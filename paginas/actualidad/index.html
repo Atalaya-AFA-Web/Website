@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualidad · AFA Atalaya</title>
+  <meta name="description" content="Noticias, avisos y crónicas de las actividades del AFA del Colegio Atalaya de Santander.">
+  <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/paginas.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER COMÚN
+       Este bloque es IDÉNTICO en las cinco páginas de /paginas/.
+       Si cambias el menú, copia el bloque completo en las demás páginas
+       (y adapta las rutas en index.html, que está un nivel más arriba).
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="../../index.html" class="brand" aria-label="Inicio - AFA Atalaya">
+        <svg class="brand-logo" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M24 4 L38 34 H32 L24 16 L16 34 H10 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M14 40 H34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-school">
+          <span class="brand-school-top">COLEGIO</span>
+          <span class="brand-school-name">ATALAYA</span>
+          <span class="brand-school-sub">SANTANDER</span>
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-afa">
+          <strong>AFA ATALAYA</strong>
+          <small>Asociación de Familias</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="../el-afa/index.html">El AFA</a></li>
+          <li><a href="../actividades/index.html">Actividades</a></li>
+          <li><a href="../formularios/index.html">Formularios</a></li>
+          <li><a href="../actualidad/index.html">Actualidad</a></li>
+          <li><a href="../contacto/index.html">Contacto</a></li>
+          <!-- Acceso al CTA dentro del menú: solo visible en móvil -->
+          <li class="nav-cta"><a href="../formularios/index.html" data-enlace="altaSocio">Hazte socio</a></li>
+        </ul>
+      </nav>
+
+      <a href="../formularios/index.html" data-enlace="altaSocio" class="btn btn-primary btn-header">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.2C.3 8.6 2.2 5 5.7 5c2 0 3.4 1.1 4.3 2.4h4c.9-1.3 2.3-2.4 4.3-2.4 3.5 0 5.4 3.6 3.7 6.8C19.5 16.1 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        Hazte socio
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ CABECERA DE PÁGINA ============ -->
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <ol>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li class="sep" aria-hidden="true">/</li>
+            <li><span aria-current="page">Actualidad</span></li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Actualidad</h1>
+        <p class="page-lead">
+          Lo que vamos haciendo y lo que está por venir: crónicas de las
+          actividades, avisos, convocatorias y resultados de los concursos.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ LISTADO DE NOTICIAS ============ -->
+    <section class="section">
+      <div class="container">
+
+        <div class="filter-chips" role="group" aria-label="Filtrar noticias" style="margin-bottom: 32px;">
+          <button class="chip is-active" data-filter="todas">Todas</button>
+          <button class="chip" data-filter="actividades">Actividades</button>
+          <button class="chip" data-filter="noticias">Noticias</button>
+          <button class="chip" data-filter="concursos">Concursos</button>
+          <button class="chip" data-filter="afa">AFA</button>
+        </div>
+
+        <!-- Para añadir una entrada nueva, copia un <article class="news-card">
+             y cambia data-category, la clase .news-thumb-*, el título y la fecha. -->
+        <div class="cards-grid cards-grid-3 news-grid" id="news-grid">
+
+          <article class="news-card" data-category="concursos">
+            <div class="news-thumb news-thumb-a">
+              <span class="news-tag">Concurso</span>
+            </div>
+            <div class="news-body">
+              <h3>¡Ya tenemos ganador del concurso!</h3>
+              <time datetime="2026-09-12">12 septiembre 2026</time>
+              <a href="#" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="actividades">
+            <div class="news-thumb news-thumb-b">
+              <span class="news-tag">Actividades</span>
+            </div>
+            <div class="news-body">
+              <h3>Así fue nuestra merienda familiar</h3>
+              <time datetime="2026-09-05">5 septiembre 2026</time>
+              <a href="#" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="actividades">
+            <div class="news-thumb news-thumb-c">
+              <span class="news-tag">Talleres</span>
+            </div>
+            <div class="news-body">
+              <h3>Taller de familias: creamos juntos</h3>
+              <time datetime="2026-08-28">28 agosto 2026</time>
+              <a href="#" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="afa">
+            <div class="news-thumb news-thumb-b">
+              <span class="news-tag">AFA</span>
+            </div>
+            <div class="news-body">
+              <h3>Nueva junta directiva del AFA Atalaya</h3>
+              <time datetime="2026-03-20">20 marzo 2026</time>
+              <a href="../el-afa/index.html" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="noticias">
+            <div class="news-thumb news-thumb-a">
+              <span class="news-tag">Aviso</span>
+            </div>
+            <div class="news-body">
+              <h3>Convocatoria de la Asamblea General</h3>
+              <time datetime="2026-09-28">28 septiembre 2026</time>
+              <a href="../actividades/index.html" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="afa">
+            <div class="news-thumb news-thumb-c">
+              <span class="news-tag">AFA</span>
+            </div>
+            <div class="news-body">
+              <h3>Abierto el plazo para asociarse al curso 2026–2027</h3>
+              <time datetime="2026-09-01">1 septiembre 2026</time>
+              <a href="../formularios/index.html" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="news-empty" id="news-empty" hidden>
+          No hay publicaciones en esta categoría todavía.
+        </p>
+
+        <!-- Paginación: activadla cuando haya más entradas de las que caben aquí. -->
+        <nav class="pagination" aria-label="Paginación de noticias">
+          <span class="is-disabled" aria-hidden="true">&#8592; Anterior</span>
+          <a href="#" aria-current="page">1</a>
+          <span class="is-disabled">Siguiente &#8594;</span>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- ============ CANALES ============ -->
+    <section class="section section-activities">
+      <div class="container split">
+        <div class="prose">
+          <h2>Dónde te avisamos</h2>
+          <p>
+            Publicamos aquí todo lo importante, pero para los avisos del día a
+            día usamos también las redes de la asociación y el correo del AFA.
+          </p>
+          <p>
+            Si eres familia asociada y no recibes nuestros correos, revisa la
+            carpeta de <em>spam</em> y escríbenos para que comprobemos que tu
+            dirección está bien anotada.
+          </p>
+        </div>
+        <aside class="aside-card">
+          <h2>Síguenos</h2>
+          <p style="font-size: 0.92rem; color: var(--text-soft); margin: 0 0 16px;">
+            Las fotos y los avisos rápidos los compartimos en redes.
+          </p>
+          <ul class="footer-social">
+            <li>
+              <a href="#" data-red="instagram" aria-label="Instagram">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-red="facebook" aria-label="Facebook">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-red="whatsapp" aria-label="WhatsApp">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c-.5 2.5 3.5 6.5 6 6l.5-2-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2Z" fill="currentColor"/></svg>
+              </a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER COMÚN
+       Bloque idéntico en las cinco páginas de /paginas/.
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a href="../../index.html" class="brand brand-footer" aria-label="Inicio - AFA Atalaya">
+          <svg class="brand-logo" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 4 L38 34 H32 L24 16 L16 34 H10 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M14 40 H34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-school">
+            <span class="brand-school-top">COLEGIO</span>
+            <span class="brand-school-name">ATALAYA</span>
+            <span class="brand-school-sub">SANTANDER</span>
+          </span>
+        </a>
+        <p>AFA ATALAYA<br><small>Familias que hacen comunidad</small></p>
+      </div>
+
+      <nav class="footer-col" aria-label="Navegación del pie">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="../el-afa/index.html">El AFA</a></li>
+          <li><a href="../actividades/index.html">Actividades</a></li>
+          <li><a href="../formularios/index.html">Formularios</a></li>
+          <li><a href="../actualidad/index.html">Actualidad</a></li>
+          <li><a href="../contacto/index.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Documentación">
+        <h3>Documentación</h3>
+        <ul>
+          <li><a href="../formularios/index.html#documentacion">Estatutos</a></li>
+          <li><a href="../formularios/index.html#documentacion">Actas</a></li>
+          <li><a href="../formularios/index.html#documentacion">Memorias</a></li>
+          <li><a href="../formularios/index.html#documentacion">Bases y documentos</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>
+          <a href="mailto:afa@colegioatalaya.com" data-email class="footer-mail">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span data-email-text>afa@colegioatalaya.com</span>
+          </a>
+        </p>
+        <p class="footer-social-label">Síguenos en redes</p>
+        <ul class="footer-social">
+          <li>
+            <a href="#" data-red="instagram" aria-label="Instagram">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-red="facebook" aria-label="Facebook">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-red="whatsapp" aria-label="WhatsApp">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c-.5 2.5 3.5 6.5 6 6l.5-2-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2Z" fill="currentColor"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          © 2026 AFA Colegio Atalaya
+          <span class="dot" aria-hidden="true">·</span>
+          CIF G-39039813
+          <span class="dot" aria-hidden="true">·</span>
+          <a href="../privacidad/index.html">Política de privacidad</a>
+          <span class="dot" aria-hidden="true">·</span>
+          <a href="../aviso-legal/index.html">Aviso legal</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- config.js debe cargarse primero: contiene la configuración del sitio -->
+  <script src="../../js/config.js"></script>
+  <script src="../../js/main.js"></script>
+  <script src="../../js/enlaces-externos.js"></script>
+</body>
+</html>

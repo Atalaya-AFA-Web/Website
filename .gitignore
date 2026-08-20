@@ -1,0 +1,33 @@
+# ---- Sistema operativo ----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# ---- Editores / IDE ----
+.vscode/
+.idea/
+*.sublime-workspace
+*.code-workspace
+
+# ---- Ficheros temporales ----
+*.tmp
+*.bak
+*.log
+*~
+
+# ---- Ofimática (bloqueos de Word/Excel al abrir un fichero) ----
+~$*
+
+# ---- Dependencias (si en el futuro se añade alguna herramienta) ----
+node_modules/
+
+# ---- IMPORTANTE: datos personales y documentación interna ----
+# No subir al repositorio ficheros con datos de socios, actas con NIF,
+# listados de familias ni documentación interna de la asociación.
+# Este repositorio contiene ÚNICAMENTE el código de la web pública.
+privado/
+socios/
+*.xlsx
+*.csv

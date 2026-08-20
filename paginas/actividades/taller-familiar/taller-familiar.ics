@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AFA Colegio Atalaya//Web//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:taller-familiar-2026-09-25@afaatalaya
+DTSTAMP:20260818T090000Z
+DTSTART:20260925T153000Z
+DTEND:20260925T170000Z
+SUMMARY:Taller familiar del AFA Atalaya
+LOCATION:Colegio Atalaya\, Bajada Rumayor s/n\, 39006 Santander (Cantabri
+ a)
+DESCRIPTION:Taller para hacer en familia\, dirigido al alumnado de primar
+ ia acompañado de un adulto. Plazas limitadas: requiere inscripción pre
+ via.
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

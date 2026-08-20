@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularios y documentación · AFA Atalaya</title>
+  <meta name="description" content="Alta de socio, inscripciones, autorizaciones y documentación de la Asociación de Familias del Colegio Atalaya.">
+  <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/paginas.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER COMÚN
+       Este bloque es IDÉNTICO en las cinco páginas de /paginas/.
+       Si cambias el menú, copia el bloque completo en las demás páginas
+       (y adapta las rutas en index.html, que está un nivel más arriba).
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="../../index.html" class="brand" aria-label="Inicio - AFA Atalaya">
+        <svg class="brand-logo" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M24 4 L38 34 H32 L24 16 L16 34 H10 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M14 40 H34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-school">
+          <span class="brand-school-top">COLEGIO</span>
+          <span class="brand-school-name">ATALAYA</span>
+          <span class="brand-school-sub">SANTANDER</span>
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-afa">
+          <strong>AFA ATALAYA</strong>
+          <small>Asociación de Familias</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="../el-afa/index.html">El AFA</a></li>
+          <li><a href="../actividades/index.html">Actividades</a></li>
+          <li><a href="../formularios/index.html">Formularios</a></li>
+          <li><a href="../actualidad/index.html">Actualidad</a></li>
+          <li><a href="../contacto/index.html">Contacto</a></li>
+          <!-- Acceso al CTA dentro del menú: solo visible en móvil -->
+          <li class="nav-cta"><a href="../formularios/index.html" data-enlace="altaSocio">Hazte socio</a></li>
+        </ul>
+      </nav>
+
+      <a href="../formularios/index.html" data-enlace="altaSocio" class="btn btn-primary btn-header">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.2C.3 8.6 2.2 5 5.7 5c2 0 3.4 1.1 4.3 2.4h4c.9-1.3 2.3-2.4 4.3-2.4 3.5 0 5.4 3.6 3.7 6.8C19.5 16.1 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        Hazte socio
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ CABECERA DE PÁGINA ============ -->
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <ol>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li class="sep" aria-hidden="true">/</li>
+            <li><span aria-current="page">Formularios</span></li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Formularios y documentación</h1>
+        <p class="page-lead">
+          Aquí encontrarás todo lo que necesitas para asociarte, inscribirte en
+          una actividad o consultar la documentación de la asociación.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ FORMULARIOS ============ -->
+    <section class="section" id="formularios">
+      <div class="container">
+        <h2 class="section-title">
+          <svg class="icon icon-title" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 3v5h5M9 13h6M9 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Formularios
+        </h2>
+
+        <!-- Estos botones abren el correo del AFA mientras no haya formularios
+             externos. En cuanto rellenéis AFA_CONFIG.enlaces en js/config.js,
+             pasan a abrir el Google Form correspondiente automáticamente.
+             No hay que tocar este HTML. -->
+        <div class="form-cards">
+
+          <article class="form-card">
+            <p class="form-card-meta">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4 0-7 2-7 5v2h14v-2c0-3-3-5-7-5Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M18 8v6m-3-3h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Alta de socio
+            </p>
+            <h3>Hazte socio del AFA</h3>
+            <p>
+              Alta de una familia como socia para el curso 2026–2027. La cuota es
+              anual y por unidad familiar, no por alumno.
+            </p>
+            <a href="mailto:afa@colegioatalaya.com?subject=Alta%20de%20socio%20AFA%20Atalaya" data-email
+               data-enlace="altaSocio" class="btn btn-primary">
+              Solicitar alta
+            </a>
+          </article>
+
+          <article class="form-card">
+            <p class="form-card-meta">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4m8-4v4M9 15l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Inscripciones
+            </p>
+            <h3>Inscripción a actividades</h3>
+            <p>
+              Reserva de plaza en los talleres y actividades con aforo limitado.
+              Se abre unos días antes de cada convocatoria.
+            </p>
+            <a href="../actividades/index.html" data-enlace="inscripcionActividad"
+               class="btn btn-outline">
+              Ver actividades
+            </a>
+          </article>
+
+          <article class="form-card">
+            <p class="form-card-meta">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="11" r="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 18 5-4 3 2 3-3 5 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              Autorizaciones
+            </p>
+            <h3>Autorización de imagen</h3>
+            <p>
+              Consentimiento para publicar fotografías de las actividades del AFA
+              en la web y en las redes de la asociación.
+            </p>
+            <a href="mailto:afa@colegioatalaya.com?subject=Autorizaci%C3%B3n%20de%20imagen" data-email
+               data-enlace="autorizacionImagen" class="btn btn-outline">
+              Solicitar el modelo
+            </a>
+          </article>
+
+          <article class="form-card">
+            <p class="form-card-meta">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-4 12.8c.8.6 1.2 1.5 1.2 2.4h5.6c0-.9.4-1.8 1.2-2.4A7 7 0 0 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 21h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Propuestas
+            </p>
+            <h3>Propón una idea</h3>
+            <p>
+              ¿Se te ocurre una actividad, una mejora o un tema que llevar al
+              colegio? Cuéntanoslo y lo valoramos en la próxima reunión.
+            </p>
+            <a href="../contacto/index.html" data-enlace="propuestas"
+               class="btn btn-outline">
+              Enviar propuesta
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DOCUMENTACIÓN ============ -->
+    <section class="section section-activities" id="documentacion">
+      <div class="container">
+        <h2 class="section-title">
+          <svg class="icon icon-title" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a2 2 0 0 1 2 2v13a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2V5a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M18 21a2 2 0 0 0 2-2V9h-2M8 8h6M8 12h6M8 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Documentación
+        </h2>
+
+        <!-- CÓMO PUBLICAR UN DOCUMENTO
+             1. Sube el PDF a la carpeta /docs del repositorio, con el nombre
+                exacto que aparece en el href de más abajo (sin tildes ni
+                espacios). Se puede hacer arrastrándolo en github.com.
+             2. Quita la clase "is-pending" y el atributo aria-disabled de ese
+                enlace. El documento pasa a ser descargable.
+
+             NO subáis a /docs ficheros con datos personales (listados de
+             socios, actas con NIF): el repositorio es público y el historial
+             de Git los conserva aunque después se borren. -->
+        <div class="doc-list">
+
+          <a class="doc-item is-pending" href="../../docs/estatutos-afa-atalaya.pdf"
+             aria-disabled="true" download>
+            <span class="doc-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            <span class="doc-info">
+              <strong>Estatutos de la asociación</strong>
+              <span>Normas de funcionamiento del AFA · PDF</span>
+            </span>
+            <span class="link-arrow link-arrow-sm doc-action">Descargar <span aria-hidden="true">&#8594;</span></span>
+            <span class="doc-pending">Pendiente de publicar</span>
+          </a>
+
+          <a class="doc-item is-pending" href="../../docs/acta-constitucion-junta-2026-03-20.pdf"
+             aria-disabled="true" download>
+            <span class="doc-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            <span class="doc-info">
+              <strong>Acta de constitución de la junta</strong>
+              <span>Asamblea General de 20 de marzo de 2026 · PDF</span>
+            </span>
+            <span class="link-arrow link-arrow-sm doc-action">Descargar <span aria-hidden="true">&#8594;</span></span>
+            <span class="doc-pending">Pendiente de publicar</span>
+          </a>
+
+          <a class="doc-item is-pending" href="../../docs/memoria-curso-2025-2026.pdf"
+             aria-disabled="true" download>
+            <span class="doc-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            <span class="doc-info">
+              <strong>Memoria del curso anterior</strong>
+              <span>Resumen de actividades y cuentas · PDF</span>
+            </span>
+            <span class="link-arrow link-arrow-sm doc-action">Descargar <span aria-hidden="true">&#8594;</span></span>
+            <span class="doc-pending">Pendiente de publicar</span>
+          </a>
+
+          <a class="doc-item is-pending" href="../../docs/bases-concursos-2026-2027.pdf"
+             aria-disabled="true" download>
+            <span class="doc-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            <span class="doc-info">
+              <strong>Bases de los concursos</strong>
+              <span>Condiciones de participación · PDF</span>
+            </span>
+            <span class="link-arrow link-arrow-sm doc-action">Descargar <span aria-hidden="true">&#8594;</span></span>
+            <span class="doc-pending">Pendiente de publicar</span>
+          </a>
+
+        </div>
+
+        <div class="callout" style="max-width: none;">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8h.01M11 12h1v5h1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <p>
+            Si echas en falta algún documento o necesitas una copia de un acta
+            concreta, escríbenos a
+            <a href="mailto:afa@colegioatalaya.com" data-email><span data-email-text>afa@colegioatalaya.com</span></a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PREGUNTAS FRECUENTES ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <svg class="icon icon-title" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6m0 3h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Preguntas frecuentes
+        </h2>
+
+        <div class="accordion" id="faq">
+
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-1">
+                ¿Hay que ser socio para participar en las actividades?
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="faq-1" hidden>
+              <p>
+                No en todas. Las reuniones informativas y las asambleas están
+                abiertas a cualquier familia del colegio. En las actividades con
+                coste o con aforo limitado, las familias asociadas tienen
+                preferencia, porque son las que las financian con su cuota.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-2">
+                ¿La cuota es por familia o por hijo?
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="faq-2" hidden>
+              <p>
+                Por familia. Una sola cuota anual cubre a toda la unidad familiar,
+                independientemente del número de hijos e hijas matriculados en el
+                centro.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-3">
+                ¿En qué se gasta el dinero de las cuotas?
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="faq-3" hidden>
+              <p>
+                En materiales para los talleres, en las actividades del curso y en
+                las aportaciones puntuales que acuerda la asamblea. Ningún miembro
+                de la junta cobra por su labor.
+              </p>
+              <p>
+                Las cuentas se presentan y se aprueban en la Asamblea General, y
+                quedan recogidas en la memoria del curso.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-4">
+                Quiero colaborar pero no puedo comprometerme todo el curso
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="faq-4" hidden>
+              <p>
+                Perfecto, así funciona la mayoría de la gente. Puedes decirnos en
+                qué tipo de tareas te encaja ayudar y te avisamos solo cuando
+                surja algo de ese estilo. Sin compromiso de continuidad.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-5">
+                ¿Cómo me presento a la junta directiva?
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="faq-5" hidden>
+              <p>
+                Las candidaturas se presentan en la Asamblea General en la que
+                toca renovar cargos, según lo previsto en los estatutos. Si te
+                interesa, escríbenos antes y te explicamos los plazos y lo que
+                implica cada cargo.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROTECCIÓN DE DATOS ============ -->
+    <section class="section section-activities">
+      <div class="container">
+        <div class="prose">
+          <h2>Protección de datos</h2>
+          <p>
+            Los datos que nos facilitas en los formularios se utilizan
+            únicamente para gestionar tu condición de socio y para informarte de
+            las actividades del AFA. No se ceden a terceros ni se emplean con
+            fines comerciales.
+          </p>
+          <p>
+            Puedes ejercer tus derechos de acceso, rectificación y supresión
+            escribiendo a
+            <a href="mailto:afa@colegioatalaya.com" data-email><span data-email-text>afa@colegioatalaya.com</span></a>.
+            Tienes más detalle en la
+            <a href="../privacidad/index.html">política de privacidad</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER COMÚN
+       Bloque idéntico en las cinco páginas de /paginas/.
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a href="../../index.html" class="brand brand-footer" aria-label="Inicio - AFA Atalaya">
+          <svg class="brand-logo" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 4 L38 34 H32 L24 16 L16 34 H10 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M14 40 H34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-school">
+            <span class="brand-school-top">COLEGIO</span>
+            <span class="brand-school-name">ATALAYA</span>
+            <span class="brand-school-sub">SANTANDER</span>
+          </span>
+        </a>
+        <p>AFA ATALAYA<br><small>Familias que hacen comunidad</small></p>
+      </div>
+
+      <nav class="footer-col" aria-label="Navegación del pie">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="../el-afa/index.html">El AFA</a></li>
+          <li><a href="../actividades/index.html">Actividades</a></li>
+          <li><a href="../formularios/index.html">Formularios</a></li>
+          <li><a href="../actualidad/index.html">Actualidad</a></li>
+          <li><a href="../contacto/index.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Documentación">
+        <h3>Documentación</h3>
+        <ul>
+          <li><a href="../formularios/index.html#documentacion">Estatutos</a></li>
+          <li><a href="../formularios/index.html#documentacion">Actas</a></li>
+          <li><a href="../formularios/index.html#documentacion">Memorias</a></li>
+          <li><a href="../formularios/index.html#documentacion">Bases y documentos</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>
+          <a href="mailto:afa@colegioatalaya.com" data-email class="footer-mail">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span data-email-text>afa@colegioatalaya.com</span>
+          </a>
+        </p>
+        <p class="footer-social-label">Síguenos en redes</p>
+        <ul class="footer-social">
+          <li>
+            <a href="#" data-red="instagram" aria-label="Instagram">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-red="facebook" aria-label="Facebook">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-red="whatsapp" aria-label="WhatsApp">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c-.5 2.5 3.5 6.5 6 6l.5-2-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2Z" fill="currentColor"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          © 2026 AFA Colegio Atalaya
+          <span class="dot" aria-hidden="true">·</span>
+          CIF G-39039813
+          <span class="dot" aria-hidden="true">·</span>
+          <a href="../privacidad/index.html">Política de privacidad</a>
+          <span class="dot" aria-hidden="true">·</span>
+          <a href="../aviso-legal/index.html">Aviso legal</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- config.js debe cargarse primero: contiene la configuración del sitio -->
+  <script src="../../js/config.js"></script>
+  <script src="../../js/main.js"></script>
+  <script src="../../js/enlaces-externos.js"></script>
+  <script src="../../js/acordeon.js"></script>
+</body>
+</html>
