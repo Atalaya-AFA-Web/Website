@@ -329,6 +329,104 @@
   font-size: 0.85rem;
 }
 
+/* ---------- Actividades de cursos anteriores ---------- */
+
+.past-activity {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.past-activity:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.past-activity-head {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.past-activity-num {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--green-800);
+  color: var(--text-inverse);
+  font-size: 1.15rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.past-activity h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--green-900);
+  line-height: 1.3;
+}
+
+.past-activity .activity-tags {
+  margin-bottom: 8px;
+}
+
+.past-activity .prose {
+  padding-left: 72px;
+}
+
+/* Recuadro "Qué aprendimos" que va dentro de cada actividad pasada.
+   Lleva también la clase .prose para heredar la tipografía y las viñetas,
+   por eso aquí sólo se ajusta la caja y los márgenes. */
+.past-activity .learned {
+  margin-left: 72px;
+  margin-top: 4px;
+  padding: 18px 22px;
+  background: var(--green-50);
+  border-left: 3px solid var(--green-600);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.past-activity .learned h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.past-activity .learned > *:last-child {
+  margin-bottom: 0;
+}
+
+.past-activity .learned li {
+  margin-bottom: 10px;
+}
+
+/* Variante para las actividades cuya memoria aún no está redactada */
+.past-activity .learned.is-pending {
+  background: var(--bg-soft);
+  border-left-color: var(--border);
+}
+
+.past-activity .learned.is-pending p {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .past-activity .prose {
+    padding-left: 0;
+  }
+
+  .past-activity .learned {
+    margin-left: 0;
+    padding: 16px 18px;
+  }
+}
+
 /* ---------- Comisiones de trabajo ---------- */
 
 .commission-grid {

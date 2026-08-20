@@ -91,78 +91,82 @@
         <div class="filter-chips" role="group" aria-label="Filtrar noticias" style="margin-bottom: 32px;">
           <button class="chip is-active" data-filter="todas">Todas</button>
           <button class="chip" data-filter="actividades">Actividades</button>
-          <button class="chip" data-filter="noticias">Noticias</button>
+          <button class="chip" data-filter="formacion">Formación</button>
           <button class="chip" data-filter="concursos">Concursos</button>
-          <button class="chip" data-filter="afa">AFA</button>
+          <button class="chip" data-filter="afa">La AFA</button>
         </div>
 
         <!-- Para añadir una entrada nueva, copia un <article class="news-card">
              y cambia data-category, la clase .news-thumb-*, el título y la fecha. -->
+        <!-- Para añadir una entrada nueva, copia un <article class="news-card">
+             y cambia data-category, la clase .news-thumb-*, el título, la fecha
+             y el enlace. Las categorías deben coincidir con los data-filter de
+             los botones de arriba. -->
         <div class="cards-grid cards-grid-3 news-grid" id="news-grid">
+
+          <article class="news-card" data-category="afa">
+            <div class="news-thumb news-thumb-b">
+              <span class="news-tag">La AFA</span>
+            </div>
+            <div class="news-body">
+              <h3>Arranca el curso 2026–2027</h3>
+              <time datetime="2026-08-20">20 agosto 2026</time>
+              <a href="../actividades/index.html" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="actividades">
+            <div class="news-thumb news-thumb-c">
+              <span class="news-tag">Actividades</span>
+            </div>
+            <div class="news-body">
+              <h3>Merienda literaria: libros y merienda</h3>
+              <time datetime="2026-05-15">Mayo 2026</time>
+              <a href="../actividades/curso-2025-2026/index.html#merienda-literaria" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="formacion">
+            <div class="news-thumb news-thumb-b">
+              <span class="news-tag">Formación</span>
+            </div>
+            <div class="news-body">
+              <h3>Taller de Primeros Auxilios con Cruz Roja</h3>
+              <time datetime="2026-04-29">29 abril 2026</time>
+              <a href="../actividades/curso-2025-2026/index.html#primeros-auxilios" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="formacion">
+            <div class="news-thumb news-thumb-a">
+              <span class="news-tag">Formación</span>
+            </div>
+            <div class="news-body">
+              <h3>Charla sobre atragantamientos en 0–5 años</h3>
+              <time datetime="2026-04-15">15 abril 2026</time>
+              <a href="../actividades/curso-2025-2026/index.html#taller-atragantamientos" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="actividades">
+            <div class="news-thumb news-thumb-c">
+              <span class="news-tag">Actividades</span>
+            </div>
+            <div class="news-body">
+              <h3>Así fue la Merienda del Carnaval</h3>
+              <time datetime="2026-02-13">13 febrero 2026</time>
+              <a href="../actividades/curso-2025-2026/index.html#merienda-carnaval" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
 
           <article class="news-card" data-category="concursos">
             <div class="news-thumb news-thumb-a">
               <span class="news-tag">Concurso</span>
             </div>
             <div class="news-body">
-              <h3>¡Ya tenemos ganador del concurso!</h3>
-              <time datetime="2026-09-12">12 septiembre 2026</time>
-              <a href="#" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
-
-          <article class="news-card" data-category="actividades">
-            <div class="news-thumb news-thumb-b">
-              <span class="news-tag">Actividades</span>
-            </div>
-            <div class="news-body">
-              <h3>Así fue nuestra merienda familiar</h3>
-              <time datetime="2026-09-05">5 septiembre 2026</time>
-              <a href="#" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
-
-          <article class="news-card" data-category="actividades">
-            <div class="news-thumb news-thumb-c">
-              <span class="news-tag">Talleres</span>
-            </div>
-            <div class="news-body">
-              <h3>Taller de familias: creamos juntos</h3>
-              <time datetime="2026-08-28">28 agosto 2026</time>
-              <a href="#" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
-
-          <article class="news-card" data-category="afa">
-            <div class="news-thumb news-thumb-b">
-              <span class="news-tag">AFA</span>
-            </div>
-            <div class="news-body">
-              <h3>Nueva junta directiva de la AFA Atalaya</h3>
-              <time datetime="2026-03-20">20 marzo 2026</time>
-              <a href="../la-afa/index.html" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
-
-          <article class="news-card" data-category="noticias">
-            <div class="news-thumb news-thumb-a">
-              <span class="news-tag">Aviso</span>
-            </div>
-            <div class="news-body">
-              <h3>Convocatoria de la Asamblea General</h3>
-              <time datetime="2026-09-28">28 septiembre 2026</time>
-              <a href="../actividades/index.html" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
-
-          <article class="news-card" data-category="afa">
-            <div class="news-thumb news-thumb-c">
-              <span class="news-tag">AFA</span>
-            </div>
-            <div class="news-body">
-              <h3>Abierto el plazo para asociarse al curso 2026–2027</h3>
-              <time datetime="2026-09-01">1 septiembre 2026</time>
-              <a href="../formularios/index.html" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+              <h3>58 postales en nuestro primer concurso de Navidad</h3>
+              <time datetime="2025-12-19">19 diciembre 2025</time>
+              <a href="../actividades/curso-2025-2026/index.html#concurso-postales" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
             </div>
           </article>
 
@@ -172,8 +176,9 @@
           No hay publicaciones en esta categoría todavía.
         </p>
 
-        <!-- Paginación: activadla cuando haya más entradas de las que caben aquí. -->
-        <nav class="pagination" aria-label="Paginación de noticias">
+        <!-- Paginación: activadla quitando el atributo hidden cuando haya más
+             entradas de las que caben cómodamente en esta página. -->
+        <nav class="pagination" aria-label="Paginación de noticias" hidden>
           <span class="is-disabled" aria-hidden="true">&#8592; Anterior</span>
           <a href="#" aria-current="page">1</a>
           <span class="is-disabled">Siguiente &#8594;</span>

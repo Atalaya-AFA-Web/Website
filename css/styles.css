@@ -51,7 +51,7 @@
      Hay dos versiones: la de escritorio y una más ligera para móviles, que se
      intercambian en el bloque responsive del final de este fichero.
      Para cambiar la foto, sustituye estos dos ficheros en /img conservando los
-     nombres (en minúsculas: GitHub Pages distingue mayúsculas). */
+     nombres (en minúsculas: el servidor distingue mayúsculas). */
   --hero-image: url("../img/cabecera.webp");
 }
 
@@ -233,6 +233,10 @@ html {
 }
 
 .section-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
   margin-top: 36px;
   text-align: center;
 }
