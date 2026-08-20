@@ -1,4 +1,4 @@
-# Documentos públicos del AFA
+# Documentos públicos de la AFA
 
 Los PDF que se descargan desde la web van en esta carpeta.
 
@@ -44,5 +44,5 @@ hacedlo por correo o por una carpeta privada de Drive, no por la web.
 ## Límites técnicos
 
 GitHub Pages admite hasta 1 GB de sitio publicado y 100 MB por fichero, con un
-límite blando de 100 GB de tráfico al mes. Para documentos del AFA es de sobra.
+límite blando de 100 GB de tráfico al mes. Para documentos de la AFA es de sobra.
 Si algún día hay vídeo, mejor enlazarlo a Drive o YouTube.

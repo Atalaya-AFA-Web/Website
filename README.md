@@ -1,4 +1,4 @@
-# Web del AFA Colegio Atalaya
+# Web de la AFA Colegio Atalaya
 
 Sitio web de la Asociación de Familias de Alumnos del Colegio Atalaya de Santander
 (CIF G-39039813).
@@ -12,7 +12,8 @@ Web estática: HTML, CSS y JavaScript, sin frameworks ni proceso de compilación
 ├── index.html                    Página de inicio
 │
 ├── paginas/                      Todas las páginas interiores
-│   ├── el-afa/index.html         Quiénes somos, junta, organización
+│   ├── la-afa/index.html         Quiénes somos, junta, organización y
+│   │                             comisiones de trabajo (ancla #comisiones)
 │   ├── actividades/
 │   │   ├── index.html            Calendario del curso por trimestres
 │   │   ├── reunion-bienvenida/   Ficha de actividad (sin inscripción)
@@ -55,10 +56,24 @@ Web estática: HTML, CSS y JavaScript, sin frameworks ni proceso de compilación
                                   los Google Forms, y conectarlos a la web
 ```
 
+### Nota de estilo: «la AFA», no «el AFA»
+
+En todos los textos se usa el **femenino**: *la AFA*, *de la AFA*, *a la AFA*.
+
+El motivo es que las siglas toman el género del núcleo de la denominación
+completa, y aquí el núcleo es **Asociación** de Familias de Alumnos. Podría
+parecer que aplica la regla de *el agua* (femenino con /a/ tónica inicial), pero
+el *Diccionario panhispánico de dudas* excluye expresamente a las siglas de esa
+regla: se usa *la* cuando esa /a/ **no es tónica en la palabra original**, y en
+*asociación* el acento cae en la última sílaba. El propio DPD pone como ejemplo
+«la AFE (Asociación de Futbolistas Españoles)», que es un caso idéntico.
+
+Por coherencia, la carpeta de la sección es `paginas/la-afa/`.
+
 ### Por qué esta estructura
 
-- **Una carpeta por página** (`paginas/el-afa/index.html` en lugar de
-  `paginas/el-afa.html`): la URL queda limpia (`/paginas/el-afa/`) y cada
+- **Una carpeta por página** (`paginas/la-afa/index.html` en lugar de
+  `paginas/la-afa.html`): la URL queda limpia (`/paginas/la-afa/`) y cada
   sección tiene un sitio propio donde crecer. Si mañana hay fichas de noticias
   individuales, van dentro de `paginas/actualidad/`.
 - **Las páginas de apartado están todas al mismo nivel**, así que usan
@@ -144,10 +159,13 @@ python -m http.server 8000
 Estos puntos están marcados con `<!-- TODO -->` en el código:
 
 - Importe de la cuota del curso 2026–2027.
+- Revisar con la junta las descripciones de las nueve comisiones de trabajo
+  (`paginas/la-afa/index.html`, sección `#comisiones`): la lista es la que pasó
+  la junta, pero las descripciones de una línea son una propuesta.
 - Fechas definitivas de las actividades del segundo y tercer trimestre.
-- Enlaces reales de los formularios (ahora abren el correo del AFA).
+- Enlaces reales de los formularios (ahora abren el correo de la AFA).
 - PDF de estatutos, actas y memorias en `docs/`.
-- URL de las redes sociales del AFA.
+- URL de las redes sociales de la AFA.
 - Comprobar el origen y la licencia de la foto de portada.
 - Revisión del aviso legal y la política de privacidad por parte de la junta.
 - Activar el reenvío del Gmail técnico al correo público.
@@ -162,17 +180,18 @@ servicio. No hay que tocar HTML para ponerlo en marcha.
 
 | Qué configurar | Sin configurar (ahora) | Configurado |
 |---|---|---|
+| `email` | — | `colegioatalaya.afa@gmail.com`, aplicado en las 10 páginas |
 | `formulario.endpoint` | El formulario abre el gestor de correo de la familia con el mensaje redactado | Se envía en segundo plano y se muestra la confirmación en la propia página |
-| `enlaces.altaSocio` y compañía | Los botones abren un correo al AFA | Abren el Google Form correspondiente |
+| `enlaces.altaSocio` y compañía | Los botones abren un correo a la AFA | Abren el Google Form correspondiente |
 | `redes.*` | Los iconos del pie se ocultan | Se muestran y enlazan |
 
 ### Poner el formulario de contacto en marcha (Web3Forms)
 
 Una web estática **no puede enviar correos por sí misma**: no hay servidor que
 procese el envío. Hace falta un servicio que lo reciba y lo reenvíe al correo
-del AFA. El recomendado es **Web3Forms**, porque se da de alta solo con un
+de la AFA. El recomendado es **Web3Forms**, porque se da de alta solo con un
 correo, sin crear cuenta ni contraseña: la clave queda ligada a
-`afa@colegioatalaya.com`, así que **cuando cambie la junta no hay credenciales
+`colegioatalaya.afa@gmail.com`, así que **cuando cambie la junta no hay credenciales
 que traspasar**.
 
 **Ya está configurado.** La clave de Web3Forms está en `js/config.js` y está
@@ -213,7 +232,7 @@ el botón "Solicitar alta" pasa a abrirlo automáticamente.
 
 ## La dirección de la sede
 
-Aparece en cuatro sitios: `el-afa` (datos de la asociación), `contacto` (bloque
+Aparece en cuatro sitios: `la-afa` (datos de la asociación), `contacto` (bloque
 "Cómo llegar"), `privacidad` y `aviso-legal`. Si algún día cambia, hay que
 tocar esos cuatro ficheros — a diferencia del correo, no está centralizada,
 porque va en el HTML para que los buscadores la indexen.
@@ -262,4 +281,4 @@ consentimiento por escrito de sus familias.
 
 ## Contacto
 
-afa@colegioatalaya.com
+colegioatalaya.afa@gmail.com

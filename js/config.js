@@ -8,7 +8,7 @@
 
    Regla general: si un valor está VACÍO (""), la web usa el comportamiento
    de reserva que ya funciona sin configurar nada (normalmente, abrir el
-   correo del AFA). En cuanto lo rellenas, se usa el servicio.
+   correo de la AFA). En cuanto lo rellenas, se usa el servicio.
 
    Se carga ANTES que el resto de los scripts en todas las páginas.
    ========================================================================== */
@@ -32,12 +32,19 @@ var AFA_CONFIG = {
          · Cuenta de Web3Forms → el buzón donde ATERRIZAN los mensajes del
            formulario de contacto (ver apartado 2).
 
-       Si son distintos, configura en la cuenta de Web3Forms un reenvío
-       automático hacia este correo público. Si no, los mensajes del
-       formulario se quedarán en un buzón que nadie mira.
+       ⚠ CUIDADO: las dos cuentas son Gmail y se parecen mucho. No las
+         confundas al mantener esto:
+
+           colegioatalaya.afa@gmail.com       → PÚBLICO (este apartado)
+           colegioatalaya.afa.web@gmail.com   → TÉCNICO (Web3Forms y Google Forms)
+
+       Como son distintas, hay que configurar en la cuenta técnica un reenvío
+       automático hacia la pública. Si no, los mensajes del formulario se
+       quedarán en un buzón que nadie mira.
      ------------------------------------------------------------------------ */
-  // TODO: sustituir por el correo público definitivo cuando se decida.
-  email: "afa@colegioatalaya.com",
+  // Se escribe en minúsculas: en Gmail la dirección funciona igual con
+  // mayúsculas, y así los enlaces mailto quedan limpios y homogéneos.
+  email: "colegioatalaya.afa@gmail.com",
 
 
   /* ------------------------------------------------------------------------
@@ -47,7 +54,7 @@ var AFA_CONFIG = {
      servicio que reciba el envío y lo reenvíe a un buzón.
 
      CUENTA UTILIZADA: colegioatalaya.afa.web@gmail.com
-     Es la cuenta "técnica" del AFA: la que tiene la clave de Web3Forms y la
+     Es la cuenta "técnica" de la AFA: la que tiene la clave de Web3Forms y la
      que es propietaria de los Google Forms y de sus hojas de respuestas.
      Los mensajes del formulario de contacto llegan AQUÍ.
 
@@ -87,7 +94,7 @@ var AFA_CONFIG = {
     accessKey: "75d5743a-e557-4e2e-989b-0388db3af9b5",
 
     // Asunto con el que llegarán los mensajes al buzón.
-    asunto: "Nuevo mensaje desde la web del AFA"
+    asunto: "Nuevo mensaje desde la web de la AFA"
   },
 
 
@@ -114,7 +121,8 @@ var AFA_CONFIG = {
     altaSocio: "",              // Google Form de alta de socio
     inscripcionActividad: "",   // Google Form de inscripción a actividades
     autorizacionImagen: "",     // Google Form o PDF de autorización de imagen
-    propuestas: ""              // Google Form de propuestas y sugerencias
+    propuestas: "",             // Google Form de propuestas y sugerencias
+    comisiones: ""              // Google Form para apuntarse a una comisión
   },
 
 

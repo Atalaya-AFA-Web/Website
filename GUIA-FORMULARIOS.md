@@ -1,4 +1,4 @@
-# Guía: formularios de la web del AFA Atalaya
+# Guía: formularios de la web de la AFA Atalaya
 
 Documento de trabajo para la junta. No se publica en la web: es la guía para
 montar los formularios y dejarlos conectados.
@@ -17,10 +17,17 @@ mensajes del día a día tiene acceso también a la base de datos de socios.
 
 | | Cuenta técnica | Correo público |
 |---|---|---|
-| **Dirección** | `colegioatalaya.afa.web@gmail.com` | *pendiente de decidir* |
+| **Dirección** | `colegioatalaya.afa.web@gmail.com` | `colegioatalaya.afa@gmail.com` |
 | **Para qué** | Clave de Web3Forms · Propietaria de los Google Forms y de las hojas de respuestas | Es el que aparece en la web; el que las familias usan para escribir |
 | **Quién debe entrar** | Secretaría y tesorería (contiene datos de socios) | Quien atienda mensajes |
 | **Dónde se configura** | En Web3Forms y en Google | `email` en `js/config.js` |
+
+> ⚠ **Ojo, las dos direcciones se parecen mucho.** La técnica lleva `.web`
+> antes de la arroba y la pública no. Merece la pena escribirlo así en el acta
+> o donde documentéis las cuentas, porque es un error fácil de cometer:
+>
+> - `colegioatalaya.afa@gmail.com` → **pública**, la que ven las familias
+> - `colegioatalaya.afa.web@gmail.com` → **técnica**, Web3Forms y Google Forms
 
 ### ⚠ El punto que no hay que pasar por alto: el reenvío
 
@@ -33,7 +40,7 @@ Solución, y es de un minuto: **activa el reenvío automático en el Gmail.**
 
 1. Entra en `colegioatalaya.afa.web@gmail.com`.
 2. Rueda de ajustes → *Ver todos los ajustes* → pestaña **Reenvío y correo POP/IMAP**.
-3. *Añadir una dirección de reenvío* → escribe el correo público.
+3. *Añadir una dirección de reenvío* → escribe `colegioatalaya.afa@gmail.com`.
 4. Google manda un correo de confirmación a esa dirección: hay que abrirlo y
    confirmar desde ahí.
 5. Vuelve y marca **Reenviar una copia del correo entrante a…**, dejando la
@@ -49,7 +56,7 @@ copia en la cuenta técnica como respaldo.
 
 ### Dos avisos sobre la cuenta técnica
 
-**Que sea del AFA, no personal.** `colegioatalaya.afa.web@gmail.com` cumple:
+**Que sea de la AFA, no personal.** `colegioatalaya.afa.web@gmail.com` cumple:
 es una cuenta creada para esto. **Guarda la contraseña donde la junta pueda
 recuperarla**, no solo en tu cabeza o en tu navegador — ahí va a vivir la base
 de datos de socios.
@@ -85,7 +92,7 @@ se va o pierde el móvil.
 formulario: {
   endpoint: "https://api.web3forms.com/submit",
   accessKey: "75d5743a-e557-4e2e-989b-0388db3af9b5",
-  asunto: "Nuevo mensaje desde la web del AFA"
+  asunto: "Nuevo mensaje desde la web de la AFA"
 },
 ```
 
@@ -107,7 +114,7 @@ esa línea.
      a vosotros mismos.
 
 Si algo falla, la web muestra un aviso en rojo pidiendo que escriban
-directamente al correo del AFA, así que ningún mensaje se pierde por el camino.
+directamente al correo de la AFA, así que ningún mensaje se pierde por el camino.
 
 ### 2.4 Mantenimiento
 
@@ -135,14 +142,14 @@ Título sugerido: **Alta de socio · AFA Colegio Atalaya · Curso 2026–2027**
 
 Descripción (debajo del título):
 
-> Con esta solicitud tu familia pasa a formar parte del AFA del Colegio Atalaya
+> Con esta solicitud tu familia pasa a formar parte de la AFA del Colegio Atalaya
 > de Santander. La cuota es **anual y por unidad familiar**, no por alumno.
 >
 > Responsable del tratamiento: Asociación de Familias de Alumnos del Colegio
 > Atalaya de Santander (CIF G-39039813). Usaremos estos datos únicamente para
-> gestionar tu condición de socio y para informarte de las actividades del AFA.
+> gestionar tu condición de socio y para informarte de las actividades de la AFA.
 > No se ceden a terceros. Puedes ejercer tus derechos de acceso, rectificación
-> y supresión escribiendo a afa@colegioatalaya.com. Más información en nuestra
+> y supresión escribiendo a colegioatalaya.afa@gmail.com. Más información en nuestra
 > política de privacidad: [enlace a la página de privacidad de la web].
 
 ---
@@ -159,7 +166,7 @@ Descripción (debajo del título):
 | Teléfono de la segunda persona | Respuesta corta | No |
 
 *Texto de ayuda en el teléfono:* "Lo usamos solo para avisos urgentes
-relacionados con actividades del AFA."
+relacionados con actividades de la AFA."
 
 ---
 
@@ -211,16 +218,49 @@ familia. [Ajustar al importe aprobado en asamblea.]"
 
 ---
 
-#### Sección 4 — Participación (opcional)
+#### Sección 4 — Comisiones de trabajo (opcional)
+
+Esta sección es **la más importante del formulario después de los datos de
+contacto**, porque es la que convierte el alta en participación real.
+
+*Cabecera de sección:*
+> Nuestro trabajo se organiza en comisiones. Marca las que te interesen y te
+> avisaremos solo cuando surja algo de esas: no es un compromiso ni un cargo,
+> es una lista de avisos. Puedes marcar varias, o ninguna.
 
 | Campo | Tipo | Obligatorio |
 |---|---|---|
-| ¿En qué te encajaría colaborar? | Casillas (varias respuestas): Montaje y desmontaje de actividades · Acompañar en salidas · Preparar materiales · Difusión y redes sociales · Comisión de fiestas · Aportar ideas desde casa · Ahora mismo no puedo | No |
+| ¿En qué comisiones te gustaría participar? | Casillas, una por comisión (lista abajo) | No |
 | ¿Cuándo te viene mejor? | Casillas: Mañanas · Tardes · Fines de semana | No |
+| Si quieres, cuéntanos qué puedes aportar | Párrafo | No |
 
-*Cabecera de sección:* "Esto no es un compromiso. Nos sirve para avisarte solo
-cuando surja algo que encaje contigo, en lugar de mandar peticiones generales a
-todo el mundo."
+**Las casillas deben ser exactamente estas nueve**, las mismas que aparecen en
+la página de La AFA:
+
+- Actividades Extraescolares
+- Fiestas y eventos
+- Actividades en Familia
+- Huerto y Medioambiente
+- Movilidad e Infraestructuras
+- Comunicación
+- Convivencia
+- Comedor
+- Senderismo
+
+Y añade una décima opción, que ahorra malentendidos:
+
+- Ahora mismo no puedo, pero avisadme si hace falta algo puntual
+
+> ⚠ **Que las tres listas coincidan.** Los nombres de las comisiones aparecen
+> en tres sitios: la página de La AFA, estas casillas y los grupos a los que
+> luego escribís. Si divergen, la columna de la hoja de respuestas deja de
+> servir para filtrar. Cuando cambiéis una comisión, cambiadla en los tres.
+
+**Por qué esto es tan útil:** al ser casillas, en la hoja de respuestas te queda
+una columna con los nombres marcados. Filtrando por "Fiestas y eventos" tienes
+en dos clics la lista de correos a la que escribir cuando toque preparar
+Carnaval, en lugar de mandar un correo genérico a todas las familias que casi
+nadie contesta.
 
 ---
 
@@ -232,9 +272,9 @@ un consentimiento válido, porque la familia no puede asociarse sin aceptarlo.
 
 | Campo | Tipo | Obligatorio |
 |---|---|---|
-| Acepto el tratamiento de mis datos para la gestión de mi condición de socio y para recibir información del AFA | Casilla | **Sí** |
-| Autorizo la publicación de imágenes en las que aparezcan mis hijos/as, tomadas en actividades del AFA, en su web y redes sociales | Opción única: Sí, lo autorizo / No lo autorizo | **Sí** (pero ambas respuestas son válidas) |
-| Quiero recibir los avisos del AFA por WhatsApp | Opción única: Sí / No | No |
+| Acepto el tratamiento de mis datos para la gestión de mi condición de socio y para recibir información de la AFA | Casilla | **Sí** |
+| Autorizo la publicación de imágenes en las que aparezcan mis hijos/as, tomadas en actividades de la AFA, en su web y redes sociales | Opción única: Sí, lo autorizo / No lo autorizo | **Sí** (pero ambas respuestas son válidas) |
+| Quiero recibir los avisos de la AFA por WhatsApp | Opción única: Sí / No | No |
 | ¿Algo más que quieras contarnos? | Párrafo | No |
 
 ---
@@ -253,11 +293,11 @@ versión):
   justificante del alta y te ahorra el "¿seguro que lo mandé?".
 - **Mensaje de confirmación** personalizado. Propuesta:
 
-  > ¡Gracias! Hemos recibido tu solicitud de alta en el AFA Atalaya.
+  > ¡Gracias! Hemos recibido tu solicitud de alta en la AFA Atalaya.
   >
   > Te escribiremos en unos días para confirmarla y darte los datos del pago de
   > la cuota. Si en una semana no has recibido nada, avísanos a
-  > afa@colegioatalaya.com.
+  > colegioatalaya.afa@gmail.com.
 
 - **Notificaciones**: en la pestaña de *Respuestas*, activa que te avise por
   correo cuando llegue una nueva. Si no, hay que acordarse de mirar.
@@ -299,7 +339,7 @@ enlaces: {
 
 > **Una consideración de diseño, por si la queréis revisar.** Con esto, el botón
 > "Hazte socio" del header lleva directamente al Google Form, sin pasar por la
-> página de Formularios donde se explica la cuota y qué hace el AFA. Es lo más
+> página de Formularios donde se explica la cuota y qué hace la AFA. Es lo más
 > directo para quien ya viene decidido, pero se pierde la oportunidad de
 > convencer a quien todavía duda.
 >
@@ -309,6 +349,27 @@ enlaces: {
 > páginas. Los de la página de Formularios se dejan como están.
 
 ---
+
+## 3.6 Cómo usar las comisiones en el día a día
+
+Una vez tengáis las respuestas del alta con las comisiones marcadas:
+
+1. **En la hoja de respuestas**, crea una pestaña por comisión con un filtro,
+   o usa el filtro de la columna. Google Sheets permite filtrar por "el texto
+   contiene" → "Fiestas y eventos".
+2. **Cuando toque una actividad de esa comisión**, copias esa columna de correos
+   y escribes solo a esas familias. El mensaje pasa de ser una petición genérica
+   a una convocatoria dirigida, y la tasa de respuesta cambia por completo.
+3. **Nombra a una persona de referencia por comisión**, aunque no sea de la
+   junta. Sin alguien que convoque, la lista se queda en una lista.
+4. **Revísalo al empezar cada curso**: quien se apuntó el año pasado puede
+   seguir o no, y hay familias nuevas.
+
+> **Consejo sobre el número de comisiones.** Nueve son bastantes para arrancar.
+> Si al cabo de unos meses hay tres con gente y seis vacías, no pasa nada: se
+> marcan las vacías como «en formación» en la web (hay una clase CSS preparada
+> para eso) o se agrupan. Es más honesto que mantener nueve comisiones que
+> existen solo en el organigrama.
 
 ## 4. Los otros tres formularios
 
@@ -349,7 +410,7 @@ trimestre. Así la URL no cambia nunca y `inscripcionActividad` en
 | Teléfono móvil | Respuesta corta | Sí |
 | Nombre y curso del alumnado que participa | Párrafo | Sí |
 | Número de personas que asistiréis en total | Número | Sí |
-| ¿Sois familia socia del AFA? | Sí / No / No lo sé | Sí |
+| ¿Sois familia socia de la AFA? | Sí / No / No lo sé | Sí |
 | Algo que debamos tener en cuenta | Párrafo | No |
 
 El campo del **número total de asistentes** es el que os permite controlar el
@@ -424,8 +485,8 @@ página de Contacto, que es donde queremos que vaya.
 ## 5. Checklist de puesta en marcha
 
 ### Cuentas
-- [ ] Decidir el correo público definitivo
-- [ ] Ponerlo en `email` dentro de `js/config.js` (una sola línea, actualiza las 8 páginas)
+- [x] Decidir el correo público definitivo: `colegioatalaya.afa@gmail.com`
+- [x] Ponerlo en `email` dentro de `js/config.js`
 - [ ] Activar el reenvío automático del Gmail técnico al correo público
 - [ ] Añadir a otra persona de la junta como recuperación de la cuenta de Google
 - [ ] Guardar la contraseña del Gmail donde la junta pueda recuperarla
