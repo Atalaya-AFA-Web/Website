@@ -6,9 +6,7 @@
   <title>AFA Atalaya · Asociación de Familias del Colegio Atalaya</title>
   <meta name="description" content="AFA Atalaya: un espacio creado por las familias y para las familias del Colegio Atalaya (Santander).">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fuentes.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -280,64 +278,65 @@
     </section>
 
     <!-- ============ ACTUALIDAD AFA ============ -->
+    <!-- ============ ACTUALIDAD ============
+         Estas tres tarjetas deben ser LAS MISMAS que las de la página de
+         Actualidad. Son lo que está en marcha, no un archivo: cuando una
+         actividad termina se retira de aquí y su crónica pasa al histórico
+         del curso (paginas/actividades/#historico).
+         ============================================================ -->
     <section class="section section-news" id="actualidad">
       <div class="container">
-        <div class="section-header section-header-wrap">
+        <div class="section-header section-header-stack">
           <h2 class="section-title">
             <svg class="icon icon-title" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a2 2 0 0 1 2 2v13a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2V5a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M18 21a2 2 0 0 0 2-2V9h-2M8 8h6M8 12h6M8 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            Actualidad AFA
+            Lo próximo
           </h2>
-          <div class="filter-chips" role="group" aria-label="Filtrar noticias">
-            <button class="chip is-active" data-filter="todas">Todas</button>
-            <button class="chip" data-filter="actividades">Actividades</button>
-            <button class="chip" data-filter="noticias">Noticias</button>
-            <button class="chip" data-filter="concursos">Concursos</button>
-            <button class="chip" data-filter="afa">AFA</button>
-          </div>
+          <p class="section-sub">
+            Lo que hay en marcha ahora mismo. Todo lo demás está en el
+            calendario del curso y en el histórico.
+          </p>
         </div>
 
-        <div class="cards-grid cards-grid-3 news-grid" id="news-grid">
+        <div class="cards-grid cards-grid-3 news-grid">
 
-          <article class="news-card" data-category="concursos">
-            <div class="news-thumb news-thumb-a">
-              <span class="news-tag">Concurso</span>
-            </div>
-            <div class="news-body">
-              <h3>¡Ya tenemos ganador del concurso!</h3>
-              <time datetime="2026-09-12">12 septiembre 2026</time>
-              <a href="paginas/actualidad/index.html" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
-
-          <article class="news-card" data-category="actividades">
+          <article class="news-card">
             <div class="news-thumb news-thumb-b">
-              <span class="news-tag">Actividades</span>
+              <span class="news-tag">Convocatoria</span>
             </div>
             <div class="news-body">
-              <h3>Así fue nuestra merienda familiar</h3>
-              <time datetime="2026-09-05">5 septiembre 2026</time>
-              <a href="paginas/actualidad/index.html" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+              <h3>Reunión de bienvenida: te contamos el curso</h3>
+              <time datetime="2026-09-12T18:00">Sábado 12 de septiembre, 18:00 h</time>
+              <a href="paginas/actividades/reunion-bienvenida/index.html" class="link-arrow link-arrow-sm">Ver los detalles <span aria-hidden="true">&#8594;</span></a>
             </div>
           </article>
 
-          <article class="news-card" data-category="actividades">
+          <article class="news-card">
             <div class="news-thumb news-thumb-c">
-              <span class="news-tag">Talleres</span>
+              <span class="news-tag">Inscripción abierta</span>
             </div>
             <div class="news-body">
-              <h3>Taller de familias: creamos juntos</h3>
-              <time datetime="2026-08-28">28 agosto 2026</time>
-              <a href="paginas/actualidad/index.html" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+              <h3>Taller familiar: plazas limitadas</h3>
+              <time datetime="2026-09-25T17:30">Viernes 25 de septiembre, 17:30 h</time>
+              <a href="paginas/actividades/taller-familiar/index.html" class="link-arrow link-arrow-sm">Apúntate <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-thumb news-thumb-a">
+              <span class="news-tag">La AFA</span>
+            </div>
+            <div class="news-body">
+              <h3>Se abren las comisiones de trabajo</h3>
+              <time datetime="2026-08-21">21 de agosto de 2026</time>
+              <a href="paginas/la-afa/index.html#comisiones" class="link-arrow link-arrow-sm">Ver las comisiones <span aria-hidden="true">&#8594;</span></a>
             </div>
           </article>
 
         </div>
-
-        <p class="news-empty" id="news-empty" hidden>No hay publicaciones en esta categoría todavía.</p>
 
         <div class="section-cta">
-          <a href="paginas/actualidad/index.html" class="btn btn-outline">Ver todas las noticias <span aria-hidden="true">&#8594;</span></a>
-          <a href="paginas/actividades/curso-2025-2026/index.html" class="btn btn-outline">Lo que hicimos el curso pasado <span aria-hidden="true">&#8594;</span></a>
+          <a href="paginas/actualidad/index.html" class="btn btn-outline">Ver toda la actualidad <span aria-hidden="true">&#8594;</span></a>
+          <a href="paginas/actividades/index.html#historico" class="btn btn-outline">Lo que ya hemos hecho <span aria-hidden="true">&#8594;</span></a>
         </div>
       </div>
     </section>
@@ -409,24 +408,11 @@
             <span data-email-text>colegioatalaya.afa@gmail.com</span>
           </a>
         </p>
-        <p class="footer-social-label">Síguenos en redes</p>
-        <ul class="footer-social">
-          <li>
-            <a href="#" data-red="instagram" aria-label="Instagram">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-red="facebook" aria-label="Facebook">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-red="whatsapp" aria-label="WhatsApp">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c-.5 2.5 3.5 6.5 6 6l.5-2-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2Z" fill="currentColor"/></svg>
-            </a>
-          </li>
-        </ul>
+        <p class="footer-address">
+          Colegio Atalaya<br>
+          Bajada Rumayor, s/n<br>
+          39006 Santander (Cantabria)
+        </p>
       </div>
     </div>
 

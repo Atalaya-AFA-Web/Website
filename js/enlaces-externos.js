@@ -7,8 +7,11 @@
         marcados con data-email y en los textos marcados con data-email-text.
      2. Sustituye el href de los botones marcados con data-enlace="clave"
         por la URL correspondiente de AFA_CONFIG.enlaces (si está puesta).
-     3. Rellena los iconos de redes sociales marcados con data-red="clave"
-        y oculta los que no tengan URL configurada.
+
+   Antes había un tercer módulo para los iconos de redes sociales. Se retiró
+   en agosto de 2026: la AFA no tiene ni prevé tener redes, y mantener el
+   soporte obligaba a declarar a Meta como destinataria en la política de
+   privacidad. Si algún día se abren, el histórico de Git tiene el código.
 
    El HTML lleva siempre un valor de reserva escrito a mano, así que si este
    script no se ejecuta la web sigue siendo perfectamente usable.
@@ -68,40 +71,6 @@
     });
   }
 
-  /* ---------- 3. Iconos de redes sociales ---------- */
-
-  function initSocialLinks(config) {
-    var redes = config.redes || {};
-
-    document.querySelectorAll("[data-red]").forEach(function (link) {
-      var url = redes[link.dataset.red];
-      var item = link.closest("li") || link;
-
-      if (!url) {
-        // Sin URL: se oculta el icono en lugar de dejar un enlace muerto
-        item.hidden = true;
-        return;
-      }
-
-      link.href = url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-    });
-
-    // Si no queda ninguna red visible, oculta también el texto "Síguenos"
-    document.querySelectorAll(".footer-social").forEach(function (list) {
-      var visibles = list.querySelectorAll("li:not([hidden])").length;
-
-      if (visibles === 0) {
-        list.hidden = true;
-        var label = list.previousElementSibling;
-        if (label && label.classList.contains("footer-social-label")) {
-          label.hidden = true;
-        }
-      }
-    });
-  }
-
   /* ---------- Arranque ---------- */
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -113,6 +82,5 @@
     // tiene prioridad sobre el respaldo por correo.
     initExternalLinks(config);
     initEmail(config);
-    initSocialLinks(config);
   });
 })();

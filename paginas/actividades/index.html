@@ -6,9 +6,7 @@
   <title>Actividades · AFA Atalaya</title>
   <meta name="description" content="Calendario de actividades de la AFA Atalaya para el curso 2026-2027: talleres, encuentros, asambleas y celebraciones.">
   <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/fuentes.css">
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="../../css/paginas.css">
 </head>
@@ -395,33 +393,73 @@
       </div>
     </section>
 
-    <!-- ============ CURSO ANTERIOR ============ -->
-    <section class="section section-activities">
-      <div class="container split">
-        <div class="prose">
-          <h2>Lo que hicimos el curso pasado</h2>
-          <p>
-            La junta actual empezó en noviembre de 2025 y en su primer curso
-            sacó adelante <strong>cinco actividades</strong>: un concurso de
-            postales con 58 participantes, la merienda de Carnaval, dos talleres
-            de formación gratuitos para las familias y una merienda literaria.
-          </p>
-          <p>
-            Dos de ellas se hicieron con entidades de fuera del colegio:
-            <strong>Cruz Roja</strong> impartió el taller de primeros auxilios y
-            la <strong>Librería Gil</strong> donó los premios del concurso.
+    <!-- ============ HISTÓRICO POR CURSOS ============
+         Aquí vive todo lo ya celebrado. La página de Actualidad solo tiene lo
+         que está en marcha, y cuando una actividad termina su crónica acaba
+         aquí, en la página del curso correspondiente.
+
+         PARA AÑADIR UN CURSO NUEVO:
+           1. Crea la carpeta paginas/actividades/curso-2026-2027/
+              copiando curso-2025-2026/index.html como plantilla.
+           2. Copia una <article class="tile"> de abajo, cámbiale el título,
+              las cifras y el enlace, y ponla PRIMERA (orden: el más reciente
+              arriba).
+         Cuando haya cuatro o cinco cursos, esta sección merecerá su propia
+         página (paginas/actividades/historico/); hasta entonces sobra.
+         ============================================================ -->
+    <section class="section section-activities" id="historico">
+      <div class="container">
+        <div class="section-header section-header-stack">
+          <h2 class="section-title">
+            <svg class="icon icon-title" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 4v6h6M8 14h8M8 18h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Lo que ya hemos hecho
+          </h2>
+          <p class="section-sub">
+            El archivo de la asociación, curso por curso: qué se organizó, cómo
+            fue y qué aprendimos de cada actividad.
           </p>
         </div>
-        <aside class="aside-card">
-          <h2>Curso 2025–2026</h2>
-          <p style="font-size: 0.92rem; color: var(--text-soft); margin: 0 0 16px;">
-            El detalle de las cinco actividades, con lo que salió bien y lo que
-            aprendimos de cada una.
-          </p>
-          <a href="curso-2025-2026/index.html" class="btn btn-outline">
-            Ver el resumen <span aria-hidden="true">&#8594;</span>
-          </a>
-        </aside>
+
+        <div class="tiles">
+
+          <article class="tile">
+            <span class="tile-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4m8-4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Curso 2025–2026</h3>
+            <p>
+              El primer curso de la junta actual: <strong>cinco
+              actividades</strong>, 58 participantes en el concurso de postales
+              y dos talleres de formación gratuitos. Con Cruz Roja, la Librería
+              Gil y la Residencia Isasti.
+            </p>
+            <p>
+              <a href="curso-2025-2026/index.html" class="link-arrow link-arrow-sm">
+                Ver el curso completo <span aria-hidden="true">&#8594;</span>
+              </a>
+            </p>
+          </article>
+
+          <!-- Marcador del curso en marcha. Se sustituye por una tile normal
+               cuando el curso termine y se escriba su página. -->
+          <article class="tile">
+            <span class="tile-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Curso 2026–2027</h3>
+            <p>
+              En marcha. Lo que está previsto y lo que tiene la inscripción
+              abierta está arriba, en el calendario de esta página, y en
+              Actualidad.
+            </p>
+            <p>
+              <a href="../actualidad/index.html" class="link-arrow link-arrow-sm">
+                Ver qué hay ahora <span aria-hidden="true">&#8594;</span>
+              </a>
+            </p>
+          </article>
+
+        </div>
       </div>
     </section>
 
@@ -508,24 +546,11 @@
             <span data-email-text>colegioatalaya.afa@gmail.com</span>
           </a>
         </p>
-        <p class="footer-social-label">Síguenos en redes</p>
-        <ul class="footer-social">
-          <li>
-            <a href="#" data-red="instagram" aria-label="Instagram">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-red="facebook" aria-label="Facebook">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-red="whatsapp" aria-label="WhatsApp">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c-.5 2.5 3.5 6.5 6 6l.5-2-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2Z" fill="currentColor"/></svg>
-            </a>
-          </li>
-        </ul>
+        <p class="footer-address">
+          Colegio Atalaya<br>
+          Bajada Rumayor, s/n<br>
+          39006 Santander (Cantabria)
+        </p>
       </div>
     </div>
 

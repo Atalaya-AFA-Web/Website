@@ -6,9 +6,7 @@
   <title>Actualidad · AFA Atalaya</title>
   <meta name="description" content="Noticias, avisos y crónicas de las actividades de la AFA del Colegio Atalaya de Santander.">
   <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/fuentes.css">
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="../../css/paginas.css">
 </head>
@@ -78,8 +76,9 @@
         </nav>
         <h1 class="page-title">Actualidad</h1>
         <p class="page-lead">
-          Lo que vamos haciendo y lo que está por venir: crónicas de las
-          actividades, avisos, convocatorias y resultados de los concursos.
+          Lo que está en marcha y lo que viene: convocatorias, inscripciones
+          abiertas y avisos. Lo que ya ha pasado no se queda aquí, pasa al
+          histórico de cada curso.
         </p>
       </div>
     </section>
@@ -88,101 +87,77 @@
     <section class="section">
       <div class="container">
 
-        <div class="filter-chips" role="group" aria-label="Filtrar noticias" style="margin-bottom: 32px;">
-          <button class="chip is-active" data-filter="todas">Todas</button>
-          <button class="chip" data-filter="actividades">Actividades</button>
-          <button class="chip" data-filter="formacion">Formación</button>
-          <button class="chip" data-filter="concursos">Concursos</button>
-          <button class="chip" data-filter="afa">La AFA</button>
-        </div>
+        <!-- ============================================================
+             QUÉ VA EN ESTA PÁGINA
 
-        <!-- Para añadir una entrada nueva, copia un <article class="news-card">
-             y cambia data-category, la clase .news-thumb-*, el título y la fecha. -->
-        <!-- Para añadir una entrada nueva, copia un <article class="news-card">
-             y cambia data-category, la clase .news-thumb-*, el título, la fecha
-             y el enlace. Las categorías deben coincidir con los data-filter de
-             los botones de arriba. -->
+             Actualidad = lo que está pasando y lo que va a pasar. Nada más.
+             Cuando una actividad termina, su entrada NO se queda aquí: se
+             retira de esta lista y su crónica pasa al histórico del curso
+             (paginas/actividades/curso-XXXX-XXXX/), al que se enlaza abajo.
+
+             Así esta página siempre responde a la pregunta "¿qué hay ahora?"
+             en lugar de convertirse en un archivo. Si algún día hay tantas
+             entradas vivas que hace falta filtrarlas por categoría, el
+             sistema de chips sigue en js/main.js (initCategoryFilters) y solo
+             habría que volver a poner los botones y los data-category.
+
+             Para añadir una entrada: copia un <article class="news-card">,
+             cambia la clase .news-thumb-* (a, b o c), el título, la fecha y
+             el enlace de destino.
+             ============================================================ -->
         <div class="cards-grid cards-grid-3 news-grid" id="news-grid">
 
-          <article class="news-card" data-category="afa">
+          <article class="news-card">
             <div class="news-thumb news-thumb-b">
+              <span class="news-tag">Convocatoria</span>
+            </div>
+            <div class="news-body">
+              <h3>Reunión de bienvenida: te contamos el curso</h3>
+              <time datetime="2026-09-12T18:00">Sábado 12 de septiembre, 18:00 h</time>
+              <a href="../actividades/reunion-bienvenida/index.html" class="link-arrow link-arrow-sm">Ver los detalles <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-thumb news-thumb-c">
+              <span class="news-tag">Inscripción abierta</span>
+            </div>
+            <div class="news-body">
+              <h3>Taller familiar: plazas limitadas</h3>
+              <time datetime="2026-09-25T17:30">Viernes 25 de septiembre, 17:30 h</time>
+              <a href="../actividades/taller-familiar/index.html" class="link-arrow link-arrow-sm">Apúntate <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-thumb news-thumb-a">
               <span class="news-tag">La AFA</span>
             </div>
             <div class="news-body">
-              <h3>Arranca el curso 2026–2027</h3>
-              <time datetime="2026-08-20">20 agosto 2026</time>
-              <a href="../actividades/index.html" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
-
-          <article class="news-card" data-category="actividades">
-            <div class="news-thumb news-thumb-c">
-              <span class="news-tag">Actividades</span>
-            </div>
-            <div class="news-body">
-              <h3>Merienda literaria: libros y merienda</h3>
-              <time datetime="2026-05-15">Mayo 2026</time>
-              <a href="../actividades/curso-2025-2026/index.html#merienda-literaria" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
-
-          <article class="news-card" data-category="formacion">
-            <div class="news-thumb news-thumb-b">
-              <span class="news-tag">Formación</span>
-            </div>
-            <div class="news-body">
-              <h3>Taller de Primeros Auxilios con Cruz Roja</h3>
-              <time datetime="2026-04-29">29 abril 2026</time>
-              <a href="../actividades/curso-2025-2026/index.html#primeros-auxilios" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
-
-          <article class="news-card" data-category="formacion">
-            <div class="news-thumb news-thumb-a">
-              <span class="news-tag">Formación</span>
-            </div>
-            <div class="news-body">
-              <h3>Charla sobre atragantamientos en 0–5 años</h3>
-              <time datetime="2026-04-15">15 abril 2026</time>
-              <a href="../actividades/curso-2025-2026/index.html#taller-atragantamientos" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
-
-          <article class="news-card" data-category="actividades">
-            <div class="news-thumb news-thumb-c">
-              <span class="news-tag">Actividades</span>
-            </div>
-            <div class="news-body">
-              <h3>Así fue la Merienda del Carnaval</h3>
-              <time datetime="2026-02-13">13 febrero 2026</time>
-              <a href="../actividades/curso-2025-2026/index.html#merienda-carnaval" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
-
-          <article class="news-card" data-category="concursos">
-            <div class="news-thumb news-thumb-a">
-              <span class="news-tag">Concurso</span>
-            </div>
-            <div class="news-body">
-              <h3>58 postales en nuestro primer concurso de Navidad</h3>
-              <time datetime="2025-12-19">19 diciembre 2025</time>
-              <a href="../actividades/curso-2025-2026/index.html#concurso-postales" class="link-arrow link-arrow-sm">Leer más <span aria-hidden="true">&#8594;</span></a>
+              <h3>Se abren las comisiones de trabajo</h3>
+              <time datetime="2026-08-21">21 de agosto de 2026</time>
+              <a href="../la-afa/index.html#comisiones" class="link-arrow link-arrow-sm">Ver las comisiones <span aria-hidden="true">&#8594;</span></a>
             </div>
           </article>
 
         </div>
 
-        <p class="news-empty" id="news-empty" hidden>
-          No hay publicaciones en esta categoría todavía.
+        <!-- Mensaje para cuando no haya nada en marcha. Es el precio de tener
+             una página de actualidad de verdad: algunos meses estará vacía, y
+             eso es más honesto que rellenarla con cosas del curso pasado.
+             Quitar el atributo hidden si se retiran todas las entradas. -->
+        <p class="news-empty" hidden>
+          Ahora mismo no hay nada en marcha. Lo próximo se publicará aquí en
+          cuanto la junta lo tenga cerrado.
         </p>
 
-        <!-- Paginación: activadla quitando el atributo hidden cuando haya más
-             entradas de las que caben cómodamente en esta página. -->
-        <nav class="pagination" aria-label="Paginación de noticias" hidden>
-          <span class="is-disabled" aria-hidden="true">&#8592; Anterior</span>
-          <a href="#" aria-current="page">1</a>
-          <span class="is-disabled">Siguiente &#8594;</span>
-        </nav>
+        <!-- Salida al histórico. Es lo que permite que esta página se quede
+             corta sin perder nada: lo viejo tiene su sitio. -->
+        <div class="section-cta">
+          <a href="../actividades/index.html#historico" class="btn btn-outline">
+            Ver lo que ya hemos hecho <span aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
 
       </div>
     </section>
@@ -193,8 +168,14 @@
         <div class="prose">
           <h2>Dónde te avisamos</h2>
           <p>
-            Publicamos aquí todo lo importante, pero para los avisos del día a
-            día usamos también las redes de la asociación y el correo de la AFA.
+            Esta web es el canal oficial de la asociación: aquí se publica todo
+            lo importante y aquí queda consultable. Los avisos también se envían
+            por correo y por la plataforma del colegio.
+          </p>
+          <p>
+            La AFA <strong>no tiene redes sociales</strong>. Los grupos de
+            WhatsApp de cada curso son de las familias, no de la asociación, así
+            que lo que se dice en ellos no es información oficial.
           </p>
           <p>
             Si eres familia asociada y no recibes nuestros correos, revisa la
@@ -203,27 +184,14 @@
           </p>
         </div>
         <aside class="aside-card">
-          <h2>Síguenos</h2>
+          <h2>Escríbenos</h2>
           <p style="font-size: 0.92rem; color: var(--text-soft); margin: 0 0 16px;">
-            Las fotos y los avisos rápidos los compartimos en redes.
+            Para dudas, propuestas o para avisarnos de un correo que no te ha
+            llegado.
           </p>
-          <ul class="footer-social">
-            <li>
-              <a href="#" data-red="instagram" aria-label="Instagram">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
-              </a>
-            </li>
-            <li>
-              <a href="#" data-red="facebook" aria-label="Facebook">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-              </a>
-            </li>
-            <li>
-              <a href="#" data-red="whatsapp" aria-label="WhatsApp">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c-.5 2.5 3.5 6.5 6 6l.5-2-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2Z" fill="currentColor"/></svg>
-              </a>
-            </li>
-          </ul>
+          <a href="../contacto/index.html" class="btn btn-primary">
+            Ir a contacto <span aria-hidden="true">&#8594;</span>
+          </a>
         </aside>
       </div>
     </section>
@@ -282,24 +250,11 @@
             <span data-email-text>colegioatalaya.afa@gmail.com</span>
           </a>
         </p>
-        <p class="footer-social-label">Síguenos en redes</p>
-        <ul class="footer-social">
-          <li>
-            <a href="#" data-red="instagram" aria-label="Instagram">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-red="facebook" aria-label="Facebook">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-red="whatsapp" aria-label="WhatsApp">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c-.5 2.5 3.5 6.5 6 6l.5-2-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2Z" fill="currentColor"/></svg>
-            </a>
-          </li>
-        </ul>
+        <p class="footer-address">
+          Colegio Atalaya<br>
+          Bajada Rumayor, s/n<br>
+          39006 Santander (Cantabria)
+        </p>
       </div>
     </div>
 

@@ -1248,3 +1248,226 @@ button:focus-visible {
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   PÁGINAS LEGALES (política de privacidad y aviso legal)
+   ========================================================================== */
+
+/* ---------- Índice de la página ---------- */
+
+.legal-toc {
+  margin-bottom: 36px;
+  padding: 20px 24px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.legal-toc h2 {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.legal-toc ol {
+  margin: 0;
+  padding-left: 22px;
+  list-style: decimal;
+  columns: 2;
+  column-gap: 32px;
+}
+
+.legal-toc li {
+  margin-bottom: 6px;
+  break-inside: avoid;
+  font-size: 0.94rem;
+}
+
+.legal-toc a {
+  color: var(--green-800);
+  text-decoration: none;
+}
+
+.legal-toc a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Ficha de datos del titular ---------- */
+
+.legal-id {
+  margin: 0 0 8px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(140px, auto) 1fr;
+  gap: 8px 20px;
+  font-size: 0.96rem;
+}
+
+.legal-id dt {
+  font-weight: 800;
+  color: var(--green-900);
+}
+
+.legal-id dd {
+  margin: 0;
+}
+
+/* ---------- Tabla de tratamientos ----------
+   Se usa para el resumen de qué datos se tratan, con qué finalidad, con qué
+   base jurídica y durante cuánto tiempo. En móvil no se puede reducir más sin
+   que quede ilegible, así que se permite el desplazamiento horizontal. */
+
+.legal-table-wrap {
+  margin-bottom: 20px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+/* La tabla vive dentro de .prose, que está limitada a 72ch (~780 px) para que
+   el texto se lea cómodo. Con cuatro columnas eso queda muy estrecho, así que
+   en pantallas anchas la tabla se sale de esa limitación y ocupa todo el
+   contenedor: 1120 px menos los 24 px de padding a cada lado. */
+@media (min-width: 1120px) {
+  .legal-table-wrap {
+    width: 1072px;
+  }
+}
+
+.legal-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.legal-table th,
+.legal-table td {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-table thead th {
+  background: var(--green-50);
+  color: var(--green-900);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.legal-table tbody tr:last-child th,
+.legal-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.legal-table tbody th {
+  font-weight: 800;
+  color: var(--green-900);
+  white-space: normal;
+}
+
+/* ---------- Páginas legales en móvil ----------
+   Una tabla de cuatro columnas no cabe en un móvil, y obligar a desplazarla a
+   los lados en una página que las familias van a leer desde el teléfono es
+   mala idea. Por debajo de 700 px la tabla se convierte en una lista de
+   fichas: cada fila es un bloque con su título, y cada dato lleva delante su
+   etiqueta, que sale del atributo data-label del HTML. */
+
+@media (max-width: 700px) {
+  .legal-toc ol {
+    columns: 1;
+  }
+
+  /* La ficha de datos del titular pasa a una sola columna, y las direcciones
+     de correo largas se parten en lugar de desbordar la pantalla. */
+  .legal-id {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .legal-id dt {
+    margin-top: 14px;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .legal-id dt:first-child {
+    margin-top: 0;
+  }
+
+  .legal-id dd {
+    overflow-wrap: anywhere;
+  }
+
+  .legal-table-wrap {
+    overflow-x: visible;
+    border: 0;
+  }
+
+  .legal-table {
+    min-width: 0;
+    display: block;
+  }
+
+  .legal-table thead {
+    display: none; /* los encabezados los aporta ::before de cada celda */
+  }
+
+  .legal-table tbody,
+  .legal-table tbody tr {
+    display: block;
+  }
+
+  .legal-table tbody tr {
+    margin-bottom: 16px;
+    padding: 4px 0 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+  }
+
+  .legal-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .legal-table tbody th,
+  .legal-table tbody td {
+    display: block;
+    padding: 8px 16px;
+    border-bottom: 0;
+  }
+
+  .legal-table tbody th {
+    padding-top: 12px;
+    font-size: 1rem;
+  }
+
+  .legal-table tbody td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+}
+
+/* ---------- Fecha de última actualización ---------- */
+
+.legal-updated {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}

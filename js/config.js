@@ -3,8 +3,8 @@
 
    ▸ ESTE ES EL ÚNICO FICHERO QUE HAY QUE EDITAR PARA PONER LA WEB EN MARCHA.
 
-   Todo lo que depende de un servicio externo (formularios, Google Forms,
-   redes sociales) se configura aquí y no repartido por el HTML.
+   Todo lo que depende de un servicio externo (el formulario de contacto y
+   los formularios de Google) se configura aquí y no repartido por el HTML.
 
    Regla general: si un valor está VACÍO (""), la web usa el comportamiento
    de reserva que ya funciona sin configurar nada (normalmente, abrir el
@@ -123,18 +123,15 @@ var AFA_CONFIG = {
     autorizacionImagen: "",     // Google Form o PDF de autorización de imagen
     propuestas: "",             // Google Form de propuestas y sugerencias
     comisiones: ""              // Google Form para apuntarse a una comisión
-  },
-
+  }
 
   /* ------------------------------------------------------------------------
-     4. REDES SOCIALES
-     Mientras estén vacías, los iconos del pie se ocultan (mejor que dejar
-     enlaces que no llevan a ninguna parte).
+     Aquí había un apartado 4 con las redes sociales. Se retiró en agosto de
+     2026 por decisión de la junta: la AFA no tiene ni prevé tener redes, y la
+     web es el canal oficial. Si algún día se abren, hay que volver a añadir
+     el bloque "redes" aquí, los iconos en el pie y el módulo initSocialLinks
+     de enlaces-externos.js (todo está en el histórico de Git), y declarar a
+     Meta como destinataria en la política de privacidad.
      ------------------------------------------------------------------------ */
-  redes: {
-    instagram: "",
-    facebook: "",
-    whatsapp: ""              // Enlace de invitación al grupo, si lo hay
-  }
 
 };

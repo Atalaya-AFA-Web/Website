@@ -153,13 +153,13 @@ publicar». Los originales existen ya:
 
 ## 6. Datos que siguen faltando
 
-- [ ] **Importe de la cuota** del curso 2026–2027 (aparece como «pendiente de
-      publicar» en la página de La AFA).
+- [ ] **Confirmar el importe de la cuota** del curso 2026–2027. En el acta del
+      20 de marzo de 2026 consta **18 € por familia** (18 € × 187 familias), y
+      que **la cobra el colegio**, no la AFA. Falta confirmar que sigue igual
+      este curso y publicarlo en la página de La AFA.
 - [ ] **Lista real de cursos del colegio**, para el desplegable del formulario
       de alta.
 - [ ] **Aforo del Taller familiar** (ahora dice solo «aforo limitado»).
-- [ ] **URL de Instagram, Facebook y WhatsApp.** Mientras estén vacías en
-      `config.js`, los iconos del pie se ocultan solos.
 - [ ] **Temática concreta del Taller familiar** del 25 de septiembre.
 - [ ] **Revisar las descripciones de las nueve comisiones**: la lista es la que
       pasó la junta, pero las descripciones de una línea las redacté yo por
@@ -167,6 +167,13 @@ publicar». Los originales existen ya:
       conviene confirmar.
 - [ ] **Origen y licencia de la foto de cabecera** (parece generada con IA o de
       banco de imágenes; si fueran niños del colegio haría falta consentimiento).
+- [ ] **Número de inscripción en el Registro de Asociaciones de Cantabria.**
+      Está en blanco en el certificado de modificación de la junta. Hace falta
+      para el aviso legal (apartado 1, marcado con un `TODO` en el HTML) y,
+      según el propio acta del 20 de marzo, también para poder optar a
+      subvenciones: la asociación solo aparece como activa en 2017.
+- [ ] **Ubicación exacta del buzón** de la AFA en el colegio, para la página de
+      Contacto.
 
 ---
 
@@ -193,15 +200,57 @@ la web. Merece la pena atacarlas explícitamente:
 
 ## 8. Revisión legal
 
-- [ ] **Revisar el aviso legal y la política de privacidad.** Están redactados y
-      marcados como borrador. Los debería leer la junta y, si es posible, alguien
-      con criterio jurídico.
-- [ ] **Actualizar la fecha de «última actualización»** de los dos textos al
-      publicarlos.
-- [ ] **Decidir sobre Google Fonts.** La web carga la tipografía desde los
-      servidores de Google, lo que comunica la IP de quien visita la web. Está
-      declarado en la política de privacidad, pero si preferís eliminar ese punto
-      se descarga la fuente y se sirve desde `img/` — son diez minutos.
+Los dos textos se reescribieron por completo el 21 de agosto de 2026 con los
+datos reales de los estatutos y de las actas. Ya no son borradores genéricos:
+llevan el CIF, el domicilio social, la ley de constitución, la tabla de
+tratamientos, los encargados reales (Vercel, Web3Forms y Google) y la AEPD.
+
+- [ ] **Que la junta los lea y los apruebe formalmente**, y que quede en acta.
+      No son textos de relleno: comprometen a la asociación.
+- [ ] **Revisión por alguien con criterio jurídico**, si hay alguna familia del
+      colegio que pueda echarles un ojo. Están redactados con cuidado, pero
+      quien los escribió no es abogado y conviene decirlo.
+- [ ] **Completar el número de registro** en el aviso legal (ver apartado 6).
+- [ ] **Actualizar la fecha de «última actualización»** de los dos textos si se
+      cambia algo antes de publicar. Ahora dicen 21 de agosto de 2026.
+- [x] ~~Decidir sobre Google Fonts.~~ Hecho: la tipografía Nunito se sirve
+      ahora desde `/fonts` (ver `css/fuentes.css`). La web **no hace ninguna
+      petición a terceros**, comprobado con el navegador. Eso simplifica mucho
+      la política de privacidad.
+- [x] ~~Redes sociales.~~ Decidido en agosto de 2026: la AFA no tiene ni prevé
+      tener. Se retiraron los iconos del pie, el bloque `redes` de `config.js` y
+      el módulo `initSocialLinks`. Si algún día se abren, hay que volver a
+      añadirlos y declarar a Meta en la política de privacidad.
+- [ ] **Autorización de imagen.** La política dice que solo se publican fotos de
+      menores con autorización escrita de la familia. Hay que tener realmente
+      ese documento firmado antes de publicar la primera foto en la web.
+- [ ] **Revisar las fotos de las memorias** antes de subirlas a la web con el
+      mismo criterio.
+
+---
+
+## 8 bis. Cómo se mantiene Actualidad (regla editorial)
+
+Desde agosto de 2026 Actualidad **solo contiene lo que está en marcha**. No es
+un archivo. La rutina es esta:
+
+1. Se convoca una actividad → se añade una tarjeta en `paginas/actualidad/` y
+   **la misma tarjeta** en el bloque «Lo próximo» de `index.html`. Son dos
+   sitios: si se cambia uno hay que cambiar el otro.
+2. La actividad termina → se **retira** la tarjeta de los dos sitios.
+3. Al cerrar el curso se escribe su página en
+   `paginas/actividades/curso-XXXX-XXXX/` y se añade una tarjeta al histórico
+   de `paginas/actividades/#historico`.
+
+Consecuencia asumida: habrá meses en que Actualidad esté casi vacía. Para eso
+está el párrafo `.news-empty`, que solo hay que desmarcar quitándole `hidden`.
+
+- [ ] Retirar la tarjeta de la **Reunión de bienvenida** después del 12 de
+      septiembre de 2026.
+- [ ] Retirar la tarjeta del **Taller familiar** después del 25 de septiembre
+      de 2026, y escribir su crónica.
+- [ ] Al cerrar el curso, crear `curso-2026-2027/` y convertir la tarjeta
+      «Curso 2026–2027 · en marcha» del histórico en una tarjeta normal.
 
 ---
 
