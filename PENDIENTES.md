@@ -13,6 +13,91 @@ gestionado con SourceTree) y despliegue automático en Vercel.
 
 ---
 
+## 0. Lo que hay que hacer TÚ, fuera de la web (27 de agosto de 2026)
+
+Estas cuatro cosas no se pueden resolver desde el código. Son las que quedan
+para que lo publicado funcione de verdad.
+
+### 0.1 Blindar el grupo de WhatsApp (antes de que se indexe el enlace)
+
+La web publica ahora el enlace de invitación al grupo. Por defecto ese enlace
+deja entrar a cualquiera y, al estar en una página pública, Google lo va a
+encontrar. Con dos ajustes deja de ser un problema:
+
+1. **Aprobación de nuevos participantes.** Abre el grupo → toca el nombre del
+   grupo → *Configuración del grupo* (o *Permisos*) → activa
+   **«Aprobar nuevos participantes»**. Desde ese momento, quien use el enlace
+   entra en una cola y un administrador acepta o rechaza uno a uno. El enlace
+   puede estar público sin riesgo: sin tu visto bueno nadie entra.
+2. **Que solo los administradores puedan invitar.** En el mismo menú, deja
+   *«Editar la información del grupo»* y el envío de invitaciones restringidos a
+   administradores.
+
+Además, conviene saber que **el enlace se puede regenerar** en cualquier momento
+(*Invitar por enlace → Restablecer enlace*), lo que invalida el anterior. Si
+algún día entra alguien de fuera del colegio, se restablece y **se pega el
+enlace nuevo en `js/config.js`**, apartado 4. Si no se actualiza ahí, el botón
+de la web deja de funcionar.
+
+Los nombres exactos de los menús cambian un poco entre versiones de WhatsApp y
+entre Android e iPhone, pero la opción se llama siempre algo parecido a
+«Aprobar nuevos participantes».
+
+### 0.2 Que los mensajes del formulario lleguen al correo de la AFA
+
+Lo pediste y hay que aclararlo: **Web3Forms envía siempre al buzón de la cuenta
+que creó la clave**, que es `colegioatalaya.afa.web@gmail.com`. Añadir un
+segundo destinatario (el campo `ccemail`) es una función de pago, así que no se
+puede hacer desde el código. Dos vías, las dos gratis:
+
+- [ ] **Opción A, recomendada — reenvío automático.** En
+      `colegioatalaya.afa.web@gmail.com`: *Configuración → Reenvío y correo
+      POP/IMAP → Añadir una dirección de reenvío* →
+      `colegioatalaya.afa@gmail.com`, y confirmar el correo de verificación que
+      llega a la cuenta pública. No hay que tocar nada del código.
+- [ ] **Opción B — clave nueva.** Crear una access key en web3forms.com
+      directamente desde la cuenta pública y pegarla en `js/config.js`. Los
+      mensajes llegan al buzón público sin reenvío intermedio, a cambio de
+      perder la separación entre cuenta técnica y pública.
+- [ ] **En cualquier caso: mandar un mensaje de prueba real** desde la web y
+      comprobar dónde aterriza. Esto sigue sin hacerse y es lo único que
+      demuestra que la cadena entera funciona.
+
+### 0.3 El logotipo
+
+La cabecera lleva ahora un **monograma tipográfico provisional** («AFA» sobre
+verde). Se retiró el escudo del Colegio Atalaya porque la AFA es una entidad
+independiente y el aviso legal lo dice expresamente.
+
+- [ ] **Sacar el concurso de rediseño** que acordó la asamblea del 29 de mayo de
+      2026. Hay que redactar las bases y llevarlas a asamblea.
+- [ ] Mientras tanto, decidir si se quiere usar alguna de las dos marcas que ya
+      circulan (la casita roja de la circular de la ludoteca o el dibujo del
+      grupo de WhatsApp). Las dos están en baja resolución dentro de imágenes de
+      WhatsApp; si se quiere usar una, hace falta el original o un SVG.
+- [ ] Si se decide seguir usando la marca del colegio, **pedir permiso expreso
+      al centro** y guardarlo por escrito.
+
+### 0.4 Autorizaciones de imagen
+
+De las seis imágenes que pasaste, solo se han publicado dos: la bandeja de
+magdalenas (no sale nadie) y una foto de una charla, recortada y con el fondo
+desenfocado para que no se reconozca a ninguna persona.
+
+- [ ] **No se han publicado** la de la merienda literaria (niños de infantil con
+      la cara perfectamente visible) ni la del taller de primeros auxilios
+      (adultos identificables). Para publicarlas hace falta autorización escrita
+      de cada familia que aparece.
+- [ ] El mapa del eclipse **no se publica**: es material de un tercero y haría
+      falta permiso o atribución.
+- [ ] La sexta imagen **no es una foto, es la circular de la ludoteca de junio y
+      contiene el IBAN de la asociación**. No debe subirse a la web ni al
+      repositorio bajo ninguna circunstancia.
+- [ ] Preparar el formulario de derechos de imagen. Ya existe uno de la ludoteca
+      de junio (`forms.gle/siimRxjUxehYuV2r7`): puede servir de base.
+
+---
+
 ## 1. Corregir ya (afecta a lo que está publicado)
 
 - [x] ~~Contenido viejo publicado en `paginas/el-afa/`~~ — **neutralizado.**
@@ -153,10 +238,10 @@ publicar». Los originales existen ya:
 
 ## 6. Datos que siguen faltando
 
-- [ ] **Confirmar el importe de la cuota** del curso 2026–2027. En el acta del
-      20 de marzo de 2026 consta **18 € por familia** (18 € × 187 familias), y
-      que **la cobra el colegio**, no la AFA. Falta confirmar que sigue igual
-      este curso y publicarlo en la página de La AFA.
+- [x] ~~Publicar el importe de la cuota.~~ Hecho: **18 € por familia**, con
+      página propia (`paginas/hazte-socio/`) que lo traduce en beneficios reales.
+      Queda **confirmar que sigue siendo 18 € este curso** antes de dar el dato
+      por bueno de cara a las familias.
 - [ ] **Lista real de cursos del colegio**, para el desplegable del formulario
       de alta.
 - [ ] **Aforo del Taller familiar** (ahora dice solo «aforo limitado»).
@@ -320,3 +405,50 @@ tocar HTML», el CMS gana por mucho.
 4. Crear el Google Form de alta y pegar su URL.
 5. Publicar estatutos y memoria (con los datos personales quitados).
 6. El resto, según vaya haciendo falta.
+
+---
+
+## 11. Hecho el 27 de agosto de 2026
+
+- [x] **Redes sociales.** Corregido el error de la sesión anterior: la web decía
+      que la AFA no tenía redes. Sí las tiene. Instagram (@afacolegioatalaya) y
+      el grupo de WhatsApp están en `js/config.js`, con iconos en el pie de las
+      trece páginas, y **Meta queda declarada en la política de privacidad**,
+      incluida la advertencia de que entrar en el grupo expone tu teléfono al
+      resto del grupo.
+- [x] **Marca propia** en la cabecera, sin el escudo del colegio.
+- [x] **Página de la cuota** con el argumento de la ludoteca (35 € socios frente
+      a 55 €: veinte euros de ahorro con una cuota de dieciocho).
+- [x] **Preguntas frecuentes** como sección del menú, con trece preguntas
+      agrupadas por tema en lugar de las cinco escondidas en Formularios.
+- [x] **Próximas actividades ocultas.** Se retiraron el calendario del curso, la
+      rejilla de la portada y las fichas de la reunión de bienvenida y el taller
+      familiar, que tenían fechas inventadas. Las dos carpetas quedan como
+      redirección: **bórralas en SourceTree**
+      (`paginas/actividades/reunion-bienvenida/` y `taller-familiar/`); el 301
+      ya está en `vercel.json`.
+- [x] **Ludoteca de septiembre** publicada como única convocatoria viva, dejando
+      claro que es una recogida de interés y no una inscripción.
+- [x] **El curso 2025–2026 pasa de cinco a ocho actividades.** El acta del 29 de
+      mayo documenta tres que faltaban (jornadas culturales, eclipse solar y
+      ludoteca de junio) y completa merienda literaria y primeros auxilios. Las
+      cifras de cabecera estaban mal: eran 8 actividades, 5 entidades y 3
+      talleres, no 5, 3 y 2.
+- [x] **Estatutos y las dos actas publicados** en `docs/`, enlazados desde
+      Formularios.
+- [x] **Acta del 20 de marzo redactada de verdad.** El párrafo que identificaba
+      a un asociado concreto se ha sustituido por un resumen neutro, y la página
+      se ha convertido en imagen para que **el texto original no se pueda
+      extraer del PDF** (comprobado). También se han tapado las dos rúbricas
+      manuscritas de la presidenta y la secretaria, dejando los rótulos: una
+      firma escaneada en una web pública es una invitación a copiarla. Si
+      preferís publicarlas, se revierte.
+- [x] **Revisión móvil.** Auditoría automática de las trece páginas a 320, 360,
+      390, 430 y 768 px. Tres fallos reales corregidos: desplazamiento
+      horizontal de 24 px en La AFA a 320 px (la rejilla de comisiones),
+      enlaces de 20-22 px de alto por debajo del mínimo de 24 px de la WCAG
+      2.5.8, y la casilla del consentimiento del formulario a 20×20 px. Ahora la
+      auditoría sale limpia.
+- [x] **Registro de asociaciones.** El acta de mayo confirma que la asociación
+      ya está actualizada en el Registro de Consejería, así que el aviso legal
+      lo dice. Sigue faltando el número.

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludoteca de septiembre · AFA Atalaya</title>
+  <meta name="description" content="La AFA del Colegio Atalaya está recogiendo el interés de las familias para organizar la ludoteca de septiembre, de 15 a 17 h en el colegio.">
+  <link rel="icon" href="../../../img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../css/fuentes.css">
+  <link rel="stylesheet" href="../../../css/styles.css">
+  <link rel="stylesheet" href="../../../css/paginas.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER COMÚN — VARIANTE DE PÁGINA DE DETALLE
+       Este bloque es idéntico en todas las páginas de detalle (las que están a
+       tres niveles, como las fichas de actividades o de noticias). Se diferencia
+       del de las páginas de /paginas/ solo en las rutas: ../../../ en lugar de
+       ../../ y ../../seccion/ en lugar de ../seccion/.
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="../../../index.html" class="brand" aria-label="Inicio &middot; AFA Atalaya">
+        <!-- MARCA DE LA AFA
+             Antes aquí estaba el escudo del Colegio Atalaya. Se retiró en
+             agosto de 2026: la AFA es una entidad jurídicamente independiente
+             del centro (así lo dice el aviso legal) y usar la marca del colegio
+             como si fuera la suya no era correcto.
+
+             Esto es un monograma provisional. La asamblea del 29 de mayo de
+             2026 acordó convocar un concurso para rediseñar el logotipo de la
+             Asociación; cuando haya ganador, se sustituye este <span> por la
+             imagen (idealmente un SVG) y se retiran los estilos .brand-mark. -->
+        <span class="brand-mark" aria-hidden="true">AFA</span>
+        <span class="brand-name">
+          <strong>AFA Atalaya</strong>
+          <small>Asociaci&oacute;n de Familias del Colegio Atalaya</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../../index.html">Inicio</a></li>
+          <li><a href="../../la-afa/index.html">La AFA</a></li>
+          <li><a href="../../actividades/index.html">Actividades</a></li>
+          <li><a href="../../formularios/index.html">Formularios</a></li>
+          <li><a href="../../actualidad/index.html">Actualidad</a></li>
+          <li><a href="../../preguntas-frecuentes/index.html">Preguntas</a></li>
+          <li><a href="../../contacto/index.html">Contacto</a></li>
+          <!-- Acceso al CTA dentro del menú: solo visible en móvil -->
+          <li class="nav-cta"><a href="../../hazte-socio/index.html" data-enlace="altaSocio">Hazte socio</a></li>
+        </ul>
+      </nav>
+
+      <a href="../../hazte-socio/index.html" data-enlace="altaSocio" class="btn btn-primary btn-header">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.2C.3 8.6 2.2 5 5.7 5c2 0 3.4 1.1 4.3 2.4h4c.9-1.3 2.3-2.4 4.3-2.4 3.5 0 5.4 3.6 3.7 6.8C19.5 16.1 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        Hazte socio
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ CABECERA DE PÁGINA ============ -->
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <ol>
+            <li><a href="../../../index.html">Inicio</a></li>
+            <li class="sep" aria-hidden="true">/</li>
+            <li><a href="../index.html">Actividades</a></li>
+            <li class="sep" aria-hidden="true">/</li>
+            <li><span aria-current="page">Ludoteca de septiembre</span></li>
+          </ol>
+        </nav>
+
+        <p class="activity-tags">
+          <span class="tag tag-kids">Alumnado</span>
+          <span class="tag">Septiembre 2026</span>
+        </p>
+
+        <h1 class="page-title">Ludoteca de septiembre</h1>
+        <p class="page-lead">
+          Queremos organizarla otra vez, pero antes necesitamos saber cuántas
+          familias la van a usar. Si te interesa, dínoslo: eso es todo lo que hay
+          que hacer por ahora.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ EL AVISO IMPORTANTE ============ -->
+    <section class="section">
+      <div class="container">
+
+        <div class="callout callout-warning">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 2.5 20h19L12 4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v4m0 3h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <div>
+            <p>
+              <strong>Todavía no es una inscripción.</strong> Estamos midiendo la
+              demanda: si no hay familias suficientes, el servicio no se puede
+              montar. Cuando sepamos que sale adelante, os avisaremos con las
+              fechas, el precio y el plazo para apuntarse de verdad.
+            </p>
+            <p>
+              Decirnos que te interesa <strong>no te compromete a nada</strong> y
+              tampoco reserva plaza.
+            </p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="prose">
+            <h2>Qué es</h2>
+            <p>
+              Un servicio de ludoteca para las tardes del principio de curso, en
+              las instalaciones del colegio, para las familias que necesitan
+              cubrir esa franja. Está abierto a
+              <strong>todas las familias, asociadas o no</strong>.
+            </p>
+            <p>
+              Se prestará <strong>en el mismo espacio y con el mismo horario que
+              en junio de 2026: de 15:00 a 17:00 h</strong> en el colegio.
+            </p>
+
+            <h2>Qué hay que hacer ahora</h2>
+            <p>
+              Escribirnos con los datos de los niños y niñas que vayan a usar el
+              servicio:
+            </p>
+            <ul>
+              <li>Nombre y apellidos.</li>
+              <li>Curso en el que están este año académico que empieza.</li>
+            </ul>
+            <p>
+              <a href="mailto:colegioatalaya.afa@gmail.com?subject=Ludoteca%20de%20septiembre" data-email class="btn btn-primary">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                Decir que nos interesa
+              </a>
+            </p>
+
+            <h2>Cuánto costó en junio</h2>
+            <p>
+              El precio de septiembre está por confirmar, pero el de junio da la
+              referencia:
+            </p>
+            <div class="legal-table-wrap">
+              <table class="legal-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Familias</th>
+                    <th scope="col">Precio en junio de 2026</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Asociadas a la AFA</th>
+                    <td data-label="Precio en junio de 2026">35 € por niño o niña</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">No asociadas</th>
+                    <td data-label="Precio en junio de 2026">55 € por niño o niña</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              La diferencia de <strong>20 €</strong> sale de la cuota de socio,
+              que cuesta 18 € al año: en junio la asociación puso 360 € de su
+              fondo para abaratar el servicio a las familias asociadas. Si te
+              cuadran las cuentas,
+              <a href="../../hazte-socio/index.html">hazte socio antes de
+              apuntarte</a>.
+            </p>
+          </div>
+
+          <aside class="aside-card">
+            <h2>Resumen</h2>
+            <dl>
+              <dt>Estado</dt>
+              <dd>Recogiendo interés. No es una inscripción</dd>
+
+              <dt>Horario previsto</dt>
+              <dd>De 15:00 a 17:00 h, en el colegio</dd>
+
+              <dt>Referencia de junio</dt>
+              <dd>35 € socios · 55 € no socios</dd>
+
+              <dt>Abierto a</dt>
+              <dd>Todas las familias, asociadas o no</dd>
+
+              <dt>Qué mandar</dt>
+              <dd>Nombre, apellidos y curso de cada niño o niña</dd>
+            </dl>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ CÓMO FUE EN JUNIO ============ -->
+    <section class="section section-activities">
+      <div class="container">
+        <div class="prose">
+          <h2>Cómo fue la de junio</h2>
+          <p>
+            Se prestó del <strong>1 al 19 de junio de 2026</strong>, en las
+            tardes no lectivas, y la impartió la empresa
+            <strong>Ocio de Colores</strong> con tres monitores.
+            <strong>Se apuntaron 31 alumnos</strong> y la valoración de la
+            asamblea fue positiva.
+          </p>
+          <p>
+            Costó 1.625 €. Las inscripciones cubrieron 1.265 € y la asociación
+            aportó los 360 € restantes. Todo esto está en el acta de la asamblea
+            del 29 de mayo de 2026, que puedes
+            <a href="../../formularios/index.html#documentacion">descargar</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA HAZTE SOCIO ============ -->
+    <section class="section-join">
+      <div class="container join-inner">
+        <div class="join-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="13" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="11" cy="17" r="4" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="37" cy="17" r="4" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M14 38c0-5.5 4.5-10 10-10s10 4.5 10 10M3 34c0-4 3.5-7 8-7m26 0c4.5 0 8 3 8 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="join-text">
+          <h2>La cuota se paga sola con una ludoteca</h2>
+          <p>18 € al año por familia frente a 20 € de ahorro en una sola inscripción.</p>
+        </div>
+        <a href="../../hazte-socio/index.html" data-enlace="altaSocio" class="btn btn-light">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.2C.3 8.6 2.2 5 5.7 5c2 0 3.4 1.1 4.3 2.4h4c.9-1.3 2.3-2.4 4.3-2.4 3.5 0 5.4 3.6 3.7 6.8C19.5 16.1 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          Hazte socio
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER COMÚN — VARIANTE DE PÁGINA DE DETALLE
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a href="../../../index.html" class="brand brand-footer" aria-label="Inicio &middot; AFA Atalaya">
+          <span class="brand-mark" aria-hidden="true">AFA</span>
+          <span class="brand-name">
+            <strong>AFA Atalaya</strong>
+            <small>Familias que hacen comunidad</small>
+          </span>
+        </a>
+      </div>
+
+      <nav class="footer-col" aria-label="Navegación del pie">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="../../../index.html">Inicio</a></li>
+          <li><a href="../../la-afa/index.html">La AFA</a></li>
+          <li><a href="../../actividades/index.html">Actividades</a></li>
+          <li><a href="../../formularios/index.html">Formularios</a></li>
+          <li><a href="../../actualidad/index.html">Actualidad</a></li>
+          <li><a href="../../contacto/index.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Documentación">
+        <h3>Documentación</h3>
+        <ul>
+          <li><a href="../../formularios/index.html#documentacion">Estatutos</a></li>
+          <li><a href="../../formularios/index.html#documentacion">Actas</a></li>
+          <li><a href="../../formularios/index.html#documentacion">Memorias</a></li>
+          <li><a href="../../formularios/index.html#documentacion">Bases y documentos</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>
+          <a href="mailto:colegioatalaya.afa@gmail.com" data-email class="footer-mail">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span data-email-text>colegioatalaya.afa@gmail.com</span>
+          </a>
+        </p>
+        <p class="footer-address">
+          Colegio Atalaya<br>
+          Bajada Rumayor, s/n<br>
+          39006 Santander (Cantabria)
+        </p>
+
+        <p class="footer-social-label">S&iacute;guenos</p>
+        <ul class="footer-social">
+          <li>
+            <a href="https://www.instagram.com/afacolegioatalaya/" data-red="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram de la AFA Atalaya (se abre en una pesta&ntilde;a nueva)">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-red="facebook" aria-label="Facebook">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://chat.whatsapp.com/GXTstqKemALJwI44OGuPQZ" data-red="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Grupo de WhatsApp de la AFA Atalaya (se abre en una pesta&ntilde;a nueva)">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c-.5 2.5 3.5 6.5 6 6l.5-2-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2Z" fill="currentColor"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          © 2026 AFA Colegio Atalaya
+          <span class="dot" aria-hidden="true">·</span>
+          CIF G-39039813
+          <span class="dot" aria-hidden="true">·</span>
+          <a href="../../privacidad/index.html">Política de privacidad</a>
+          <span class="dot" aria-hidden="true">·</span>
+          <a href="../../aviso-legal/index.html">Aviso legal</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- config.js debe cargarse primero: contiene la configuración del sitio -->
+  <script src="../../../js/config.js"></script>
+  <script src="../../../js/main.js"></script>
+  <script src="../../../js/enlaces-externos.js"></script>
+</body>
+</html>

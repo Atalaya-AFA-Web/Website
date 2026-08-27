@@ -189,6 +189,12 @@ html {
   font-size: 0.9rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  /* Estos enlaces medían 20-22 px de alto, por debajo del mínimo de 24 px que
+     pide la WCAG 2.5.8 para un objetivo táctil. El padding vertical los sube
+     a 28 px sin mover nada de sitio, porque el margen negativo compensa. */
+  min-height: 28px;
+  padding-block: 4px;
+  margin-block: -4px;
 }
 
 .link-arrow:hover {
@@ -282,65 +288,55 @@ html {
   min-height: 78px;
 }
 
-/* Marca / logo */
+/* Marca / logo ----------------------------------------------------------
+   Monograma tipográfico de la AFA. Sustituyó al escudo del Colegio Atalaya
+   en agosto de 2026: la asociación es una entidad independiente del centro y
+   no debe presentarse con la marca del colegio.
+
+   Es provisional: la asamblea del 29/05/2026 acordó convocar un concurso de
+   rediseño del logotipo. Cuando haya ganador basta con cambiar el <span
+   class="brand-mark"> del HTML por un <img> o un <svg> y borrar el bloque
+   .brand-mark de aquí; el resto de la cabecera no se toca.
+   --------------------------------------------------------------------- */
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
   color: var(--green-800);
+  text-decoration: none;
 }
 
-.brand-logo {
+.brand-mark {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
-}
-
-.brand-school {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
-}
-
-.brand-school-top {
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-}
-
-.brand-school-name {
-  font-size: 1.05rem;
+  border-radius: 11px;
+  background: var(--green-800);
+  color: var(--text-inverse);
+  font-size: 0.85rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }
 
-.brand-school-sub {
-  font-size: 0.55rem;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  color: var(--text-soft);
-}
-
-.brand-divider {
-  width: 1px;
-  height: 40px;
-  background: var(--border);
-}
-
-.brand-afa {
+.brand-name {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
 }
 
-.brand-afa strong {
-  font-size: 0.95rem;
+.brand-name strong {
+  font-size: 1.02rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
+  color: var(--green-900);
 }
 
-.brand-afa small {
-  font-size: 0.75rem;
+.brand-name small {
+  font-size: 0.72rem;
   color: var(--text-soft);
   white-space: nowrap;
 }
@@ -905,6 +901,10 @@ html {
   padding-bottom: 48px;
 }
 
+.brand-footer .brand-name small {
+  display: block;
+}
+
 .brand-footer {
   margin-bottom: 16px;
 }
@@ -954,6 +954,50 @@ html {
   color: var(--green-700);
 }
 
+/* Mismo motivo que en .link-arrow: subir el alto del objetivo táctil. */
+.footer-mail {
+  min-height: 32px;
+  padding-block: 4px;
+}
+
+.footer-social-label {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--green-800);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  background: var(--green-800);
+  color: var(--text-inverse);
+}
+
+.footer-social .icon {
+  width: 1.25em;
+  height: 1.25em;
+}
+
 .footer-address {
   margin-top: 16px;
   font-size: 0.92rem;
@@ -981,11 +1025,107 @@ html {
   margin-inline: 8px;
 }
 
+/* ---------- Bloque de la cuota ----------
+   Se usa en la PORTADA y en la página de Hazte socio. Por eso vive aquí y no en
+   paginas.css: index.html no carga paginas.css, y al tenerlo allí el bloque
+   salía sin estilos.
+
+   La idea es que el importe se lea antes que el texto: es el dato que la
+   familia viene a buscar. */
+
+.quota-hero {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.quota-price {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 30px 30px;
+  border-radius: var(--radius-lg);
+  background: var(--green-900);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-md);
+}
+
+.quota-amount {
+  font-size: clamp(2.6rem, 7vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.quota-unit {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.quota-note {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  /* 0.82 sobre el verde 900 mantiene el contraste por encima de 4.5:1 */
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 860px) {
+  .quota-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .quota-price {
+    /* En móvil la ficha del precio no necesita ocupar todo el alto: se queda
+       como una banda compacta arriba. */
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 14px;
+    padding: 22px 24px 24px;
+  }
+
+  .quota-note {
+    flex-basis: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Tipografía del texto que acompaña al precio. En las páginas interiores esto
+   lo aporta .prose (paginas.css); en la portada no existe, así que se define
+   aquí para que el bloque se vea igual en los dos sitios. */
+
+.quota-pitch h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--green-900);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.quota-pitch p {
+  margin-bottom: 16px;
+  max-width: 62ch;
+}
+
+.quota-pitch p:last-child {
+  margin-bottom: 0;
+}
+
+.quota-pitch strong {
+  color: var(--green-900);
+}
+
 /* ---------- 11. Responsive ---------- */
 
 @media (max-width: 1180px) {
-  .brand-divider,
-  .brand-afa {
+  /* Con siete elementos en el menú, el subtítulo de la marca es lo primero
+     que sobra: se oculta para que la navegación no se parta en dos líneas. */
+  .brand-name small {
     display: none;
   }
 }
@@ -1068,11 +1208,6 @@ html {
   }
 
   .main-nav a.is-active::after {
-    display: none;
-  }
-
-  .brand-divider,
-  .brand-afa {
     display: none;
   }
 

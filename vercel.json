@@ -11,22 +11,57 @@
       "source": "/paginas/el-afa/:path*",
       "destination": "/paginas/la-afa/",
       "permanent": true
+    },
+    {
+      "source": "/paginas/actividades/reunion-bienvenida",
+      "destination": "/paginas/actividades/",
+      "permanent": true
+    },
+    {
+      "source": "/paginas/actividades/reunion-bienvenida/:path*",
+      "destination": "/paginas/actividades/",
+      "permanent": true
+    },
+    {
+      "source": "/paginas/actividades/taller-familiar",
+      "destination": "/paginas/actividades/",
+      "permanent": true
+    },
+    {
+      "source": "/paginas/actividades/taller-familiar/:path*",
+      "destination": "/paginas/actividades/",
+      "permanent": true
     }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=()"
+        }
       ]
     },
     {
       "source": "/img/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
       ]
     }
   ]

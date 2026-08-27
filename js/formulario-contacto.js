@@ -110,12 +110,39 @@
 
     if (config.formulario.accessKey) {
       // --- Web3Forms ---
-      // access_key es obligatoria. El campo "email" del formulario se usa
-      // automáticamente como remitente, de modo que al responder al correo la
-      // respuesta va directamente a la familia.
+      // access_key es obligatoria.
       data.append("access_key", config.formulario.accessKey);
       data.append("subject", asunto);
       data.append("from_name", "Web AFA Atalaya");
+
+      // replyto explícito: al pulsar "Responder" en el correo que llega, la
+      // respuesta va a la familia y no al remitente técnico de Web3Forms.
+      // Web3Forms lo deduce del campo "email" cuando existe, pero dejarlo
+      // escrito evita depender de ese comportamiento implícito.
+      var correoFamilia = data.get("email");
+      if (correoFamilia) {
+        data.append("replyto", correoFamilia);
+      }
+
+      // ⚠ A DÓNDE LLEGA EL MENSAJE
+      // Web3Forms envía SIEMPRE al buzón de la cuenta que creó la access key,
+      // que aquí es colegioatalaya.afa.web@gmail.com. El plan gratuito NO
+      // permite añadir destinatarios extra (el campo "ccemail" es de pago), así
+      // que no se puede hacer desde este código.
+      //
+      // Para que los mensajes acaben en el correo público de la AFA hay que
+      // elegir una de estas dos vías, las dos gratuitas:
+      //
+      //   A) Reenvío automático en Gmail (recomendado, no toca el código):
+      //      en colegioatalaya.afa.web@gmail.com →
+      //      Configuración → Reenvío y correo POP/IMAP →
+      //      Añadir dirección de reenvío → colegioatalaya.afa@gmail.com
+      //      y confirmar el correo de verificación.
+      //
+      //   B) Generar una access key nueva desde la propia cuenta pública en
+      //      web3forms.com y pegarla en js/config.js. Los mensajes llegarían
+      //      directamente al buzón público, sin reenvío que mantener, a cambio
+      //      de perder la separación entre la cuenta técnica y la pública.
     } else {
       // --- Formspree, Basin y similares ---
       // La clave va dentro de la propia URL; el asunto se pasa como _subject.

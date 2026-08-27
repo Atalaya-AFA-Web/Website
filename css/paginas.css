@@ -431,7 +431,10 @@
 
 .commission-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  /* min(320px, 100%) en lugar de 320px: en pantallas de 320 px de ancho, una
+     columna mínima de 320 px más el padding del contenedor desbordaba y hacía
+     que la página se moviera en horizontal. */
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: 16px;
 }
 
@@ -988,9 +991,12 @@
 }
 
 .field-check input {
-  width: 20px;
-  height: 20px;
-  margin-top: 2px;
+  /* 24 px es el mínimo de la WCAG 2.5.8 para un objetivo táctil, y esta es la
+     casilla del consentimiento: si no se puede pulsar bien, no se puede enviar
+     el formulario. */
+  width: 24px;
+  height: 24px;
+  margin-top: 0;
   flex: none;
   accent-color: var(--green-700);
 }
@@ -1470,4 +1476,61 @@ button:focus-visible {
   border-top: 1px solid var(--border);
   font-size: 0.9rem;
   color: var(--text-soft);
+}
+
+/* ---------- Títulos de grupo en las preguntas frecuentes ----------
+   Agrupan el acordeón por temas (Ser socio, El dinero, Participar…) para que
+   trece preguntas seguidas no se lean como un muro. */
+
+.faq-group-title {
+  margin: 44px 0 14px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green-700);
+}
+
+.faq-group-title:first-of-type {
+  margin-top: 0;
+}
+
+/* ---------- Fotos de actividades ----------
+   Las fotos van con <figure> y <figcaption> porque el pie hace falta: dice de
+   qué actividad es y, cuando toca, que no aparece nadie identificable.
+
+   ⚠ REGLA: aquí solo entran fotos sin personas identificables o con
+   autorización de imagen firmada de todas las que aparecen. Ver la política
+   de privacidad, apartado 9. */
+
+.activity-photo {
+  margin: 24px 0;
+}
+
+.activity-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  background: var(--bg-soft);
+}
+
+.activity-photo figcaption {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+/* Dentro de una actividad del histórico, la foto se alinea con el texto */
+.past-activity .activity-photo {
+  margin-left: 72px;
+  max-width: 520px;
+}
+
+@media (max-width: 640px) {
+  .past-activity .activity-photo {
+    margin-left: 0;
+    max-width: none;
+  }
 }
