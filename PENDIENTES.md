@@ -80,21 +80,34 @@ independiente y el aviso legal lo dice expresamente.
 
 ### 0.4 Autorizaciones de imagen
 
-De las seis imágenes que pasaste, solo se han publicado dos: la bandeja de
-magdalenas (no sale nadie) y una foto de una charla, recortada y con el fondo
-desenfocado para que no se reconozca a ninguna persona.
+Publicadas cuatro fotos, una por actividad, después de que la junta confirmara
+que se podían usar:
 
-- [ ] **No se han publicado** la de la merienda literaria (niños de infantil con
-      la cara perfectamente visible) ni la del taller de primeros auxilios
-      (adultos identificables). Para publicarlas hace falta autorización escrita
-      de cada familia que aparece.
-- [ ] El mapa del eclipse **no se publica**: es material de un tercero y haría
+| Foto | Actividad | Qué se ve |
+| --- | --- | --- |
+| Magdalenas | Merienda de Carnaval | Solo comida, ninguna persona |
+| Merienda literaria | Merienda literaria | Alumnado de infantil desde arriba: no se reconoce ninguna cara |
+| Primeros auxilios | Taller de Cruz Roja | Familias adultas, identificables |
+| Charla del eclipse | Charla del Observatorio | Familias adultas, identificables |
+
+- [ ] **Confirmar que existe la autorización de imagen de los adultos** que
+      aparecen en las dos fotos de los talleres. Los adultos también tienen
+      derechos de imagen: no basta con que sean socios. Si alguno pide que se
+      retire su foto, hay que hacerlo sin discutir, como dice la política de
+      privacidad.
+- [ ] **En la de la merienda literaria hay un detalle**: el niño de arriba a la
+      izquierda mira hacia abajo y se le ve un perfil parcial (oreja, mejilla y
+      el borde del ojo). No es una cara reconocible de frente, pero su familia
+      probablemente lo identificaría. Se puede difuminar esa esquina en un
+      minuto si preferís curaros en salud.
+- [ ] El **mapa del eclipse no se publica**: es material de un tercero y haría
       falta permiso o atribución.
 - [ ] La sexta imagen **no es una foto, es la circular de la ludoteca de junio y
       contiene el IBAN de la asociación**. No debe subirse a la web ni al
       repositorio bajo ninguna circunstancia.
-- [ ] Preparar el formulario de derechos de imagen. Ya existe uno de la ludoteca
-      de junio (`forms.gle/siimRxjUxehYuV2r7`): puede servir de base.
+- [ ] Preparar el formulario de derechos de imagen para las próximas
+      actividades. Ya existe uno de la ludoteca de junio
+      (`forms.gle/siimRxjUxehYuV2r7`): puede servir de base.
 
 ---
 
@@ -417,10 +430,17 @@ tocar HTML», el CMS gana por mucho.
       incluida la advertencia de que entrar en el grupo expone tu teléfono al
       resto del grupo.
 - [x] **Marca propia** en la cabecera, sin el escudo del colegio.
+- [x] **Cuatro fotos publicadas**, una por actividad, con pie y texto
+      alternativo. La de la charla estaba mal atribuida en la primera versión:
+      es la del **eclipse solar**, no una charla genérica, y ya está corregida.
 - [x] **Página de la cuota** con el argumento de la ludoteca (35 € socios frente
       a 55 €: veinte euros de ahorro con una cuota de dieciocho).
 - [x] **Preguntas frecuentes** como sección del menú, con trece preguntas
       agrupadas por tema en lugar de las cinco escondidas en Formularios.
+- [ ] **Borrar `img/actividades/charla-familias.webp`** en SourceTree. Era la
+      versión recortada y desenfocada de la foto del eclipse, sustituida por la
+      completa al confirmarse que se podían publicar las caras. Ya no la usa
+      ninguna página.
 - [x] **Próximas actividades ocultas.** Se retiraron el calendario del curso, la
       rejilla de la portada y las fichas de la reunión de bienvenida y el taller
       familiar, que tenían fechas inventadas. Las dos carpetas quedan como
