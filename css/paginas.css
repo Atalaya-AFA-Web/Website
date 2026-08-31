@@ -1534,3 +1534,171 @@ button:focus-visible {
     max-width: none;
   }
 }
+
+/* ==========================================================================
+   DATOS DE PAGO DE UNA ACTIVIDAD
+   Caja destacada con el número de cuenta, el titular y el concepto.
+
+   Se usa en las fichas de actividad que se pagan por transferencia. Está
+   pensada para que el número se lea sin esfuerzo y se copie sin errores:
+   tipografía monoespaciada, tamaño grande y un botón "Copiar" que añade
+   js/copiar.js cuando el navegador lo permite.
+   ========================================================================== */
+
+.pay-box {
+  border: 2px solid var(--green-600);
+  border-radius: var(--radius-md);
+  background: var(--green-50);
+  padding: 24px;
+  margin: 0;
+}
+
+.pay-box > h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  color: var(--green-900);
+}
+
+.pay-box .pay-intro {
+  margin: 0 0 20px;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+.pay-row {
+  padding: 14px 0;
+  border-top: 1px solid var(--green-100);
+}
+
+.pay-row:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.pay-row:last-child {
+  padding-bottom: 0;
+}
+
+.pay-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+/* El valor y el botón "Copiar" comparten línea y se envuelven en móvil */
+.pay-value {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.pay-value > [data-copiar],
+.pay-value > strong {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--green-900);
+  overflow-wrap: anywhere;
+}
+
+/* El IBAN y el concepto, en monoespaciada: los caracteres no se confunden
+   entre sí (cero contra o, uno contra ele) y eso importa cuando el dato se
+   va a teclear en una app del banco. */
+.pay-mono {
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Mono", Menlo,
+    Consolas, monospace;
+  letter-spacing: 0.02em;
+}
+
+.btn-copiar {
+  flex: none;
+  min-height: 32px;
+  padding: 5px 14px;
+  border: 1px solid var(--green-600);
+  border-radius: var(--radius-pill);
+  background: var(--bg-page);
+  color: var(--green-700);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-copiar:hover {
+  background: var(--green-100);
+}
+
+.btn-copiar.is-done {
+  border-color: var(--green-700);
+  background: var(--green-700);
+  color: var(--text-inverse);
+}
+
+/* ---------- Pasos numerados de una inscripción ---------- */
+
+.steps {
+  list-style: none;
+  counter-reset: paso;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.steps > li {
+  position: relative;
+  counter-increment: paso;
+  padding: 0 0 22px 52px;
+}
+
+/* La línea vertical que une los pasos; el último no la lleva */
+.steps > li::after {
+  content: "";
+  position: absolute;
+  top: 34px;
+  bottom: 4px;
+  left: 16px;
+  width: 2px;
+  background: var(--green-100);
+}
+
+.steps > li:last-child {
+  padding-bottom: 0;
+}
+
+.steps > li:last-child::after {
+  display: none;
+}
+
+.steps > li::before {
+  content: counter(paso);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--green-600);
+  color: var(--text-inverse);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.steps h3 {
+  margin: 5px 0 6px;
+  font-size: 1.02rem;
+}
+
+.steps p,
+.steps ul {
+  margin: 0 0 8px;
+}
+
+.steps > li > *:last-child {
+  margin-bottom: 0;
+}

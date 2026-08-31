@@ -1,6 +1,6 @@
 # Tareas pendientes · Web de la AFA Atalaya
 
-Estado a 20 de agosto de 2026.
+Estado a 31 de agosto de 2026.
 
 **Entorno actual:** repositorio en `C:\PERSONAL\AFA Atalaya\Website` (GitHub,
 gestionado con SourceTree) y despliegue automático en Vercel.
@@ -447,8 +447,27 @@ tocar HTML», el CMS gana por mucho.
       redirección: **bórralas en SourceTree**
       (`paginas/actividades/reunion-bienvenida/` y `taller-familiar/`); el 301
       ya está en `vercel.json`.
-- [x] **Ludoteca de septiembre** publicada como única convocatoria viva, dejando
-      claro que es una recogida de interés y no una inscripción.
+- [x] **Ludoteca de septiembre: inscripción abierta** (31 de agosto de 2026). La
+      ficha ha pasado de «recogida de interés» a convocatoria de verdad, con las
+      fechas (8–30 de septiembre, 17 días lectivos), el precio (45 € socios /
+      65 € no socios), el plazo del 4 de septiembre, los datos de la
+      transferencia y los datos que hay que enviar. La circular está en
+      `docs/circular-ludoteca-septiembre-2026.pdf`, enlazada desde la ficha y
+      desde Formularios → Documentación.
+
+      Tres cosas que conviene revisar cuando pase la actividad:
+
+      1. **Retirar la circular de Formularios.** Es una convocatoria con fecha
+         de caducidad, no documentación de la asociación. El comentario en el
+         HTML lo recuerda.
+      2. **Retirar el aviso del cambio de banco** cuando ya no queden circulares
+         antiguas circulando (bloque comentado en la ficha).
+      3. **Pasar la crónica al histórico del curso 2026–2027** y quitar la
+         entrada de Actualidad y de la portada.
+
+- [ ] **La merienda de la ludoteca sigue sin definir.** No aparece ni en la
+      circular ni en la web porque no sabíamos si la hay. Si al final se ofrece,
+      hay que añadirla a la ficha y a la circular con su precio.
 - [x] **El curso 2025–2026 pasa de cinco a ocho actividades.** El acta del 29 de
       mayo documenta tres que faltaban (jornadas culturales, eclipse solar y
       ludoteca de junio) y completa merienda literaria y primeros auxilios. Las
