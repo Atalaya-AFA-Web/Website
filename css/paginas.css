@@ -1702,3 +1702,14 @@ button:focus-visible {
 .steps > li > *:last-child {
   margin-bottom: 0;
 }
+
+/* Dentro de una actividad del histórico, la tabla NO se sale de la columna de
+   texto. El ensanchamiento a 1072 px de .legal-table-wrap está pensado para
+   las tablas de cuatro columnas de las páginas legales; aquí el bloque ya
+   está sangrado por el número de la actividad y una tabla de tres columnas
+   cabe de sobra en los 72ch del texto. */
+@media (min-width: 1120px) {
+  .past-activity .legal-table-wrap {
+    width: auto;
+  }
+}

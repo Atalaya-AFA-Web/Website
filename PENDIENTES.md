@@ -293,6 +293,44 @@ publicar». Los originales existen ya:
 
 ## 6. Datos que siguen faltando
 
+### 6.0 ⚠ DESCUADRE DE 120 € EN LA LUDOTECA DE JUNIO (pendiente de tesorería)
+
+Los datos de asistencia que facilitó la junta el 9 de septiembre de 2026 **no
+cuadran con las cifras económicas del acta del 29 de mayo**, que está publicada
+en `docs/` y la puede descargar cualquiera.
+
+| | Acta del 29 de mayo | Recuento de asistencia |
+|---|---|---|
+| Usuarios | 31 «alumnos inscritos» | 35 (27 socios + 8 no socios) |
+| Familias | no consta | 31 (24 socias + 7 no socias) |
+| Recaudado | 1.265 € | 1.385 € si se aplican 35 €/55 € |
+| Aporta la AFA | 360 € | 240 € |
+
+Las tres cifras del acta cuadran entre sí (1.265 + 360 = 1.625), pero con los
+precios de junio solo son compatibles con **31 usuarios en un reparto 22/9**, o
+con **35 usuarios en un reparto 33/2**. Con 27 socios y 8 no socios no salen.
+
+Hipótesis probable: el acta es del **29 de mayo** y la ludoteca fue del **1 al 19
+de junio**, así que sus cifras eran una foto de las inscripciones a esa fecha y
+después se apuntaron cuatro niños más. Pero es una hipótesis, no un dato.
+
+- [ ] **Preguntar a tesorería** cuánto se ingresó de verdad por la ludoteca de
+      junio y cuánto puso la asociación. Con eso se cierra el descuadre.
+- [ ] Mientras no esté aclarado, **la web no suma las dos cosas**: publica el
+      recuento de asistencia como recuento y atribuye las cifras de dinero al
+      acta, con su fecha. No cambiar los 1.265 €/360 € por los 1.385 €/240 €
+      calculados: contradiría el PDF del acta que está colgado en la web. Hay
+      un comentario explicándolo en
+      `paginas/actividades/curso-2025-2026/index.html`, actividad 08.
+- [ ] Cuando se confirme, hay un argumento de captación bueno esperando: las
+      7 familias no socias pagaron **440 €**; siendo socias habrían pagado
+      **406 €** (8 × 35 € + 7 cuotas de 18 €) y además habrían tenido la cuota
+      cubierta para el resto del curso. No está publicado porque depende de
+      cifras que todavía no cuadran.
+- [ ] Ojo con el ratio 24/187: solo el **13 % de las familias socias** usó la
+      ludoteca. Es un dato real y no hay que esconderlo, pero tampoco conviene
+      destacarlo como argumento de captación, porque juega en contra.
+
 - [x] ~~Publicar el importe de la cuota.~~ Hecho: **18 € por familia**, con
       página propia (`paginas/hazte-socio/`) que lo traduce en beneficios reales.
       Queda **confirmar que sigue siendo 18 € este curso** antes de dar el dato
