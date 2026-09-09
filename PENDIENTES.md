@@ -1,6 +1,6 @@
 # Tareas pendientes · Web de la AFA Atalaya
 
-Estado a 31 de agosto de 2026.
+Estado a 9 de septiembre de 2026.
 
 **Entorno actual:** repositorio en `C:\PERSONAL\AFA Atalaya\Website` (GitHub,
 gestionado con SourceTree) y despliegue automático en Vercel.
@@ -78,6 +78,27 @@ independiente y el aviso legal lo dice expresamente.
 - [ ] Si se decide seguir usando la marca del colegio, **pedir permiso expreso
       al centro** y guardarlo por escrito.
 
+### 0.5 Pedir al colegio su logotipo (para la franja del pie)
+
+La web lleva ahora, encima del pie de las doce páginas, una **franja con el
+enlace a la web del colegio** (`colegioatalaya.com`) y una frase que explica que
+la AFA y el centro son entidades distintas. En el hueco del logotipo se ve por
+ahora un icono neutro de edificio.
+
+- [ ] **Pedir el logotipo a secretaría.** Idealmente un SVG; si no, un PNG con
+      fondo transparente y al menos 200 px de alto. Hay un borrador de correo
+      preparado (`docs/correo-logotipo-colegio.md`).
+- [ ] Cuando llegue: guardarlo en `img/colegio-atalaya.svg` y escribir la ruta en
+      `js/config.js` → apartado 5 → `colegio.logo: "/img/colegio-atalaya.svg"`.
+      Con la barra inicial, porque la franja está en páginas a dos y a tres
+      niveles de profundidad. No hay que tocar el HTML.
+
+      A propósito **no se ha descargado el logotipo de su web**: es su marca, y
+      pedirlo además les da la ocasión de decir que sí. Ojo con dónde se usa:
+      dentro de la franja, que dice «el centro», es correcto; en la cabecera,
+      donde va la marca de la AFA, no lo es — que es exactamente por lo que se
+      retiró el escudo en agosto.
+
 ### 0.4 Autorizaciones de imagen
 
 Publicadas cuatro fotos, una por actividad, después de que la junta confirmara
@@ -110,6 +131,27 @@ que se podían usar:
       (`forms.gle/siimRxjUxehYuV2r7`): puede servir de base.
 
 ---
+
+### 0.6 Comprobar que la documentación interna ya no se sirve
+
+Hasta el 9 de septiembre de 2026, **este mismo fichero era legible por
+cualquiera** entrando en `afacolegioatalaya.es/PENDIENTES.md`, igual que
+`README.md` y `GUIA-FORMULARIOS.md`. Vercel sirve todos los ficheros del
+repositorio, no solo los `.html`.
+
+Puestos dos candados: `.vercelignore` (para que no se suban) y una redirección
+en `vercel.json` (para que, si aun así se suben, la URL lleve a la portada).
+
+- [ ] **Tras el primer despliegue, comprobar** que
+      `https://afacolegioatalaya.es/PENDIENTES.md` lleva a la portada y no
+      devuelve el documento. Si devuelve el documento, han fallado los dos
+      candados y hay que avisar.
+- [ ] Lo único que estaba expuesto y merece prisa es el **apartado 0.1**: el
+      texto explica que el enlace del grupo de WhatsApp es una invitación
+      abierta y que falta activar la aprobación de participantes. Mientras eso
+      siga sin hacer, es una indicación a quien quiera colarse. Lo demás
+      —correos, la clave de Web3Forms, la nota del acta— ya era público por
+      otras vías o no es un secreto.
 
 ## 1. Corregir ya (afecta a lo que está publicado)
 

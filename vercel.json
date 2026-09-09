@@ -3,6 +3,11 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/(.*).md",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/paginas/el-afa",
       "destination": "/paginas/la-afa/",
       "permanent": true

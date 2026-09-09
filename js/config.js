@@ -146,6 +146,45 @@ var AFA_CONFIG = {
     instagram: "https://www.instagram.com/afacolegioatalaya/",
     facebook: "",              // La AFA no tiene Facebook
     whatsapp: "https://chat.whatsapp.com/GXTstqKemALJwI44OGuPQZ"
+  },
+
+
+  /* ------------------------------------------------------------------------
+     5. EL COLEGIO
+
+     Datos del centro, para la franja que aparece sobre el pie de todas las
+     páginas y para el enlace del pie.
+
+     ⚠ EL COLEGIO Y LA AFA SON DOS ENTIDADES DISTINTAS. La AFA es una
+       asociación independiente, con su propio CIF, que agrupa a las familias
+       del alumnado del centro (así lo dice el aviso legal). Estos datos están
+       aquí para poder ENLAZAR al colegio, no para presentarlos como propios:
+       nunca se usan en la cabecera ni en ningún sitio donde vaya la marca de
+       la asociación.
+
+     ▸ logo: ruta a la imagen del logotipo del centro, si la hay.
+
+       VACÍO (por defecto): la franja muestra un icono neutro de edificio y el
+       nombre del colegio escrito. Funciona perfectamente así.
+
+       PARA PONER EL LOGOTIPO:
+         1. Pídelo a secretaría del colegio (idealmente SVG; si no, PNG con
+            fondo transparente y al menos 200 px de alto). Pedirlo, y no
+            descargarlo de su web, es lo correcto: es su marca.
+         2. Guárdalo en img/colegio-atalaya.svg (o .png).
+         3. Escribe aquí la ruta DESDE LA RAÍZ del sitio, empezando por "/":
+              logo: "/img/colegio-atalaya.svg"
+            La barra inicial es importante: la franja está en páginas a dos y
+            a tres niveles de profundidad, y una ruta relativa solo valdría
+            para unas.
+
+       Lo aplica js/enlaces-externos.js; no hay que tocar el HTML.
+     ------------------------------------------------------------------------ */
+  colegio: {
+    nombre: "Colegio Atalaya",
+    web: "https://colegioatalaya.com/",
+    telefono: "942 314 116",
+    logo: ""                   // ← ruta del logotipo cuando lo facilite el centro
   }
 
 };

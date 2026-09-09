@@ -31,3 +31,30 @@ privado/
 socios/
 *.xlsx
 *.csv
+
+# ---- Paquetes de transferencia y borrados pendientes ----
+*.tgz
+*.zip
+_to_delete/
+
+# ==========================================================================
+# LOS .md NO VAN AQUÍ. Está decidido, y este comentario existe para que no
+# se vuelva a intentar.
+#
+# PENDIENTES.md, README.md y GUIA-FORMULARIOS.md son la memoria del
+# proyecto: por qué se tomó cada decisión, qué queda por hacer y cómo se
+# mantiene esto. Valen más que el código, porque el código se puede
+# reescribir y los motivos no se recuperan. Tienen que estar en Git, con su
+# historial, para quien coja la web dentro de dos juntas.
+#
+# El problema real era otro: Vercel sirve TODOS los ficheros del
+# repositorio, así que cualquiera podía leer la lista interna de tareas
+# entrando en afacolegioatalaya.es/PENDIENTES.md. Eso se arregla en el
+# despliegue, no en Git: ver .vercelignore y la primera redirección de
+# vercel.json.
+#
+# Y ojo: sacarlos de Git ahora tampoco los borraría de internet. El
+# repositorio es público y el historial conserva todo lo que se ha subido
+# alguna vez. Ignorarlos a estas alturas sería perder la documentación de
+# cara al futuro sin dejar de tenerla expuesta en el pasado.
+# ==========================================================================

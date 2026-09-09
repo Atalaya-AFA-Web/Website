@@ -9,6 +9,8 @@
         por la URL correspondiente de AFA_CONFIG.enlaces (si está puesta).
      3. Rellena los iconos de redes marcados con data-red="clave" y oculta
         los que no tengan URL configurada.
+     4. Rellena la franja del colegio (nombre, web, teléfono y logotipo) a
+        partir de AFA_CONFIG.colegio.
 
    El HTML lleva siempre un valor de reserva escrito a mano, así que si este
    script no se ejecuta la web sigue siendo perfectamente usable.
@@ -102,6 +104,59 @@
     });
   }
 
+  /* ---------- 4. Datos del colegio ----------
+     Rellena la franja que hay sobre el pie de todas las páginas a partir de
+     AFA_CONFIG.colegio, para no tener los mismos datos repetidos en doce
+     ficheros HTML.
+
+       <a data-colegio-web>              → dirección de la web del centro
+       <span data-colegio-nombre>        → nombre del centro
+       <a data-colegio-tel>              → teléfono (href tel: y texto)
+       <span data-colegio-logo>          → si hay logo configurado, se
+                                           sustituye el icono por la imagen
+
+     Como en el resto del sitio, el HTML lleva ya los valores escritos a mano,
+     así que si este script no llega a ejecutarse la franja se ve igual. */
+
+  function initSchool(config) {
+    var colegio = config.colegio;
+    if (!colegio) return;
+
+    if (colegio.web) {
+      document.querySelectorAll("[data-colegio-web]").forEach(function (link) {
+        link.href = colegio.web;
+      });
+    }
+
+    if (colegio.nombre) {
+      document.querySelectorAll("[data-colegio-nombre]").forEach(function (el) {
+        el.textContent = colegio.nombre;
+      });
+    }
+
+    if (colegio.telefono) {
+      document.querySelectorAll("[data-colegio-tel]").forEach(function (link) {
+        var texto = link.querySelector("[data-colegio-tel-text]");
+        if (texto) texto.textContent = colegio.telefono;
+        // El href tel: no admite espacios ni guiones.
+        link.href = "tel:" + colegio.telefono.replace(/[^+\d]/g, "");
+      });
+    }
+
+    // El logotipo del centro, si se ha facilitado. Sustituye al icono neutro.
+    if (colegio.logo) {
+      document.querySelectorAll("[data-colegio-logo]").forEach(function (hueco) {
+        var img = document.createElement("img");
+        img.src = colegio.logo;
+        img.alt = colegio.nombre || "Logotipo del colegio";
+        hueco.textContent = "";
+        hueco.appendChild(img);
+        // El icono de reserva era decorativo; la imagen ya no lo es.
+        hueco.removeAttribute("aria-hidden");
+      });
+    }
+  }
+
   /* ---------- Arranque ---------- */
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -114,5 +169,6 @@
     initExternalLinks(config);
     initEmail(config);
     initSocialLinks(config);
+    initSchool(config);
   });
 })();

@@ -1288,3 +1288,188 @@ html {
     min-height: 160px;
   }
 }
+
+/* ==========================================================================
+   FRANJA DEL COLEGIO
+   Banda que aparece justo encima del pie en todas las páginas.
+
+   ▸ POR QUÉ EXISTE, Y POR QUÉ AQUÍ.
+
+   La AFA es una asociación de familias del Colegio Atalaya, pero es una
+   entidad jurídicamente independiente del centro (así lo dice el aviso
+   legal). Esa relación hay que explicarla, no solo enlazarla: una familia
+   que llega a esta web tiene que entender de un vistazo que el colegio es
+   otra cosa, con su propia web y su propio teléfono.
+
+   Por eso el bloque lleva una frase y no solo un logotipo. Y por eso está
+   sobre el pie y NO en la cabecera: en agosto de 2026 se retiró de la
+   cabecera el escudo del colegio precisamente porque usar la marca del
+   centro en el sitio donde va la marca propia daba a entender que la AFA y
+   el colegio eran lo mismo.
+
+   El tono es deliberadamente discreto (fondo suave, botón de contorno) para
+   no competir con el bloque verde de «Hazte socio», que en muchas páginas
+   queda inmediatamente encima.
+   ========================================================================== */
+
+.school-strip {
+  border-top: 1px solid var(--border);
+  background: var(--bg-soft);
+  padding: 30px 0;
+}
+
+.school-strip-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px 28px;
+  flex-wrap: wrap;
+}
+
+/* Hueco del logotipo del centro.
+
+   Mientras no haya logotipo, muestra un icono neutro de edificio escolar
+   dentro de una tarjeta blanca. NO se dibuja aquí un escudo inventado: un
+   logotipo aproximado es peor que ninguno.
+
+   Cuando el colegio facilite el fichero, se rellena colegio.logo en
+   js/config.js y js/enlaces-externos.js sustituye el icono por la imagen;
+   no hay que tocar el HTML de las doce páginas. */
+.school-mark {
+  flex: none;
+  /* La altura es fija y la anchura se adapta al contenido, con un mínimo
+     cuadrado para el icono de reserva y un máximo para que un logotipo
+     alargado no se coma la franja. Los logotipos de los centros suelen ser
+     más anchos que altos. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 68px;
+  max-width: 170px;
+  height: 68px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card-bg);
+  color: var(--green-600);
+}
+
+.school-mark svg {
+  width: 34px;
+  height: 34px;
+}
+
+/* La ALTURA del logotipo se fija en píxeles y la anchura se deduce de su
+   proporción. Con max-height en lugar de height, la caja y la imagen se
+   dimensionan la una a partir de la otra y el navegador resuelve el círculo
+   dejando el logotipo diminuto (comprobado: 50 px en lugar de 104).
+   object-fit mantiene la proporción si además topa con el ancho máximo. */
+.school-mark img {
+  display: block;
+  height: 52px;
+  width: auto;
+  max-width: 154px;
+  object-fit: contain;
+}
+
+.school-text {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.school-label {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.school-name {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--green-900);
+}
+
+.school-note {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+.school-note a {
+  color: var(--green-700);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.school-actions {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+/* El teléfono del centro: en móvil es un enlace que llama, en escritorio
+   es simplemente el número escrito. */
+.school-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 28px;
+  padding-block: 4px;
+  margin-block: -4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.school-phone:hover {
+  color: var(--green-700);
+}
+
+.school-phone .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Flecha de «sale de esta web». Se escribe en el HTML, no con ::after, para
+   que también la lean los lectores de pantalla a través del aria-label del
+   propio enlace. */
+.icon-external {
+  width: 15px;
+  height: 15px;
+  margin-left: 2px;
+}
+
+@media (max-width: 700px) {
+  .school-strip-inner {
+    gap: 18px;
+  }
+
+  .school-actions,
+  .school-actions .btn {
+    width: 100%;
+  }
+
+  .school-actions {
+    align-items: stretch;
+  }
+
+  /* A ancho completo, el rótulo y la flecha se quedarían separados en los
+     dos extremos del botón: se agrupan en el centro. */
+  .school-actions .btn {
+    justify-content: center;
+  }
+
+  .school-phone {
+    justify-content: center;
+  }
+}

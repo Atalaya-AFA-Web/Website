@@ -1,0 +1,37 @@
+# ==========================================================================
+# FICHEROS QUE NO SE DESPLIEGAN
+#
+# Este fichero NO es .gitignore. La diferencia importa:
+#
+#   .gitignore    → el fichero no entra en el repositorio.
+#   .vercelignore → el fichero SÍ está en el repositorio, con su historial y
+#                   su copia de seguridad, pero NO se sube a la web.
+#
+# La documentación interna (PENDIENTES.md, README.md, GUIA-FORMULARIOS.md)
+# tiene que seguir en Git: es la memoria del proyecto y lo que va a leer quien
+# coja esto dentro de dos juntas. Lo que no tiene ningún sentido es que se
+# pueda leer escribiendo afacolegioatalaya.es/PENDIENTES.md, que es lo que
+# pasaba hasta ahora: Vercel sirve TODOS los ficheros del repositorio, no solo
+# los .html.
+#
+# ⚠ POR SI ACASO, HAY UN SEGUNDO CANDADO. La documentación de Vercel no dice
+#   con claridad si .vercelignore se aplica también a los despliegues
+#   conectados a Git o solo a los que se hacen con su herramienta de línea de
+#   comandos. Por eso vercel.json lleva además una redirección que manda a la
+#   portada cualquier URL que acabe en .md. Con los dos puestos, da igual cuál
+#   de los dos funcione.
+#
+#   PARA COMPROBARLO tras el primer despliegue: entra en
+#   https://afacolegioatalaya.es/PENDIENTES.md
+#     · Si sale la portada → funciona (aunque sea por la redirección).
+#     · Si sale el documento → los dos candados han fallado; avisa.
+# ==========================================================================
+
+# Documentación interna: se queda en Git, no se publica.
+*.md
+
+# Paquetes de transferencia y carpetas de borrado, si alguno acaba aquí
+# por error.
+*.tgz
+*.zip
+_to_delete/
