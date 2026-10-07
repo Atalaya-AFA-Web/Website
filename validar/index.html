@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validar carnet de socio · AFA Atalaya</title>
+  <meta name="description" content="Comprobación del carnet de socio de la AFA del Colegio Atalaya.">
+  <!-- Página de uso interno de los comercios: no debe salir en buscadores -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/fuentes.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/paginas.css">
+</head>
+<body class="validar-body">
+
+  <!-- ==========================================================================
+       PÁGINA DE VALIDACIÓN DEL CARNET
+       La abre el comercio al escanear el QR del carnet con la cámara de su
+       móvil. Es deliberadamente mínima, sin menú: lo único que importa es que
+       VÁLIDO / NO VÁLIDO se lea de un vistazo.
+
+       Está en la raíz (/validar/) y no en /paginas/ para que la URL del QR sea
+       lo más corta posible: cuanto más corta, menos denso es el QR y mejor se
+       escanea.
+
+       Toda la comprobación ocurre en el navegador del comercio
+       (js/carnet-token.js). Los datos del carnet van detrás de "#" y no llegan
+       nunca al servidor.
+       ========================================================================== -->
+
+  <header class="validar-header">
+    <span class="brand-mark" aria-hidden="true">AFA</span>
+    <span class="validar-header-texto">
+      <strong>AFA Atalaya</strong>
+      <small>Comprobaci&oacute;n de carnet de socio</small>
+    </span>
+  </header>
+
+  <main class="validar-main">
+
+    <!-- Resultado. js/validar.js cambia la clase (is-valido, is-invalido,
+         is-error, is-vacio) y rellena los textos. -->
+    <section class="validar-panel is-cargando" id="validar-panel" aria-live="polite">
+
+      <div class="validar-estado">
+        <span class="validar-icono" id="validar-icono" aria-hidden="true"></span>
+        <h1 class="validar-titulo" id="validar-titulo">Comprobando&hellip;</h1>
+        <p class="validar-motivo" id="validar-motivo"></p>
+      </div>
+
+      <p class="validar-prueba" id="validar-prueba" hidden>
+        Carnet de PRUEBA &middot; no vale para descuentos
+      </p>
+
+      <dl class="validar-datos" id="validar-datos" hidden>
+        <dt class="sr-only">Nombre</dt>
+        <dd class="validar-nombre" id="validar-nombre"></dd>
+        <dt class="sr-only">Condici&oacute;n</dt>
+        <dd id="validar-curso"></dd>
+        <dt class="sr-only">N&uacute;mero de carnet</dt>
+        <dd id="validar-numero"></dd>
+        <dt class="sr-only">Caducidad</dt>
+        <dd id="validar-caducidad"></dd>
+      </dl>
+
+      <!-- Reloj en marcha: demuestra que la pantalla es de ahora y no una
+           captura o una foto de una validación anterior. -->
+      <div class="validar-reloj" aria-label="Hora actual">
+        <span class="validar-reloj-punto" aria-hidden="true"></span>
+        <span id="validar-hora">--:--:--</span>
+        <span class="validar-reloj-fecha" id="validar-fecha"></span>
+      </div>
+    </section>
+
+    <p class="validar-aviso" id="validar-aviso-bajas" hidden>
+      No se ha podido consultar la lista de bajas (conexi&oacute;n lenta o
+      cortada). La firma del carnet es correcta, pero si tienes dudas, vuelve a
+      escanear el QR en un momento.
+    </p>
+
+    <section class="validar-instrucciones">
+      <h2>C&oacute;mo comprobar un carnet</h2>
+      <ol>
+        <li>Escanea el QR <strong>siempre con tu m&oacute;vil</strong>, no mires el del cliente.</li>
+        <li>Comprueba que la direcci&oacute;n de arriba es <strong>afacolegioatalaya.es</strong>.</li>
+        <li>Comprueba que la hora <strong>avanza</strong>: si est&aacute; quieta, es una captura.</li>
+        <li>Pide el <strong>DNI</strong> y comprueba que el nombre coincide.</li>
+        <li>No anotes ni guardes ning&uacute;n dato del carnet ni del DNI.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="validar-footer">
+    <p>
+      Asociaci&oacute;n de Familias del Colegio Atalaya &middot; <span class="validar-nowrap">CIF G-39039813</span>
+      <br>
+      <a href="../paginas/privacidad/index.html">Pol&iacute;tica de privacidad</a>
+      <span aria-hidden="true">&middot;</span>
+      <a href="../index.html">Web de la AFA</a>
+    </p>
+  </footer>
+
+  <script src="../js/carnet-token.js"></script>
+  <script src="../js/validar.js"></script>
+</body>
+</html>
