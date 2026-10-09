@@ -30,6 +30,27 @@
 
     if (wrapper) wrapper.classList.toggle("has-error", show);
     if (error) error.hidden = !show;
+
+    // Marcas para quien no ve el recuadro rojo.
+    //
+    //   aria-invalid   → el lector de pantalla dice "no válido" al entrar en
+    //                    el campo, en lugar de dejar a la persona adivinando
+    //                    por qué no se ha enviado el formulario.
+    //   aria-describedby → engancha el mensaje concreto al campo, así que al
+    //                    enfocarlo se lee "Correo electrónico, no válido,
+    //                    revisa el correo electrónico".
+    //
+    // El mensaje además lleva role="alert" en el HTML, que lo anuncia en
+    // cuanto deja de estar oculto, sin esperar a que nadie lo enfoque.
+    field.setAttribute("aria-invalid", show ? "true" : "false");
+
+    if (error && error.id) {
+      if (show) {
+        field.setAttribute("aria-describedby", error.id);
+      } else {
+        field.removeAttribute("aria-describedby");
+      }
+    }
   }
 
   function isValid(field) {

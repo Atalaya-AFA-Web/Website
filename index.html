@@ -8,14 +8,78 @@
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/fuentes.css">
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- ==========================================================================
+       CÓMO SE VE ESTA PÁGINA AL COMPARTIRLA Y EN LOS BUSCADORES
+
+       Hasta octubre de 2026 no había nada de esto: pegar un enlace de la web
+       en el grupo de WhatsApp del curso mostraba la URL pelada, sin título ni
+       descripción ni imagen. Siendo WhatsApp el canal por el que de verdad
+       circulan los avisos, era el agujero más caro de la web.
+
+       · canonical  → la dirección buena de esta página, para que el buscador
+                      no trate como distintas /pagina/ y /pagina/index.html.
+       · og:*       → lo que leen WhatsApp, Facebook, Telegram y LinkedIn.
+       · twitter:*  → lo mismo para X y algún cliente de correo.
+
+       La imagen (img/og-afa-atalaya.jpg, 1200x630) es común a todo el sitio.
+       Si algún día una página merece la suya, se cambia solo aquí.
+       ========================================================================== -->
+  <link rel="canonical" href="https://afacolegioatalaya.es/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AFA Atalaya">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://afacolegioatalaya.es/">
+  <meta property="og:title" content="AFA Atalaya · Asociación de Familias del Colegio Atalaya">
+  <meta property="og:description" content="AFA Atalaya: un espacio creado por las familias y para las familias del Colegio Atalaya (Santander).">
+  <meta property="og:image" content="https://afacolegioatalaya.es/img/og-afa-atalaya.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AFA Atalaya, Asociación de Familias del Colegio Atalaya de Santander">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#17552f">
+
+  <!-- Datos estructurados: la asociación, para la ficha de los buscadores. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Asociación de Familias de Alumnos del Colegio Atalaya de Santander",
+  "alternateName": "AFA Atalaya",
+  "url": "https://afacolegioatalaya.es/",
+  "logo": "https://afacolegioatalaya.es/img/og-afa-atalaya.jpg",
+  "email": "colegioatalaya.afa@gmail.com",
+  "taxID": "G39039813",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bajada Rumayor, s/n",
+    "postalCode": "39006",
+    "addressLocality": "Santander",
+    "addressRegion": "Cantabria",
+    "addressCountry": "ES"
+  },
+  "sameAs": [
+    "https://www.instagram.com/afacolegioatalaya/"
+  ],
+  "parentOrganization": {
+    "@type": "EducationalOrganization",
+    "name": "Colegio Atalaya",
+    "url": "https://colegioatalaya.com/"
+  }
+}
+  </script>
 </head>
 <body>
+
+  <!-- Primer elemento tabulable: permite saltarse la cabecera entera.
+       Invisible hasta que recibe el foco (ver .skip-link en styles.css). -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <!-- ============ HEADER ============ -->
   <header class="site-header">
     <div class="container header-inner">
 
-      <a href="index.html" class="brand" aria-label="Inicio &middot; AFA Atalaya">
+      <a href="index.html" class="brand">
         <!-- MARCA DE LA AFA
              Antes aquí estaba el escudo del Colegio Atalaya. Se retiró en
              agosto de 2026: la AFA es una entidad jurídicamente independiente
@@ -58,7 +122,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="contenido" tabindex="-1">
 
     <!-- ============ HERO ============ -->
     <section class="hero">
@@ -261,16 +325,11 @@
 
         <div class="cards-grid cards-grid-3 news-grid">
 
-          <article class="news-card">
-            <div class="news-thumb news-thumb-b">
-              <span class="news-tag">Inscripción abierta</span>
-            </div>
-            <div class="news-body">
-              <h3>Ludoteca de septiembre: plazo hasta el día 4</h3>
-              <time datetime="2026-08-31">Del 8 al 30 de septiembre de 2026</time>
-              <a href="paginas/actividades/ludoteca-septiembre/index.html" class="link-arrow link-arrow-sm">Cómo apuntarse <span aria-hidden="true">&#8594;</span></a>
-            </div>
-          </article>
+          <!-- La tarjeta de la ludoteca de septiembre se retiró el 9 de octubre
+               de 2026, al terminar la actividad. Es la regla editorial de esta
+               sección: aquí solo va lo que está en marcha, y lo terminado pasa
+               al histórico del curso. La ficha sigue publicada como crónica en
+               paginas/actividades/ludoteca-septiembre/. -->
 
           <article class="news-card">
             <div class="news-thumb news-thumb-a">
@@ -376,7 +435,7 @@
     <div class="container footer-grid">
 
       <div class="footer-brand">
-        <a href="index.html" class="brand brand-footer" aria-label="Inicio &middot; AFA Atalaya">
+        <a href="index.html" class="brand brand-footer">
           <span class="brand-mark" aria-hidden="true">AFA</span>
           <span class="brand-name">
             <strong>AFA Atalaya</strong>

@@ -1,0 +1,12 @@
+# Robots de la web de la AFA del Colegio Atalaya
+# https://afacolegioatalaya.es/
+
+User-agent: *
+Allow: /
+
+# La documentación interna del proyecto no es contenido de la web. No debería
+# ni llegar al servidor (ver .vercelignore), pero si alguna se cuela, que al
+# menos no acabe indexada.
+Disallow: /*.md$
+
+Sitemap: https://afacolegioatalaya.es/sitemap.xml

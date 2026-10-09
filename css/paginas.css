@@ -1713,3 +1713,30 @@ button:focus-visible {
     width: auto;
   }
 }
+
+/* Etiqueta de actividad terminada. Gris deliberadamente apagado: compite con
+   las etiquetas de categoría, que sí llevan color, y lo que tiene que
+   transmitir es «esto ya pasó», no llamar la atención.
+   Contraste comprobado: 7,36:1 sobre su propio fondo (hace falta 4,5:1). */
+.tag-past { background: #e9ebe9; color: #454c48; }
+
+/* Los hijos de una rejilla no pueden encogerse por debajo de su contenido a
+   menos que se les diga. Es el `min-width: auto` que CSS Grid pone por
+   defecto, y provoca desbordamientos de pocos píxeles cuando dentro hay algo
+   que no parte: un botón con una palabra larga, un correo o un IBAN.
+
+   En la ficha de la ludoteca desbordaba 3px a 320px por el botón de
+   «Escribir el correo de inscripción». Son tres píxeles, pero el efecto es
+   una barra de desplazamiento horizontal en toda la página, que en un móvil
+   se nota al arrastrar. */
+.split > *,
+.quota-hero > * {
+  min-width: 0;
+}
+
+/* Y lo que de verdad no cabe, que parta. Los botones de esta web llevan texto
+   en mayúsculas con espaciado, así que una palabra como INSCRIPCIÓN ocupa
+   mucho más de lo que parece. */
+.btn {
+  overflow-wrap: anywhere;
+}

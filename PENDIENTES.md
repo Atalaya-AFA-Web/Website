@@ -1,6 +1,6 @@
 # Tareas pendientes · Web de la AFA Atalaya
 
-Estado a 9 de septiembre de 2026.
+Estado a 9 de octubre de 2026.
 
 **Entorno actual:** repositorio en `C:\PERSONAL\AFA Atalaya\Website` (GitHub,
 gestionado con SourceTree) y despliegue automático en Vercel.
@@ -153,23 +153,62 @@ en `vercel.json` (para que, si aun así se suben, la URL lleve a la portada).
       —correos, la clave de Web3Forms, la nota del acta— ya era público por
       otras vías o no es un secreto.
 
+### 0.7 ⚠ RUTINA DE CIERRE DE UNA CONVOCATORIA (esto ya ha fallado una vez)
+
+El 9 de octubre de 2026 la web llevaba **cinco semanas** anunciando la ludoteca
+de septiembre como «inscripción abierta», con el número de cuenta y un plazo
+que venció el 4 de septiembre. Una familia que entrara podía hacer una
+transferencia para un servicio ya prestado.
+
+No es un fallo de código: es que no había una rutina de cierre. Esta es.
+
+**El mismo día que vence un plazo, cuatro cosas:**
+
+1. **Ficha de la actividad:** cambiar la etiqueta de estado a
+   `<span class="tag tag-past">Actividad terminada</span>`, poner el aviso de
+   actividad terminada al principio del cuerpo, **retirar el bloque con el
+   número de cuenta** y pasar los textos a pretérito (incluido el resumen
+   lateral, que es lo que más se olvida).
+2. **Portada y Actualidad:** retirar la tarjeta. La regla editorial de
+   Actualidad ya lo dice: ahí solo va lo que está en marcha.
+3. **Actividades:** actualizar el aside de «lo último que se hizo».
+4. **Hazte socio:** si el texto decía «ahora mismo tiene la inscripción
+   abierta», pasarlo a pretérito.
+
+**Comprobación rápida:** buscar en todo el proyecto `Inscripción abierta`,
+`plazo hasta` y `ES30` fuera de la carpeta `docs/`. Si aparece algo, queda
+trabajo.
+
+Cuando la actividad termine del todo, su crónica pasa al histórico del curso
+y la ficha suelta se puede retirar.
+
 ## 1. Corregir ya (afecta a lo que está publicado)
 
 - [x] ~~Contenido viejo publicado en `paginas/el-afa/`~~ — **neutralizado.**
       Ese `index.html` ya no tiene la página antigua: es una redirección a
       `la-afa/` con `noindex`. Además `vercel.json` redirige la ruta de forma
       permanente (301), así que cualquier enlace antiguo sigue funcionando.
-- [ ] **Borrar la carpeta `paginas/el-afa/` en SourceTree.** Ya no hace daño,
-      pero sobra. No puedo borrarla yo: el puente con tu equipo permite escribir
-      pero no eliminar. Dentro hay también un `_prueba.txt` que generé al
-      comprobar los permisos; se va con la carpeta.
-      *En SourceTree: eliminar la carpeta, confirmar el borrado y push.*
+- [x] ~~Borrar la carpeta `paginas/el-afa/`~~ — **hecha el 9 de octubre de
+      2026**, junto con el `_prueba.txt` que llevaba dentro. La redirección 301
+      de `vercel.json` se queda: es la que mantiene vivos los enlaces antiguos
+      que alguien tenga guardados o circulando por WhatsApp. Esa redirección se
+      evalúa antes de buscar el fichero, así que la carpeta no pintaba nada.
 
-- [ ] **Quitar `img/Cabecera.png` (2 MB) del repositorio.** No se usa: la web
-      carga `cabecera.webp` (105 KB) y `cabecera-movil.webp` (47 KB). Está además
-      dentro del historial de Git, así que borrarla ahora reduce el repo de cara
-      al futuro pero no lo limpia del todo. No es grave; simplemente no hace
-      falta que esté.
+- [x] ~~Quitar `img/Cabecera.png` (2 MB) del repositorio~~ — **hecho el 9 de
+      octubre de 2026.**
+
+      ⚠ **ERA EL ORIGINAL, Y ES LA ÚNICA COPIA QUE HABÍA.** Son 1717×916 px, y
+      de ahí salieron `cabecera.webp` (108 KB) y `cabecera-movil.webp` (47 KB),
+      que son las que carga la web. Antes de retirarla del repositorio se
+      copió a **`C:\PERSONAL\AFA Atalaya\WEB AFA\originales\Cabecera.png`**,
+      con la suma de verificación comprobada. Si algún día hay que regenerar la
+      cabecera a otro tamaño o calidad, el maestro está ahí.
+
+      Dos cosas que conviene no confundir: esto **no aligera el repositorio**
+      (el fichero sigue en el historial de Git para siempre) y **no mejoraba el
+      rendimiento** (ninguna página lo enlazaba, así que nadie se lo
+      descargaba). Era desorden, nada más. Purgar el historial para recuperar
+      esos 2 MB reescribiría todos los commits y no compensa.
 
 - [ ] **Actualizar las instrucciones de despliegue.** El `README.md` y
       `docs/README.md` explican cómo publicar con **GitHub Pages** y citan sus
@@ -492,8 +531,10 @@ tocar HTML», el CMS gana por mucho.
 
 ## Orden que propongo
 
-1. Borrar `paginas/el-afa/` — es lo único que está mal en producción.
-2. Activar el reenvío del Gmail y probar el formulario.
+1. ~~Borrar `paginas/el-afa/`~~ — hecho el 9 de octubre de 2026.
+2. Activar el reenvío del Gmail y probar el formulario. **Es lo más antiguo
+   que sigue pendiente y lo que de verdad hace falta**: sin ese reenvío, los
+   mensajes del formulario de contacto caen en un buzón que nadie mira.
 3. Reescribir Actualidad con las cuatro actividades reales.
 4. Crear el Google Form de alta y pegar su URL.
 5. Publicar estatutos y memoria (con los datos personales quitados).
@@ -517,10 +558,11 @@ tocar HTML», el CMS gana por mucho.
       a 55 €: veinte euros de ahorro con una cuota de dieciocho).
 - [x] **Preguntas frecuentes** como sección del menú, con trece preguntas
       agrupadas por tema en lugar de las cinco escondidas en Formularios.
-- [ ] **Borrar `img/actividades/charla-familias.webp`** en SourceTree. Era la
-      versión recortada y desenfocada de la foto del eclipse, sustituida por la
-      completa al confirmarse que se podían publicar las caras. Ya no la usa
-      ninguna página.
+- [x] ~~Borrar `img/actividades/charla-familias.webp`~~ — **hecho el 9 de
+      octubre de 2026.** Era el recorte de 1200×495 de la foto del eclipse,
+      sustituido por `eclipse-charla.webp` (1200×698) al confirmarse que las
+      caras se podían publicar. Como el original de esa foto sigue en el
+      repositorio, el recorte no hacía falta guardarlo.
 - [x] **Próximas actividades ocultas.** Se retiraron el calendario del curso, la
       rejilla de la portada y las fichas de la reunión de bienvenida y el taller
       familiar, que tenían fechas inventadas. Las dos carpetas quedan como

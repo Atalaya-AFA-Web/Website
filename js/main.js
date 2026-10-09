@@ -21,29 +21,49 @@
 
     if (!toggle || !nav) return;
 
+    // Un único sitio donde se cambia el estado. Antes había tres cierres
+    // distintos (enlace, clic fuera y nada más) y dos de ellos actualizaban
+    // aria-expanded pero NO aria-label, así que el botón se quedaba diciendo
+    // "Cerrar menú" con el menú ya cerrado: un lector de pantalla anunciaba
+    // lo contrario de lo que hacía.
+    function setOpen(abierto) {
+      nav.classList.toggle("is-open", abierto);
+      toggle.setAttribute("aria-expanded", String(abierto));
+      toggle.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+    }
+
+    function estaAbierto() {
+      return nav.classList.contains("is-open");
+    }
+
     toggle.addEventListener("click", function () {
-      var isOpen = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
-      toggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+      setOpen(!estaAbierto());
     });
 
     // Cierra el menú al pulsar un enlace
     nav.addEventListener("click", function (event) {
-      if (event.target.closest("a")) {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      }
+      if (event.target.closest("a")) setOpen(false);
     });
 
     // Cierra el menú al hacer clic fuera de él
     document.addEventListener("click", function (event) {
       if (
-        nav.classList.contains("is-open") &&
+        estaAbierto() &&
         !nav.contains(event.target) &&
         !toggle.contains(event.target)
       ) {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
+        setOpen(false);
+      }
+    });
+
+    // Cierra con Escape y DEVUELVE EL FOCO al botón. Sin esto, quien abre el
+    // menú con el teclado y se arrepiente no tiene forma de salir: el foco se
+    // queda dentro de un menú que sigue abierto. Es la convención de cualquier
+    // componente que se despliega, y la gente la da por hecha.
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && estaAbierto()) {
+        setOpen(false);
+        toggle.focus();
       }
     });
   }

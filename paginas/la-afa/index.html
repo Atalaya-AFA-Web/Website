@@ -9,8 +9,63 @@
   <link rel="stylesheet" href="../../css/fuentes.css">
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="../../css/paginas.css">
+
+  <!-- ==========================================================================
+       CÓMO SE VE ESTA PÁGINA AL COMPARTIRLA Y EN LOS BUSCADORES
+
+       Hasta octubre de 2026 no había nada de esto: pegar un enlace de la web
+       en el grupo de WhatsApp del curso mostraba la URL pelada, sin título ni
+       descripción ni imagen. Siendo WhatsApp el canal por el que de verdad
+       circulan los avisos, era el agujero más caro de la web.
+
+       · canonical  → la dirección buena de esta página, para que el buscador
+                      no trate como distintas /pagina/ y /pagina/index.html.
+       · og:*       → lo que leen WhatsApp, Facebook, Telegram y LinkedIn.
+       · twitter:*  → lo mismo para X y algún cliente de correo.
+
+       La imagen (img/og-afa-atalaya.jpg, 1200x630) es común a todo el sitio.
+       Si algún día una página merece la suya, se cambia solo aquí.
+       ========================================================================== -->
+  <link rel="canonical" href="https://afacolegioatalaya.es/paginas/la-afa/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AFA Atalaya">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://afacolegioatalaya.es/paginas/la-afa/">
+  <meta property="og:title" content="La AFA · AFA Atalaya">
+  <meta property="og:description" content="Quiénes somos, qué hacemos y cómo nos organizamos en la AFA del Colegio Atalaya de Santander.">
+  <meta property="og:image" content="https://afacolegioatalaya.es/img/og-afa-atalaya.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AFA Atalaya, Asociación de Familias del Colegio Atalaya de Santander">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#17552f">
+
+  <!-- Datos estructurados: las migas de pan, que Google muestra bajo el título del resultado. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://afacolegioatalaya.es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "La AFA"
+    }
+  ]
+}
+  </script>
 </head>
 <body>
+
+  <!-- Primer elemento tabulable: permite saltarse la cabecera entera.
+       Invisible hasta que recibe el foco (ver .skip-link en styles.css). -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <!-- ==========================================================================
        HEADER COMÚN
@@ -21,7 +76,7 @@
   <header class="site-header">
     <div class="container header-inner">
 
-      <a href="../../index.html" class="brand" aria-label="Inicio &middot; AFA Atalaya">
+      <a href="../../index.html" class="brand">
         <!-- MARCA DE LA AFA
              Antes aquí estaba el escudo del Colegio Atalaya. Se retiró en
              agosto de 2026: la AFA es una entidad jurídicamente independiente
@@ -64,7 +119,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="contenido" tabindex="-1">
 
     <!-- ============ CABECERA DE PÁGINA ============ -->
     <section class="page-header">
@@ -574,7 +629,7 @@
     <div class="container footer-grid">
 
       <div class="footer-brand">
-        <a href="../../index.html" class="brand brand-footer" aria-label="Inicio &middot; AFA Atalaya">
+        <a href="../../index.html" class="brand brand-footer">
           <span class="brand-mark" aria-hidden="true">AFA</span>
           <span class="brand-name">
             <strong>AFA Atalaya</strong>

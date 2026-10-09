@@ -267,8 +267,18 @@ html {
   gap: 24px;
 }
 
+/* Tres columnas COMO MÁXIMO, no exactamente tres.
+
+   Con repeat(3, 1fr) fijo, una rejilla con dos tarjetas dejaba un hueco vacío
+   a la derecha, y eso pasa cada vez que se retira una convocatoria terminada
+   de Actualidad o de la portada. Con auto-fit las tarjetas se reparten el
+   ancho disponible sea cual sea su número, así que la página se puede quedar
+   con una, dos o tres sin que haya que tocar el CSS.
+
+   El minmax lleva min(320px, 100%) para que en pantallas estrechas la tarjeta
+   pueda bajar de 320px en lugar de desbordar. */
 .cards-grid-3 {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
 }
 
 /* ---------- 3. Header y navegación ---------- */
@@ -1471,5 +1481,79 @@ html {
 
   .school-phone {
     justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   SALTAR AL CONTENIDO
+   Primer elemento tabulable de todas las páginas.
+
+   Sin esto, quien navega con teclado tiene que pasar por la marca, los siete
+   enlaces del menú y el botón de socio ANTES de llegar al contenido, y eso en
+   CADA página que abre. Es el criterio 2.4.1 de la WCAG (evitar bloques).
+
+   Está siempre en el DOM y siempre es accesible: se sale de la pantalla con
+   un desplazamiento, no con display:none ni visibility:hidden, porque esas
+   dos lo sacarían también del orden de tabulación y dejaría de existir para
+   quien lo necesita. Al recibir el foco vuelve a su sitio.
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -110%);
+  padding: 12px 24px;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  background: var(--green-800);
+  color: var(--text-inverse);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translate(-50%, 0);
+}
+
+/* El destino del salto no debe dibujar un contorno al recibir el foco por
+   programa: el usuario no ha tabulado hasta él, solo ha aterrizado ahí. */
+#contenido:focus {
+  outline: none;
+}
+
+/* ==========================================================================
+   MOVIMIENTO REDUCIDO
+
+   Quien activa «reducir movimiento» en su sistema suele hacerlo por mareos,
+   migrañas o vértigo. La web tiene desplazamiento suave en los anclajes,
+   transiciones en los botones y el menú móvil desplegándose: nada
+   escandaloso, pero el ajuste del sistema es una petición explícita y hay
+   que respetarla. Criterio 2.3.3 de la WCAG.
+
+   No se desactiva todo a cero —eso rompe algunos componentes y deja cambios
+   de estado sin avisar—, sino que se deja en 0,01s: el cambio ocurre, pero no
+   se percibe como movimiento.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* El botón levanta un píxel al pasar por encima: se queda quieto. */
+  .btn:hover {
+    transform: none;
   }
 }
