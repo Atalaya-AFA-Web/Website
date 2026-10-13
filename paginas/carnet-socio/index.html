@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carnet de socio digital · AFA Atalaya</title>
+  <meta name="description" content="La AFA del Colegio Atalaya está preparando un carnet de socio digital, en el móvil, con descuentos en comercios de Santander para las familias socias.">
+  <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../css/fuentes.css">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/paginas.css">
+
+  <!-- ==========================================================================
+       CÓMO SE VE ESTA PÁGINA AL COMPARTIRLA Y EN LOS BUSCADORES
+
+       Hasta octubre de 2026 no había nada de esto: pegar un enlace de la web
+       en el grupo de WhatsApp del curso mostraba la URL pelada, sin título ni
+       descripción ni imagen. Siendo WhatsApp el canal por el que de verdad
+       circulan los avisos, era el agujero más caro de la web.
+
+       · canonical  → la dirección buena de esta página, para que el buscador
+                      no trate como distintas /pagina/ y /pagina/index.html.
+       · og:*       → lo que leen WhatsApp, Facebook, Telegram y LinkedIn.
+       · twitter:*  → lo mismo para X y algún cliente de correo.
+
+       La imagen (img/og-afa-atalaya.jpg, 1200x630) es común a todo el sitio.
+       Si algún día una página merece la suya, se cambia solo aquí.
+       ========================================================================== -->
+  <link rel="canonical" href="https://afacolegioatalaya.es/paginas/carnet-socio/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AFA Atalaya">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://afacolegioatalaya.es/paginas/carnet-socio/">
+  <meta property="og:title" content="Carnet de socio digital · AFA Atalaya">
+  <meta property="og:description" content="La AFA del Colegio Atalaya está preparando un carnet de socio digital, en el móvil, con descuentos en comercios de Santander para las familias socias.">
+  <meta property="og:image" content="https://afacolegioatalaya.es/img/og-afa-atalaya.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AFA Atalaya, Asociación de Familias del Colegio Atalaya de Santander">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#17552f">
+
+  <!-- Datos estructurados: las migas de pan, que Google muestra bajo el título del resultado. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://afacolegioatalaya.es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Carnet de socio"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Primer elemento tabulable: permite saltarse la cabecera entera.
+       Invisible hasta que recibe el foco (ver .skip-link en styles.css). -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ==========================================================================
+       HEADER COMÚN
+       Este bloque es IDÉNTICO en las cinco páginas de /paginas/.
+       Si cambias el menú, copia el bloque completo en las demás páginas
+       (y adapta las rutas en index.html, que está un nivel más arriba).
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="../../index.html" class="brand">
+        <!-- MARCA DE LA AFA
+             Antes aquí estaba el escudo del Colegio Atalaya. Se retiró en
+             agosto de 2026: la AFA es una entidad jurídicamente independiente
+             del centro (así lo dice el aviso legal) y usar la marca del colegio
+             como si fuera la suya no era correcto.
+
+             Esto es un monograma provisional. La asamblea del 29 de mayo de
+             2026 acordó convocar un concurso para rediseñar el logotipo de la
+             Asociación; cuando haya ganador, se sustituye este <span> por la
+             imagen (idealmente un SVG) y se retiran los estilos .brand-mark. -->
+        <span class="brand-mark" aria-hidden="true">AFA</span>
+        <span class="brand-name">
+          <strong>AFA Atalaya</strong>
+          <small>Asociaci&oacute;n de Familias del Colegio Atalaya</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="../la-afa/index.html">La AFA</a></li>
+          <li><a href="../actividades/index.html">Actividades</a></li>
+          <li><a href="../formularios/index.html">Formularios</a></li>
+          <li><a href="../actualidad/index.html">Actualidad</a></li>
+          <li><a href="../preguntas-frecuentes/index.html">Preguntas</a></li>
+          <li><a href="../contacto/index.html">Contacto</a></li>
+          <!-- Acceso al CTA dentro del menú: solo visible en móvil -->
+          <li class="nav-cta"><a href="../hazte-socio/index.html" data-enlace="altaSocio">Hazte socio</a></li>
+        </ul>
+      </nav>
+
+      <a href="../hazte-socio/index.html" data-enlace="altaSocio" class="btn btn-primary btn-header">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.2C.3 8.6 2.2 5 5.7 5c2 0 3.4 1.1 4.3 2.4h4c.9-1.3 2.3-2.4 4.3-2.4 3.5 0 5.4 3.6 3.7 6.8C19.5 16.1 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        Hazte socio
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+    <!-- ============ CABECERA DE PÁGINA ============ -->
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <ol>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li class="sep" aria-hidden="true">/</li>
+            <li><span aria-current="page">Carnet de socio</span></li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Carnet de socio digital</h1>
+        <p class="page-lead">
+          Estamos preparando un carnet en el móvil para las familias socias,
+          con descuentos en comercios de Santander. Te contamos cómo va a
+          funcionar.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PÁGINA DE ANUNCIO (octubre de 2026)
+         Se publica mientras el carnet está en piloto, por eso todo está en
+         futuro y no se nombran comercios. Cuando se lance:
+           · pasar los textos a presente y quitar el aviso «Próximamente»;
+           · añadir la lista de comercios adheridos en «Dónde se puede usar»;
+           · enlazar esta página desde el menú como «Descuentos para socios».
+         ========================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="prose">
+
+          <div class="callout">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <p>
+                <strong>Próximamente.</strong> La Junta lo está probando estas
+                semanas. Cuando esté listo, lo recibirás por correo: si tu
+                familia es socia, no tienes que hacer nada.
+              </p>
+            </div>
+          </div>
+
+          <h2>Qué es</h2>
+          <p>
+            Un carnet de socio que llevas en el móvil, con tu nombre. No hay
+            que instalar ninguna aplicación ni pagar nada aparte: va incluido
+            en la cuota de 18 € al año por familia.
+          </p>
+
+          <h2>Para qué sirve</h2>
+          <p>
+            Para conseguir <strong>descuentos en comercios de Santander</strong>
+            que colaboren con la AFA. Cuando haya comercios adheridos, los
+            publicaremos en esta página con el descuento de cada uno.
+          </p>
+
+          <h2>Cómo se va a usar</h2>
+          <ol class="steps">
+            <li>
+              <h3>Lo recibes por correo</h3>
+              <p>
+                Un enlace a tu carnet. Lo puedes guardar en la pantalla de
+                inicio del móvil y abrirlo como una app.
+              </p>
+            </li>
+            <li>
+              <h3>Lo enseñas en la tienda</h3>
+              <p>
+                Junto con tu DNI, para que el comercio vea que el nombre
+                coincide. El carnet es personal.
+              </p>
+            </li>
+            <li>
+              <h3>El comercio puede comprobarlo, si quiere</h3>
+              <p>
+                El carnet lleva un código QR. Si el comercio lo escanea con su
+                móvil, le aparece en la web de la AFA si el carnet es válido.
+                Es opcional: con el nombre y el DNI ya basta.
+              </p>
+            </li>
+          </ol>
+
+          <h2>Tus datos</h2>
+          <p>
+            El carnet solo lleva tu nombre y apellidos, tu número de socio, el
+            curso y la fecha de caducidad. No lleva tu DNI, ni datos de tus
+            hijos, ni tu correo. Se guarda en tu móvil y los comercios no
+            apuntan nada. Caduca cada año al terminar el curso.
+          </p>
+
+          <h2>¿Tienes un comercio?</h2>
+          <p>
+            Si tienes un comercio en Santander y te interesa ofrecer un
+            descuento a las familias del Colegio Atalaya,
+            <a href="mailto:colegioatalaya.afa@gmail.com" data-email>escríbenos</a>.
+            No necesitas instalar nada ni tiene ningún coste.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LLAMADA A HACERSE SOCIO ============ -->
+    <section class="section section-activities">
+      <div class="container">
+        <div class="prose">
+          <h2>¿Todavía no eres socio?</h2>
+          <p>
+            El carnet es para las familias socias. Si te haces socio ahora,
+            lo recibirás cuando lo pongamos en marcha.
+          </p>
+          <p>
+            <a href="../hazte-socio/index.html" data-enlace="altaSocio" class="btn btn-primary">Hazte socio</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER COMÚN
+       Bloque idéntico en las cinco páginas de /paginas/.
+       ========================================================================== -->
+  <!-- ==========================================================================
+       FRANJA DEL COLEGIO — BLOQUE COMÚN
+
+       Idéntico en las doce páginas: no lleva ningún enlace interno, así que no
+       tiene variantes de profundidad de rutas (nada de ../../ frente a
+       ../../../). Si hay que cambiar el texto, hay que cambiarlo en las doce.
+
+       El nombre, la dirección web y el teléfono los reescribe
+       js/enlaces-externos.js desde AFA_CONFIG.colegio, así que para
+       actualizarlos basta con editar js/config.js. Lo que está escrito abajo
+       es el valor de reserva, y funciona por sí solo si el JS no carga.
+
+       El hueco del logotipo (data-colegio-logo) muestra un icono neutro de
+       edificio hasta que el centro facilite su logotipo; entonces se rellena
+       colegio.logo en config.js y la imagen sustituye al icono.
+       ========================================================================== -->
+  <aside class="school-strip" aria-label="El colegio">
+    <div class="container school-strip-inner">
+
+      <span class="school-mark" data-colegio-logo aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 7.5V9h18V7.5Z"/><path d="M5 9v11m14-11v11M9 20v-6h6v6"/><path d="M3 20h18"/><path d="M12 6.4v.01"/></svg>
+      </span>
+
+      <div class="school-text">
+        <span class="school-label">El centro</span>
+        <p class="school-name" data-colegio-nombre>Colegio Atalaya</p>
+        <p class="school-note">
+          La AFA es la asociaci&oacute;n de las familias del alumnado de este
+          colegio, pero <strong>somos dos entidades distintas</strong>. Para
+          matr&iacute;culas, horarios, tutor&iacute;as o cualquier asunto
+          acad&eacute;mico, el colegio atiende en su propia web y en su
+          tel&eacute;fono.
+        </p>
+      </div>
+
+      <div class="school-actions">
+        <a href="https://colegioatalaya.com/" data-colegio-web target="_blank" rel="noopener noreferrer" class="btn btn-outline"
+           aria-label="Ir a la web del Colegio Atalaya (se abre en una pesta&ntilde;a nueva)">
+          Ir a la web del colegio
+          <svg class="icon icon-external" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 4 11 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="tel:942314116" data-colegio-tel class="school-phone">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span data-colegio-tel-text>942 314 116</span>
+        </a>
+      </div>
+
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a href="../../index.html" class="brand brand-footer">
+          <span class="brand-mark" aria-hidden="true">AFA</span>
+          <span class="brand-name">
+            <strong>AFA Atalaya</strong>
+            <small>Familias que hacen comunidad</small>
+          </span>
+        </a>
+      </div>
+
+      <nav class="footer-col" aria-label="Navegación del pie">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="../la-afa/index.html">La AFA</a></li>
+          <li><a href="../actividades/index.html">Actividades</a></li>
+          <li><a href="../formularios/index.html">Formularios</a></li>
+          <li><a href="../actualidad/index.html">Actualidad</a></li>
+          <li><a href="../contacto/index.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Documentación">
+        <h3>Documentación</h3>
+        <ul>
+          <li><a href="../formularios/index.html#documentacion">Estatutos</a></li>
+          <li><a href="../formularios/index.html#documentacion">Actas</a></li>
+          <li><a href="../formularios/index.html#documentacion">Memorias</a></li>
+          <li><a href="../formularios/index.html#documentacion">Bases y documentos</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>
+          <a href="mailto:colegioatalaya.afa@gmail.com" data-email class="footer-mail">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span data-email-text>colegioatalaya.afa@gmail.com</span>
+          </a>
+        </p>
+        <p class="footer-address">
+          Colegio Atalaya<br>
+          Bajada Rumayor, s/n<br>
+          39006 Santander (Cantabria)
+        </p>
+
+        <!-- Web del centro. El pie es donde la gente busca este enlace por
+             costumbre; la franja de arriba es la versión visible. -->
+        <p class="footer-address">
+          <a href="https://colegioatalaya.com/" data-colegio-web target="_blank" rel="noopener noreferrer"
+             aria-label="Web del Colegio Atalaya (se abre en una pesta&ntilde;a nueva)">
+            Web del colegio <span aria-hidden="true">&#8599;</span>
+          </a>
+        </p>
+
+        <p class="footer-social-label">S&iacute;guenos</p>
+        <ul class="footer-social">
+          <li>
+            <a href="https://www.instagram.com/afacolegioatalaya/" data-red="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram de la AFA Atalaya (se abre en una pesta&ntilde;a nueva)">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-red="facebook" aria-label="Facebook">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://chat.whatsapp.com/GXTstqKemALJwI44OGuPQZ" data-red="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Grupo de WhatsApp de la AFA Atalaya (se abre en una pesta&ntilde;a nueva)">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c-.5 2.5 3.5 6.5 6 6l.5-2-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2Z" fill="currentColor"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          © 2026 AFA Colegio Atalaya
+          <span class="dot" aria-hidden="true">·</span>
+          CIF G-39039813
+          <span class="dot" aria-hidden="true">·</span>
+          <a href="../privacidad/index.html">Política de privacidad</a>
+          <span class="dot" aria-hidden="true">·</span>
+          <a href="../aviso-legal/index.html">Aviso legal</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- config.js debe cargarse primero: contiene la configuración del sitio -->
+  <script src="../../js/config.js"></script>
+  <script src="../../js/main.js"></script>
+  <script src="../../js/enlaces-externos.js"></script>
+  <script src="../../js/formulario-contacto.js"></script>
+</body>
+</html>

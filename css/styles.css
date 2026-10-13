@@ -1557,3 +1557,57 @@ html {
     transform: none;
   }
 }
+
+
+/* ==========================================================================
+   AVISO DE PORTADA: CARNET DE SOCIO DIGITAL (octubre de 2026)
+   Franja bajo la cabecera de la portada que lleva a paginas/carnet-socio/.
+   Se retira junto con su bloque en index.html cuando deje de ser novedad.
+   ========================================================================== */
+
+.aviso-portada {
+  background: var(--green-50);
+  border-bottom: 1px solid var(--green-100);
+}
+
+.aviso-portada-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px 20px;
+  padding-block: 18px;
+}
+
+.aviso-portada-etiqueta {
+  flex: none;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--green-700);
+  color: var(--text-inverse);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.aviso-portada-texto {
+  flex: 1;
+  color: var(--text-main);
+}
+
+.aviso-portada-texto strong {
+  color: var(--green-900);
+}
+
+.aviso-portada-btn {
+  flex: none;
+}
+
+@media (max-width: 720px) {
+  .aviso-portada-inner {
+    flex-wrap: wrap;
+  }
+
+  .aviso-portada-texto {
+    flex-basis: 100%;
+  }
+}
