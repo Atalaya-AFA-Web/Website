@@ -352,8 +352,11 @@
             El tratamiento de los datos personales se explica con detalle en la
             <a href="../privacidad/index.html">política de privacidad</a>: qué
             datos se recogen, para qué, quién más los ve y cómo ejercer tus
-            derechos. En resumen: esta web no usa cookies, no tiene analítica y
-            no carga nada de terceros.
+            derechos. En resumen: esta web <strong>no usa cookies</strong> y
+            <strong>no carga nada de terceros</strong>. S&iacute; cuenta las
+            visitas de cada p&aacute;gina, de forma an&oacute;nima y agregada y
+            sin guardar nada en tu dispositivo; en la pol&iacute;tica de
+            privacidad se explica y hay un bot&oacute;n para oponerse.
           </p>
 
           <!-- ---------- 9. Modificaciones ---------- -->
@@ -376,7 +379,7 @@
 
           <!-- TODO: actualizar esta fecha cada vez que se modifique el texto. -->
           <p class="legal-updated">
-            Última actualización: 21 de agosto de 2026.
+            Última actualización: 21 de octubre de 2026.
           </p>
 
         </div>
@@ -537,5 +540,10 @@
   <script src="../../js/config.js"></script>
   <script src="../../js/main.js"></script>
   <script src="../../js/enlaces-externos.js"></script>
+  <!-- Analítica de la web. Carga el script de Vercel, que se sirve desde este
+       mismo dominio, y respeta a quien haya pedido no ser medido desde la
+       página de privacidad. Va el último a propósito: si fallara, no
+       arrastra a nada de lo anterior. -->
+  <script src="../../js/analitica.js"></script>
 </body>
 </html>

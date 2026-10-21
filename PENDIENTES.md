@@ -1,6 +1,6 @@
 # Tareas pendientes · Web de la AFA Atalaya
 
-Estado a 9 de octubre de 2026.
+Estado a 21 de octubre de 2026.
 
 **Entorno actual:** repositorio en `C:\PERSONAL\AFA Atalaya\Website` (GitHub,
 gestionado con SourceTree) y despliegue automático en Vercel.
@@ -181,6 +181,53 @@ trabajo.
 
 Cuando la actividad termine del todo, su crónica pasa al histórico del curso
 y la ficha suelta se puede retirar.
+
+### 0.8 Analítica de la web (hecho el 21 de octubre de 2026)
+
+Activada **Vercel Web Analytics**. Hasta ahora no se sabía si las familias
+entraban en la web ni qué miraban, así que se publicaba a ciegas.
+
+**Cómo está montado**
+
+- `js/analitica.js` carga el script de Vercel desde **este mismo dominio**
+  (`/_vercel/insights/script.js`), así que la web sigue sin cargar nada de
+  terceros. Incluido en las **13 páginas públicas**.
+- **No se incluye en `/carnet/` ni en `/validar/`**, a propósito: son páginas
+  funcionales que abre gente socia identificada con su carnet. Medirlas no
+  aporta nada.
+- Hay **exclusión voluntaria de verdad**: el botón del apartado 5 de la
+  política de privacidad guarda una marca en el navegador y, con esa marca, no
+  se carga nada. Si el navegador no deja leer el almacenamiento (ventana
+  privada), **no se mide**: ante la duda, gana la privacidad.
+
+**Qué se tocó en los textos legales** (decían que no había analítica, y era
+una promesa a las familias, no una nota técnica):
+
+- `privacidad/`: el resumen del apartado 2, el apartado 5 entero (con un
+  bloque nuevo de detalle y el botón), la fila «Visitas a esta web» en la tabla
+  de tratamientos y la ficha de Vercel del apartado 6.
+- `aviso-legal/`: el apartado 8.
+- Fecha de última actualización de los dos: 21 de octubre de 2026.
+
+**Límites del plan Hobby que conviene recordar**
+
+- 50.000 eventos al mes gratis (sobran de largo).
+- **Solo un mes de historial.** Para tener memoria hay que hacer una captura
+  del panel a final de mes, o antes de cada asamblea.
+- Sin eventos personalizados: solo páginas vistas. No se puede medir cuánta
+  gente descarga la circular ni pulsa «Hazte socio» sin pasar a Pro.
+- Tus propias visitas también cuentan: no hay forma de excluirse salvo usando
+  el botón de la página de privacidad en tu navegador.
+
+- [ ] **Comprobar en el panel de Vercel que llegan datos** un par de días
+      después del push. Si el panel sigue diciendo «Get Started», es que el
+      script no se está cargando.
+- [ ] Que alguien con criterio jurídico revise el encaje (apartado 8). El
+      razonamiento es: al no almacenar ni leer nada en el dispositivo, no entra
+      en el art. 22.2 de la LSSI y por eso no hace falta aviso de cookies; el
+      RGPD sí aplica y se cubre con interés legítimo, información y derecho de
+      oposición. Las cuatro condiciones que la guía de cookies de la AEPD pide
+      a la analítica propia se cumplen.
 
 ## 1. Corregir ya (afecta a lo que está publicado)
 

@@ -2157,3 +2157,14 @@ button:focus-visible {
 .validar-nowrap {
   white-space: nowrap;
 }
+
+/* Mensaje de estado del botón de exclusión de la analítica (página de
+   privacidad). Antes reutilizaba .legal-updated, que lleva una línea
+   separadora pensada para cerrar la página: dibujaba una raya entre el botón
+   y su propio mensaje, como si fueran cosas distintas. */
+.hint-analitica {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  min-height: 1.4em;     /* reserva el hueco para que el texto no empuje nada */
+}
