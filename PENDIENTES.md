@@ -1,6 +1,6 @@
 # Tareas pendientes · Web de la AFA Atalaya
 
-Estado a 21 de octubre de 2026.
+Estado a 27 de octubre de 2026.
 
 **Entorno actual:** repositorio en `C:\PERSONAL\AFA Atalaya\Website` (GitHub,
 gestionado con SourceTree) y despliegue automático en Vercel.
@@ -228,6 +228,51 @@ una promesa a las familias, no una nota técnica):
       RGPD sí aplica y se cubre con interés legítimo, información y derecho de
       oposición. Las cuatro condiciones que la guía de cookies de la AEPD pide
       a la analítica propia se cumplen.
+
+### 0.9 Curso 2026-2027: ludoteca de septiembre y ruta del Churrón (27 de octubre de 2026)
+
+Creada `paginas/actividades/curso-2026-2027/`, con la ludoteca de septiembre
+(26 niños) y la ruta al Churrón de Borleña (22 adultos y 20 niños, 25 de
+octubre). La ficha «Curso 2026-2027 / En marcha» de Actividades ya enlaza ahí.
+
+**Sobre las fotos de la ruta.** Se publican dos, las dos de espaldas y sin
+ninguna cara reconocible. **La foto de grupo NO se ha publicado**: los niños
+llevan la cara tapada con pegatinas, pero los quince adultos que salen son
+perfectamente identificables y la política de privacidad solo permite publicar
+imágenes con autorización escrita.
+
+- [ ] Si se quiere publicar la de grupo, **confirmar antes que esos adultos lo
+      autorizan**. Está en `03. Actividades AFA/06_Ruta Churrón de Borleña/`,
+      fichero `WhatsApp Image 2026-10-25 at 20.27.43`.
+
+**⚠ LA CIFRA DE LA LUDOTECA DE JUNIO SIGUE SIN CERRAR, Y AHORA HAY TRES.**
+
+| Fuente | Niños |
+| --- | --- |
+| Acta del 29 de mayo, publicada en `docs/` | 31 «alumnos inscritos» |
+| Dato de la junta del 9 de septiembre, que es lo que dice la web | 35 (de 31 familias) |
+| Dato de la junta del 27 de octubre | 30 |
+
+Se decidió **no tocar la web** hasta que tesorería lo cierre, porque cambiar el
+35 por el 30 dejaría tres cifras distintas circulando a la vez: la del acta
+descargable, la que la web dijo durante mes y medio y la nueva.
+
+- [ ] **Cerrar esto con tesorería de una vez**, junto con el descuadre de 120 €
+      del apartado 6.0, que es el mismo problema. Mientras tanto la web
+      mantiene 35 niños de 31 familias, con 24 socias y 7 no socias.
+
+**Otras cosas de esta tanda**
+
+- La regla editorial de Actualidad era demasiado estricta: decía que una
+  actividad terminada salía de la página el mismo día. Se ha ampliado para que
+  una crónica reciente pueda quedarse unas semanas. Está explicado en el propio
+  HTML de `paginas/actualidad/`.
+- [ ] **Retirar de Actualidad y de la portada la tarjeta de la ruta** cuando
+      pasen unas semanas, siguiendo esa regla.
+- Hay una lista de rutas fáciles con niños preparada por si se repite la
+  actividad, en `03. Actividades AFA/06_Ruta Churrón de Borleña/Rutas con
+  niños.txt`: doce rutas por Cantabria con distancia, desnivel y enlace a
+  Wikiloc.
 
 ## 1. Corregir ya (afecta a lo que está publicado)
 
