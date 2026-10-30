@@ -1611,3 +1611,44 @@ html {
     flex-basis: 100%;
   }
 }
+
+/* ======================================================================
+   CRESPÓN NEGRO · SEÑAL DE LUTO  —  añadido el 30/10/2026
+   ======================================================================
+   Lazo negro a la izquierda del logotipo, en la cabecera de todas las
+   páginas. Es un elemento temporal.
+
+   PARA QUITARLO cuando la Junta lo decida, basta con dos cosas:
+     1. borrar este bloque entero (desde el comentario hasta el cierre);
+     2. borrar el archivo img/crespon-negro.webp.
+   No hay que tocar ningún HTML: el crespón se pinta desde aquí, así que
+   desaparece de las 14 páginas a la vez.
+
+   Detalles de implementación:
+   - Va en ::before de .brand, de modo que entra como primer elemento del
+     flex y empuja al monograma; el margin-right negativo compensa el
+     gap:12px de .brand y deja una separación óptica de 8px.
+   - Está limitado a .site-header a propósito: el pie usa la misma clase
+     .brand (con .brand-footer) y ahí no debe salir.
+   - Es una imagen de fondo decorativa: no añade texto ni etiqueta alguna,
+     tal como se pidió.
+   --------------------------------------------------------------------- */
+
+.site-header .brand::before {
+  content: "";
+  flex: none;
+  width: 19px;
+  height: 31px;
+  margin-right: -4px;
+  background: url("../img/crespon-negro.webp") no-repeat center / contain;
+}
+
+/* En pantallas muy estrechas la cabecera va justa de sitio: el crespón se
+   encoge un poco para no comerle espacio al nombre de la Asociación. */
+@media (max-width: 420px) {
+  .site-header .brand::before {
+    width: 15px;
+    height: 25px;
+    margin-right: -5px;
+  }
+}

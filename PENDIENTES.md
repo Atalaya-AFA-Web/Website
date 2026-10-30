@@ -274,6 +274,38 @@ descargable, la que la web dijo durante mes y medio y la nueva.
   niños.txt`: doce rutas por Cantabria con distancia, desnivel y enlace a
   Wikiloc.
 
+### 0.10 ⚠ CRESPÓN NEGRO EN LA CABECERA (puesto el 30 de octubre de 2026)
+
+En señal de duelo por el accidente de tren de Toledo se ha añadido un lazo
+negro a la izquierda del logotipo, en la cabecera de **todas** las páginas.
+
+**Es temporal y no tiene fecha de retirada.** Ignacio dijo expresamente
+«ya decido yo cuándo se quita», así que esto no caduca solo: queda aquí
+anotado para que no se nos olvide que está puesto.
+
+- [ ] **Quitar el crespón** cuando la Junta lo decida.
+
+Cómo se quita (dos minutos, no hace falta tocar ningún HTML):
+
+1. En `css/styles.css`, borrar el bloque del final que empieza por
+   `CRESPÓN NEGRO · SEÑAL DE LUTO` — está comentado y marcado a propósito.
+2. Borrar el archivo `img/crespon-negro.webp`.
+
+Cómo está hecho, por si hubiera que repetirlo otra vez:
+
+- El lazo se pinta con `.site-header .brand::before`, es decir, desde el CSS.
+  Por eso aparece en las catorce páginas a la vez sin haber tocado ni una
+  línea de HTML, y por eso se va igual de limpio.
+- Está acotado a `.site-header` a propósito: el pie de página usa la misma
+  clase `.brand` y ahí no sale.
+- La imagen es el lazo que mandó Ignacio, recortado y con el fondo blanco
+  convertido en transparencia. Pesa 1,8 KB.
+- **No lleva texto de ningún tipo**, por decisión suya. El efecto secundario
+  es que una persona ciega que use lector de pantalla no se entera de que
+  está: un fondo CSS decorativo no se anuncia. Si algún día se quiere que sí
+  se perciba, la solución es meter el lazo en el HTML como `<img>` con un
+  `alt` corto (por ejemplo «En señal de duelo»); son catorce archivos.
+
 ## 1. Corregir ya (afecta a lo que está publicado)
 
 - [x] ~~Contenido viejo publicado en `paginas/el-afa/`~~ — **neutralizado.**
