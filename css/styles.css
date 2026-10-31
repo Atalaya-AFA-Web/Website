@@ -674,7 +674,17 @@ html {
   color: var(--text-soft);
 }
 
-/* Avatar placeholder (sustituir por <img> con foto real cuando exista) */
+/* Avatares de la junta -------------------------------------------------
+   Hay dos formas del mismo elemento y comparten tamaño y recorte circular:
+
+     <img  class="avatar" …>                  → retrato real
+     <span class="avatar avatar-a|-b"></span>  → silueta de relleno
+
+   Las siluetas se dibujan con ::before y ::after, y por eso sus reglas van
+   atadas a span.avatar: un <img> es un elemento reemplazado y no pinta sus
+   pseudoelementos, así que mezclarlas daría un resultado impredecible.
+   Mientras falte el retrato de alguien, su hueco se queda con la silueta.
+   --------------------------------------------------------------------- */
 
 .avatar {
   position: relative;
@@ -686,7 +696,14 @@ html {
   overflow: hidden;
 }
 
-.avatar::before {           /* cabeza */
+/* El retrato llena el círculo sin deformarse: las imágenes vienen ya
+   recortadas en cuadrado, así que cover solo ajusta la escala. */
+img.avatar {
+  display: block;
+  object-fit: cover;
+}
+
+span.avatar::before {       /* cabeza */
   content: "";
   position: absolute;
   top: 22%;
@@ -698,7 +715,7 @@ html {
   background: var(--green-700);
 }
 
-.avatar::after {            /* hombros */
+span.avatar::after {        /* hombros */
   content: "";
   position: absolute;
   bottom: -18%;
@@ -710,8 +727,8 @@ html {
   background: var(--green-700);
 }
 
-.avatar-b::before,
-.avatar-b::after {
+span.avatar-b::before,
+span.avatar-b::after {
   background: var(--green-600);
 }
 

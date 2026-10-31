@@ -130,6 +130,13 @@ que se podían usar:
       actividades. Ya existe uno de la ludoteca de junio
       (`forms.gle/siimRxjUxehYuV2r7`): puede servir de base.
 
+**Retratos de la junta (31 de octubre de 2026).** Son ilustraciones, no
+fotografías, pero van con nombre y cargo al lado, así que siguen siendo datos
+personales de una persona identificable. Ignacio confirmó que las cuatro
+personas las entregaron sabiendo que eran para la web. Si alguna cambia de
+opinión, se retira su retrato y su hueco vuelve a la silueta: es cambiar una
+línea de HTML en dos archivos.
+
 ---
 
 ### 0.6 Comprobar que la documentación interna ya no se sirve
@@ -305,6 +312,36 @@ Cómo está hecho, por si hubiera que repetirlo otra vez:
   está: un fondo CSS decorativo no se anuncia. Si algún día se quiere que sí
   se perciba, la solución es meter el lazo en el HTML como `<img>` con un
   `alt` corto (por ejemplo «En señal de duelo»); son catorce archivos.
+
+### 0.11 Retratos de la junta (puestos el 31 de octubre de 2026)
+
+La sección «Conoce a la junta» ya no muestra siluetas: cuatro de los seis
+miembros tienen su retrato. Son las ilustraciones que cada uno entregó, en
+`01 Junta y gobierno\Fotos Junta`, recortadas en cuadrado sobre la cara y
+guardadas en `img/junta/` a 264 px (tres veces los 88 px a los que se ven,
+para que no se vean borrosas en pantallas retina). Las cuatro juntas pesan
+48 KB.
+
+Están en los dos sitios donde sale la junta: la portada y `paginas/la-afa/`.
+
+- [ ] **Faltan dos retratos: Ignacio Tomé (Vicepresidente) y Anuar Khan
+      (Tesorero).** Mientras tanto sus huecos conservan la silueta verde, que
+      ocupa exactamente lo mismo, así que la cuadrícula no se descoloca.
+
+Cuando lleguen, el proceso es: recortar en cuadrado centrado en la cara,
+guardar como `img/junta/nombre.webp` a 264×264, y en los dos archivos cambiar
+el `<span class="avatar avatar-b">` de esa persona por el `<img class="avatar">`
+que ya está escrito como ejemplo en el comentario de encima de cada lista.
+
+Dos detalles de cómo está montado, por si hay que tocarlo:
+
+- Las reglas de la silueta en `css/styles.css` ahora son `span.avatar::before`
+  y `span.avatar::after`, no `.avatar::before`. Tenían que separarse: un
+  `<img>` es un elemento reemplazado y no pinta pseudoelementos, así que la
+  silueta y el retrato no pueden compartir selector.
+- Los retratos llevan `alt=""` a propósito. El nombre ya está escrito al lado
+  en el `<strong>`; si el `alt` lo repitiera, un lector de pantalla diría cada
+  nombre dos veces seguidas.
 
 ## 1. Corregir ya (afecta a lo que está publicado)
 
