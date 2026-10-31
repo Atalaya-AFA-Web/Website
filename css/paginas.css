@@ -308,9 +308,12 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* 88 px, los mismos que en la portada. Estaban a 64 y se quedaban pequeños
+   justo donde más sitio hay. No se sube más: a partir de 96 px el nombre de
+   Laura Fernández Corderi se parte en dos líneas y descuadra la tarjeta. */
 .board-card .avatar {
-  width: 64px;
-  height: 64px;
+  width: 88px;
+  height: 88px;
   margin: 0;
   flex: none;
 }

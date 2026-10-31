@@ -318,11 +318,23 @@ Cómo está hecho, por si hubiera que repetirlo otra vez:
 La sección «Conoce a la junta» ya no muestra siluetas: cuatro de los seis
 miembros tienen su retrato. Son las ilustraciones que cada uno entregó, en
 `01 Junta y gobierno\Fotos Junta`, recortadas en cuadrado sobre la cara y
-guardadas en `img/junta/` a 264 px (tres veces los 88 px a los que se ven,
-para que no se vean borrosas en pantallas retina). Las cuatro juntas pesan
-48 KB.
+guardadas en `img/junta/` a 360 px (tres veces los 88 px a los que se ven,
+para que no se vean borrosas ni en los móviles de más densidad). Las cuatro
+juntas pesan 60 KB y van con `loading="lazy"`: no se descargan hasta que
+alguien baja hasta la sección.
 
 Están en los dos sitios donde sale la junta: la portada y `paginas/la-afa/`.
+En La AFA los avatares estaban a 64 px y se subieron a 88, los mismos que en
+la portada (`css/paginas.css`). No se sube más: a 96 px el nombre de Laura
+Fernández Corderi se parte en dos líneas y descuadra su tarjeta.
+
+**Se descartó ampliar el retrato al hacer clic** (31/10/2026). En bytes era
+asumible —la versión grande solo se habría descargado al pulsar—, pero en
+móvil obliga a una capa a pantalla completa con Esc, botón «atrás», bloqueo
+de scroll y devolución del foco, y sobre todo no aporta: son ilustraciones
+planas, no hay detalle que descubrir al ampliarlas. Tampoco se puso realce al
+pasar el ratón, porque los avatares no son enlaces y estaría invitando a un
+clic que no hace nada.
 
 - [ ] **Faltan dos retratos: Ignacio Tomé (Vicepresidente) y Anuar Khan
       (Tesorero).** Mientras tanto sus huecos conservan la silueta verde, que
