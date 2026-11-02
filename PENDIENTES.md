@@ -342,17 +342,53 @@ juntas pesan 60 KB y van con `loading="lazy"`: no se descargan hasta que
 alguien baja hasta la sección.
 
 Están en los dos sitios donde sale la junta: la portada y `paginas/la-afa/`.
-En La AFA los avatares estaban a 64 px y se subieron a 88, los mismos que en
-la portada (`css/paginas.css`). No se sube más: a 96 px el nombre de Laura
-Fernández Corderi se parte en dos líneas y descuadra su tarjeta.
+En La AFA los avatares estaban a 64 px y ahora están a **112 px**
+(`css/paginas.css`). Con ese tamaño cuatro de los seis nombres pasan a dos
+líneas y no pasa nada: las tarjetas de una misma fila igualan su altura. Se
+probó primero a 88 px y el cambio era tan pequeño que no se apreciaba.
 
-**Se descartó ampliar el retrato al hacer clic** (31/10/2026). En bytes era
-asumible —la versión grande solo se habría descargado al pulsar—, pero en
-móvil obliga a una capa a pantalla completa con Esc, botón «atrás», bloqueo
-de scroll y devolución del foco, y sobre todo no aporta: son ilustraciones
-planas, no hay detalle que descubrir al ampliarlas. Tampoco se puso realce al
-pasar el ratón, porque los avatares no son enlaces y estaría invitando a un
-clic que no hace nada.
+**El retrato de Laura se recortó dos veces.** El primer recorte la dejaba
+desplazada a la izquierda dentro del círculo: había calculado el centro de su
+cara en x≈465 cuando está en x≈370, porque su pelo es muy asimétrico y me
+despistó. El recorte bueno es `(0, 20, 760)` sobre el original.
+
+#### La ampliación al pulsar (2 de noviembre de 2026)
+
+Pulsar un retrato lo abre en grande (300 px) en una ventana modal, con el
+nombre y el cargo debajo. Está en `js/retratos.js` y en el bloque
+«RETRATOS DE LA JUNTA · AMPLIACIÓN AL PULSAR» de `css/styles.css`.
+
+Esto se había descartado el 31 de octubre y se rehízo: la decisión de solo
+agrandarlos no se notaba, y era lo que se había pedido desde el principio.
+
+Cómo está hecho y por qué conviene no tocarlo a la ligera:
+
+- **El HTML no sabe nada.** El botón que envuelve cada retrato lo crea el
+  JavaScript. Si el script no se carga, o si el navegador no entiende
+  `<dialog>`, no hay botón: se ve el retrato pequeño y ya. Así nadie se
+  encuentra con un control muerto.
+- **Se usa `<dialog>` nativo** con `showModal()`, que ya trae Escape, foco
+  atrapado dentro, fondo inerte y la capa oscura. Hacerlo a mano habría sido
+  mucho más código y más frágil.
+- **El botón «atrás» del móvil cierra el retrato**, no la web. Se mete una
+  entrada en el historial al abrir y se escucha `popstate`. Sin esto, quien
+  abriera un retrato y pulsara «atrás» se saldría de la página entera: era mi
+  principal objeción al visor y por eso está resuelto.
+- Los retratos grandes (`img/junta/*-grande.webp`, 126 KB entre los cinco) se
+  descargan **solo al pulsar** y de uno en uno. Quien no pulse nunca no se
+  descarga ninguno.
+- El de Ignacio es de 480 px y el resto de 640, porque su ilustración venía
+  más alejada y no hay más recorte que aprovechar. Al ser dibujo plano se
+  amplía sin que se note.
+
+Para retirar la ampliación: quitar el `<script src=".../retratos.js">` de la
+portada y de `paginas/la-afa/`, borrar `js/retratos.js`, el bloque de CSS y
+los cinco `-grande.webp`. El resto de la sección sigue funcionando igual.
+
+- [ ] Cuando llegue el retrato de Anuar, generar **las dos versiones**: la de
+      360 px y la `-grande.webp`. Si falta la segunda, su botón abriría una
+      imagen rota. El script deduce el nombre añadiendo `-grande` al archivo
+      pequeño, no hay nada más que configurar.
 
 - [ ] **Falta un retrato: Anuar Khan (Tesorero).** Mientras tanto su hueco
       conserva la silueta verde, que ocupa exactamente lo mismo, así que la
