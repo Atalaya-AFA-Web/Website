@@ -697,10 +697,17 @@ html {
 }
 
 /* El retrato llena el círculo sin deformarse: las imágenes vienen ya
-   recortadas en cuadrado, así que cover solo ajusta la escala. */
+   recortadas en cuadrado, así que cover solo ajusta la escala.
+
+   El aro de 1 px no es decoración: algunos retratos tienen el fondo blanco
+   o casi blanco y, sobre las tarjetas blancas de la página de La AFA, el
+   borde del círculo desaparecía y la cara quedaba flotando. Va como
+   box-shadow y no como border porque un borde en un elemento reemplazado
+   recorta la imagen; la sombra se dibuja justo por fuera y no mueve nada. */
 img.avatar {
   display: block;
   object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(17, 51, 34, 0.10);
 }
 
 span.avatar::before {       /* cabeza */

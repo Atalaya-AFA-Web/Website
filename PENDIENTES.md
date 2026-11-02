@@ -130,12 +130,16 @@ que se podían usar:
       actividades. Ya existe uno de la ludoteca de junio
       (`forms.gle/siimRxjUxehYuV2r7`): puede servir de base.
 
-**Retratos de la junta (31 de octubre de 2026).** Son ilustraciones, no
-fotografías, pero van con nombre y cargo al lado, así que siguen siendo datos
-personales de una persona identificable. Ignacio confirmó que las cuatro
-personas las entregaron sabiendo que eran para la web. Si alguna cambia de
-opinión, se retira su retrato y su hueco vuelve a la silueta: es cambiar una
-línea de HTML en dos archivos.
+**Retratos de la junta (31 de octubre y 2 de noviembre de 2026).** Son
+ilustraciones, no fotografías, pero van con nombre y cargo al lado, así que
+siguen siendo datos personales de una persona identificable. Ignacio confirmó
+que las entregaron sabiendo que eran para la web. Si alguien cambia de opinión,
+se retira su retrato y su hueco vuelve a la silueta: es cambiar una línea de
+HTML en dos archivos.
+
+**Foto de grupo de la ruta del Churrón (2 de noviembre de 2026).** Publicada
+con autorización de todas las familias. Los menores salen con la cara tapada.
+El detalle está en el punto 0.9.
 
 ---
 
@@ -242,15 +246,28 @@ Creada `paginas/actividades/curso-2026-2027/`, con la ludoteca de septiembre
 (26 niños) y la ruta al Churrón de Borleña (22 adultos y 20 niños, 25 de
 octubre). La ficha «Curso 2026-2027 / En marcha» de Actividades ya enlaza ahí.
 
-**Sobre las fotos de la ruta.** Se publican dos, las dos de espaldas y sin
-ninguna cara reconocible. **La foto de grupo NO se ha publicado**: los niños
-llevan la cara tapada con pegatinas, pero los quince adultos que salen son
-perfectamente identificables y la política de privacidad solo permite publicar
-imágenes con autorización escrita.
+**Sobre las fotos de la ruta.** Se publican tres. Dos están tomadas de espaldas
+y no hay ninguna cara reconocible.
 
-- [ ] Si se quiere publicar la de grupo, **confirmar antes que esos adultos lo
-      autorizan**. Está en `03. Actividades AFA/06_Ruta Churrón de Borleña/`,
-      fichero `WhatsApp Image 2026-10-25 at 20.27.43`.
+- [x] ~~Si se quiere publicar la de grupo, confirmar antes que esos adultos lo
+      autorizan.~~ — **hecho. La foto de grupo se publicó el 2 de noviembre de
+      2026** (`img/actividades/ruta-churron-borlena-grupo.webp`), después de
+      que Ignacio recabara la autorización de todas las familias que aparecen.
+
+Tres cosas que conviene no perder de vista sobre esa foto:
+
+1. **Es la única imagen de la web con adultos mirando a cámara e
+   identificables.** Si alguien pide que se retire, se retira sin discutir,
+   como dice la política de privacidad: borrar el `<figure>` de la ficha del
+   Churrón y el archivo. No hace falta consultarlo con nadie.
+2. **Los menores van tapados con pegatinas en el original.** La versión que se
+   subió es tal cual llegó, sin retocar. En la carpeta de la actividad
+   (`WhatsApp Image 2026-10-25 at 20.27.43`) está la versión **sin tapar**:
+   esa no se sube nunca, ni a la web ni al repositorio.
+3. Se decidió **no usarla como portada de la tarjeta** de la ruta en Actualidad
+   ni en la página de inicio. Allí sigue el fondo de color. La foto solo la ve
+   quien entra a leer la crónica, que para cuarenta y dos personas
+   identificables es la proporción que acordamos.
 
 **⚠ LA CIFRA DE LA LUDOTECA DE JUNIO SIGUE SIN CERRAR, Y AHORA HAY TRES.**
 
@@ -315,8 +332,9 @@ Cómo está hecho, por si hubiera que repetirlo otra vez:
 
 ### 0.11 Retratos de la junta (puestos el 31 de octubre de 2026)
 
-La sección «Conoce a la junta» ya no muestra siluetas: cuatro de los seis
-miembros tienen su retrato. Son las ilustraciones que cada uno entregó, en
+La sección «Conoce a la junta» ya casi no muestra siluetas: cinco de los seis
+miembros tienen su retrato (el de Ignacio llegó el 2 de noviembre). Son las
+ilustraciones que cada uno entregó, en
 `01 Junta y gobierno\Fotos Junta`, recortadas en cuadrado sobre la cara y
 guardadas en `img/junta/` a 360 px (tres veces los 88 px a los que se ven,
 para que no se vean borrosas ni en los móviles de más densidad). Las cuatro
@@ -336,9 +354,9 @@ planas, no hay detalle que descubrir al ampliarlas. Tampoco se puso realce al
 pasar el ratón, porque los avatares no son enlaces y estaría invitando a un
 clic que no hace nada.
 
-- [ ] **Faltan dos retratos: Ignacio Tomé (Vicepresidente) y Anuar Khan
-      (Tesorero).** Mientras tanto sus huecos conservan la silueta verde, que
-      ocupa exactamente lo mismo, así que la cuadrícula no se descoloca.
+- [ ] **Falta un retrato: Anuar Khan (Tesorero).** Mientras tanto su hueco
+      conserva la silueta verde, que ocupa exactamente lo mismo, así que la
+      cuadrícula no se descoloca.
 
 Cuando lleguen, el proceso es: recortar en cuadrado centrado en la cara,
 guardar como `img/junta/nombre.webp` a 264×264, y en los dos archivos cambiar
@@ -354,6 +372,10 @@ Dos detalles de cómo está montado, por si hay que tocarlo:
 - Los retratos llevan `alt=""` a propósito. El nombre ya está escrito al lado
   en el `<strong>`; si el `alt` lo repitiera, un lector de pantalla diría cada
   nombre dos veces seguidas.
+- `img.avatar` lleva un aro de 1 px (`box-shadow`, no `border`: un borde en un
+  elemento reemplazado recorta la imagen). Hace falta porque algunos retratos
+  tienen el fondo casi blanco y sobre las tarjetas blancas de La AFA el círculo
+  desaparecía y la cara quedaba flotando.
 
 ## 1. Corregir ya (afecta a lo que está publicado)
 
