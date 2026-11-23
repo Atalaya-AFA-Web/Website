@@ -298,37 +298,38 @@ descargable, la que la web dijo durante mes y medio y la nueva.
   niños.txt`: doce rutas por Cantabria con distancia, desnivel y enlace a
   Wikiloc.
 
-### 0.10 ⚠ CRESPÓN NEGRO EN LA CABECERA (puesto el 30 de octubre de 2026)
+### 0.10 Crespón negro (del 30 de octubre al 23 de noviembre de 2026) — RETIRADO
 
-En señal de duelo por el accidente de tren de Toledo se ha añadido un lazo
-negro a la izquierda del logotipo, en la cabecera de **todas** las páginas.
+En señal de duelo por el accidente de tren de Toledo se puso un lazo negro a la
+izquierda del logotipo, en la cabecera de todas las páginas. Estuvo veinticinco
+días y se retiró cuando Ignacio lo decidió, que era el acuerdo: no tenía fecha
+de caducidad automática.
 
-**Es temporal y no tiene fecha de retirada.** Ignacio dijo expresamente
-«ya decido yo cuándo se quita», así que esto no caduca solo: queda aquí
-anotado para que no se nos olvide que está puesto.
+- [x] ~~Quitar el crespón cuando la Junta lo decida.~~ — **hecho el 23 de
+      noviembre de 2026.** Se borró el bloque `CRESPÓN NEGRO · SEÑAL DE LUTO`
+      del final de `css/styles.css` y ya no queda ninguna referencia al lazo en
+      ningún `.css`, `.html` ni `.js`. La cabecera volvió exactamente a como
+      estaba antes, comprobado a 1440, 1280, 768, 390 y 320 px.
 
-- [ ] **Quitar el crespón** cuando la Junta lo decida.
+La imagen `img/crespon-negro.webp` **sigue en el repositorio** aunque no la use
+nadie. Son 1,8 KB y se dejó a propósito: si hubiera que volver a ponerlo, es
+recuperar el bloque de CSS del historial de git y nada más. Si algún día se
+quiere limpiar, se borra el archivo y listo, no hay que tocar nada más.
 
-Cómo se quita (dos minutos, no hace falta tocar ningún HTML):
+Cómo estaba hecho, por si hay que repetirlo (lo que ojalá no haga falta):
 
-1. En `css/styles.css`, borrar el bloque del final que empieza por
-   `CRESPÓN NEGRO · SEÑAL DE LUTO` — está comentado y marcado a propósito.
-2. Borrar el archivo `img/crespon-negro.webp`.
-
-Cómo está hecho, por si hubiera que repetirlo otra vez:
-
-- El lazo se pinta con `.site-header .brand::before`, es decir, desde el CSS.
-  Por eso aparece en las catorce páginas a la vez sin haber tocado ni una
-  línea de HTML, y por eso se va igual de limpio.
-- Está acotado a `.site-header` a propósito: el pie de página usa la misma
-  clase `.brand` y ahí no sale.
-- La imagen es el lazo que mandó Ignacio, recortado y con el fondo blanco
-  convertido en transparencia. Pesa 1,8 KB.
-- **No lleva texto de ningún tipo**, por decisión suya. El efecto secundario
-  es que una persona ciega que use lector de pantalla no se entera de que
-  está: un fondo CSS decorativo no se anuncia. Si algún día se quiere que sí
-  se perciba, la solución es meter el lazo en el HTML como `<img>` con un
-  `alt` corto (por ejemplo «En señal de duelo»); son catorce archivos.
+- El lazo se pintaba con `.site-header .brand::before`, desde el CSS. Por eso
+  salía en las catorce páginas a la vez sin tocar ni una línea de HTML, y por
+  eso se ha podido quitar borrando un solo bloque.
+- Estaba acotado a `.site-header` a propósito: el pie de página usa la misma
+  clase `.brand` y ahí no debía salir.
+- **No llevaba texto de ningún tipo**, por decisión de Ignacio. El efecto
+  secundario, que quedó anotado en su momento, es que una persona ciega con
+  lector de pantalla no se enteraba de que estaba: un fondo CSS decorativo no
+  se anuncia. Si se repite y se quiere que sí se perciba, hay que meter el lazo
+  en el HTML como `<img>` con un `alt` corto («En señal de duelo»), y entonces
+  sí son catorce archivos.
+- El commit donde se puso es `afe75c0`, «Subida de crespón negro».
 
 ### 0.11 Retratos de la junta (puestos el 31 de octubre de 2026)
 
