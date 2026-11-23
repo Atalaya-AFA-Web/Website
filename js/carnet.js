@@ -72,7 +72,7 @@
     var datos = carnet.datos;
     document.getElementById("carnet-nombre").textContent = datos.n;
     document.getElementById("carnet-curso").textContent =
-      "Socio/a · curso " + CarnetAFA.cursoLegible(datos.c);
+      "Socio/a · " + CarnetAFA.cursoLegible(datos.c);
     document.getElementById("carnet-caducidad").textContent =
       "Válido hasta el " + CarnetAFA.fechaLegible(datos.exp);
     document.getElementById("carnet-numero").textContent = "Nº " + datos.id;
@@ -94,7 +94,7 @@
       sello.hidden = false;
     } else if (resultado.estado === "invalido" && resultado.motivo === "curso") {
       tarjeta.classList.add("is-caducado");
-      sello.textContent = "Este carnet es de un curso que ya no está en vigor.";
+      sello.textContent = "Este carnet es de un periodo que ya no está en vigor.";
       sello.hidden = false;
     } else if (CarnetAFA.esPrueba(datos.c)) {
       tarjeta.classList.add("is-prueba");

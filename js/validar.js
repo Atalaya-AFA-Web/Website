@@ -19,7 +19,7 @@
     falso: "El carnet es falso o ha sido modificado.",
     caducado: "El carnet está caducado.",
     baja: "Este carnet está dado de baja.",
-    curso: "El carnet es de un curso que ya no está en vigor."
+    curso: "El carnet es de un periodo que ya no está en vigor."
   };
 
   /* ---------- Reloj ---------- */
@@ -54,7 +54,7 @@
     if (!datos) { bloqueDatos.hidden = true; return; }
     document.getElementById("validar-nombre").textContent = datos.n;
     document.getElementById("validar-curso").textContent =
-      "Socio/a · curso " + CarnetAFA.cursoLegible(datos.c);
+      "Socio/a · " + CarnetAFA.cursoLegible(datos.c);
     document.getElementById("validar-numero").textContent = "Nº " + datos.id;
     document.getElementById("validar-caducidad").textContent =
       "Válido hasta el " + CarnetAFA.fechaLegible(datos.exp);
