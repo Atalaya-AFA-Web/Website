@@ -147,10 +147,14 @@
           Formularios
         </h2>
 
-        <!-- Estos botones abren el correo de la AFA mientras no haya formularios
-             externos. En cuanto rellenéis AFA_CONFIG.enlaces en js/config.js,
-             pasan a abrir el Google Form correspondiente automáticamente.
-             No hay que tocar este HTML. -->
+        <!-- El href escrito a mano en cada botón es solo el respaldo para quien
+             no ejecute JavaScript. Con config.js cargado, enlaces-externos.js lo
+             sustituye por la URL de AFA_CONFIG.enlaces que le corresponda, así
+             que no hay que tocar este HTML para activar un formulario.
+
+             Estado a 26/11/2026: "Alta de socio" ya apunta a su Google Form.
+             Los demás siguen abriendo el correo de la AFA porque su clave en
+             config.js todavía está vacía. -->
         <div class="form-cards">
 
           <article class="form-card">

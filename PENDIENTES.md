@@ -482,8 +482,23 @@ La clave de Web3Forms ya está puesta en `js/config.js`. Falta lo último:
 
 Cada uno se activa pegando su URL en `js/config.js` → `enlaces`.
 
-- [ ] `altaSocio` — alta de socio. **Activa los 20 botones «Hazte socio»** del
-      sitio. Los campos propuestos están en `GUIA-FORMULARIOS.md`, sección 3.
+- [x] ~~`altaSocio` — alta de socio.~~ — **hecho el 26 de noviembre de 2026.**
+      Está puesto `https://forms.gle/7ACdE1JKLRutbYJf9` y con esa sola línea se
+      activaron los 20 botones. Comprobado que todos abren el formulario, en
+      pestaña nueva y con `rel="noopener noreferrer"`.
+
+      **Pendiente de que alguien lo revise de verdad:** no pude abrir el
+      formulario para comprobar qué pide, así que esto va por la palabra de
+      Ignacio. Antes de darlo por bueno conviene mirar tres cosas:
+
+      - [ ] Que **no pida el IBAN ni ningún dato bancario**. Es la advertencia
+            que lleva años escrita en `js/config.js` y la web dice en varios
+            sitios que «la AFA no te pide datos bancarios». Si el formulario lo
+            pidiera, la web estaría mintiendo.
+      - [ ] Que **esté abierto a respuestas** y no exija iniciar sesión con una
+            cuenta de Google, o habrá familias que no puedan rellenarlo.
+      - [ ] Que no duplique el Google Form de *cesión y protección de datos* que
+            ya está en circulación (ver el aviso de más abajo).
 - [ ] `inscripcionActividad` — un único formulario reutilizable para todo el
       curso, con desplegable de actividad. Activa el botón del Taller familiar.
 - [ ] `comisiones` — para apuntarse a una comisión de trabajo.
@@ -711,6 +726,47 @@ está el párrafo `.news-empty`, que solo hay que desmarcar quitándole `hidden`
 - [ ] **Página 404 propia**, coherente con el diseño.
 - [ ] **`sitemap.xml` y `robots.txt`**, para que Google indexe bien.
 - [ ] **Panel de administración.** Ver el apartado siguiente.
+
+### 9.1 ⚠ Finales de línea: por qué a veces un diff sale gigante
+
+Descubierto el 26 de noviembre de 2026, al cambiar cuatro líneas de comentario
+y ver un diff de 1.900 líneas.
+
+**Qué pasa.** Los archivos del repositorio están guardados en git con finales
+de línea LF (estilo Unix), pero en el disco de Windows están en CRLF. SourceTree
+hace la conversión sola en las dos direcciones y por eso tú nunca lo notas. Lo
+que no la hace es git cuando se ejecuta desde otro sitio, como las herramientas
+de Claude: ahí cada archivo que se toca aparece como si hubiera cambiado entero.
+
+**Cómo distinguir un diff real de uno falso:**
+
+```
+git diff --stat                      # lo que parece que ha cambiado
+git diff --ignore-cr-at-eol --stat   # lo que ha cambiado de verdad
+```
+
+Si el segundo número es mucho más pequeño, lo demás son finales de línea.
+
+**Ya ha colado una vez.** El commit `4d88d56` («Efecto imagenes grandes») lleva
+2.163 líneas de ruido en `css/paginas.css`: el cambio real eran 11 líneas. No
+rompe nada —el archivo funciona igual— pero ensucia el historial y hace casi
+imposible revisar ese commit.
+
+- [ ] **Arreglarlo de raíz con un `.gitattributes`** en la raíz del repositorio:
+
+      ```
+      * text=auto
+      *.webp binary
+      *.woff2 binary
+      ```
+
+      Luego, una vez: `git add --renormalize .` y un commit titulado
+      «Normalizar finales de línea». Ese commit sí tocará casi todos los
+      archivos, y es lo normal: es el precio de hacerlo bien una sola vez.
+      A partir de ahí, da igual desde dónde se edite.
+
+      Conviene hacerlo cuando no haya ramas a medias sin fusionar, porque
+      complica los merges de lo que estuviera abierto en ese momento.
 
 ---
 

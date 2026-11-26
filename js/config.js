@@ -110,16 +110,28 @@ var AFA_CONFIG = {
        usad una orden SEPA en PDF firmada que la familia entregue en mano.
 
      ▸ altaSocio afecta a TODOS los botones "Hazte socio" y "Solicitar alta"
-       del sitio: el del header, el del hero de la portada, el del menú móvil,
-       el del bloque final de cada página y el de la página de Formularios.
-       Son 20 enlaces en total; se configuran todos con esta única línea.
+       del sitio: el del header, el del menú móvil, el del hero de la portada,
+       el del bloque final de cada página, el de la página de Formularios y el
+       de la página del carnet. Son 41 enlaces repartidos por 15 archivos
+       (contados el 26/11/2026); se configuran todos con esta única línea.
+       Antes aquí ponía 20: se quedó corto al ir añadiendo páginas. Si vuelves
+       a contarlos: grep -rho 'data-enlace="altaSocio"' --include=*.html .
 
      Mientras estén vacíos, esos botones llevan a la página de Formularios
      (o abren el correo público, según el caso), así que la web nunca queda
      con enlaces roscados.
+
+     Nota de noviembre de 2026: ese respaldo tenía un punto ciego. En la
+     propia página "Hazte socio" el enlace de reserva apuntaba a sí misma,
+     así que el botón "Solicitar el alta" recargaba la página y parecía
+     estropeado. Ya se ha cambiado por el correo de la AFA. Si en el futuro
+     se añade un botón con data-enlace, comprobad que su href de reserva
+     lleve a algún sitio distinto de la página donde está.
      ------------------------------------------------------------------------ */
   enlaces: {
-    altaSocio: "",              // Google Form de alta de socio
+    // Puesto en marcha el 26 de noviembre de 2026. Con esta sola línea se
+    // activaron los 20 botones "Hazte socio" / "Solicitar alta" del sitio.
+    altaSocio: "https://forms.gle/7ACdE1JKLRutbYJf9",
     inscripcionActividad: "",   // Google Form de inscripción a actividades
     autorizacionImagen: "",     // Google Form o PDF de autorización de imagen
     propuestas: "",             // Google Form de propuestas y sugerencias
